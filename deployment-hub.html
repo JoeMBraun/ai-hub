@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Deployment Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        /* Grouped Navigation */
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-right: 6px;
+        }
+        .nav a {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 8px;
+            padding: 6px 14px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        .nav a:hover {
+            background: #22263a;
+            border-color: #5865f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 12px;
+            border-left: 3px solid #444;
+            padding-left: 8px;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .card {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 16px 20px;
+            width: 260px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card:hover {
+            border-color: #5865f2;
+            background: #22263a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.2);
+        }
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 7px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+            width: fit-content;
+        }
+        .badge-open { background: #2a2a1e; color: #facc15; }
+        .badge-free { background: #1e3a2f; color: #4ade80; }
+        .badge-pro { background: #2a1f3d; color: #a78bfa; }
+        .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
+
+        .text-block {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+        .text-block strong { color: #e0e0e0; }
+    </style>
+</head>
+<body>
+
+<!-- GROUPED NAVIGATION -->
+<div class="nav">
+
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 AI Chatbot Hub →</a>
+        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
+        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Data & Evaluation</div>
+        <a href="data-hub.html">📚 AI Data Hub →</a>
+        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
+        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Safety & Ops</div>
+        <a href="security-hub.html">🔒 AI Security Hub →</a>
+        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
+        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
+    </div>
+
+</div>
+
+<h1>🚀 AI Deployment Hub</h1>
+<p class="subtitle">Deployment patterns, scaling strategies, GPU provisioning, CI/CD, and production AI</p>
+
+<!-- INTRO -->
+<div class="section">
+    <div class="section-label">Overview</div>
+    <div class="text-block">
+        <strong>Deployment is where AI becomes real.</strong>  
+        This hub covers everything required to run AI systems in production: GPU provisioning, scaling, CI/CD, observability, versioning, and cost optimization.  
+        Whether you're deploying RAG, agents, or full AI applications, this is your operational foundation.
+    </div>
+</div>
+
+<!-- DEPLOYMENT PATTERNS -->
+<div class="section">
+    <div class="section-label">Deployment Patterns</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Serverless AI</div>
+            <div class="card-desc">On-demand inference with autoscaling and zero idle cost</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Containerized AI</div>
+            <div class="card-desc">Docker + Kubernetes for predictable, portable deployments</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Edge Deployment</div>
+            <div class="card-desc">Run models locally for privacy and low latency</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Hybrid Cloud</div>
+            <div class="card-desc">Combine cloud GPUs with on-prem data and compute</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- GPU / TPU PROVISIONING -->
+<div class="section">
+    <div class="section-label">GPU & TPU Provisioning</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://modal.com" target="_blank">
+            <div class="card-name">Modal</div>
+            <div class="card-desc">Serverless GPU compute for AI workloads</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://www.runpod.io" target="_blank">
+            <div class="card-name">RunPod</div>
+            <div class="card-desc">GPU cloud for inference and training</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://www.paperspace.com" target="_blank">
+            <div class="card-name">Paperspace</div>
+            <div class="card-desc">GPU VMs for AI development and deployment</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://cloud.google.com/tpu" target="_blank">
+            <div class="card-name">Google TPU</div>
+            <div class="card-desc">High-performance tensor processing for large models</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- CI/CD FOR AI -->
+<div class="section">
+    <div class="section-label">CI/CD for AI</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://www.github.com/features/actions" target="_blank">
+            <div class="card-name">GitHub Actions</div>
+            <div class="card-desc">Automate testing, deployment, and model updates</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+
+        <a class="card" href="https://www.gitlab.com" target="_blank">
+            <div class="card-name">GitLab CI</div>
+            <div class="card-desc">Integrated CI/CD pipelines for AI systems</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+
+        <a class="card" href="https://www.circleci.com" target="_blank">
+            <div class="card-name">CircleCI</div>
+            <div class="card-desc">Automated builds and deployments for AI apps</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- MODEL VERSIONING -->
+<div class="section">
+    <div class="section-label">Model Versioning</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://www.wandb.com" target="_blank">
+            <div class="card-name">Weights & Biases</div>
+            <div class="card-desc">Experiment tracking and model versioning</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+
+        <a class="card" href="https://mlflow.org" target="_blank">
+            <div class="card-name">MLflow</div>
+            <div class="card-desc">Model registry and lifecycle management</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://huggingface.co/docs/hub" target="_blank">
+            <div class="card-name">HuggingFace Hub</div>
+            <div class="card-desc">Model hosting, versioning, and deployment</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- COST OPTIMIZATION -->
+<div class="section">
+    <div class="section-label">Cost Optimization</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Batching</div>
+            <div class="card-desc">Group inference requests to reduce cost</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Caching</div>
+            <div class="card-desc">Reuse previous responses to avoid recomputation</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Model Distillation</div>
+            <div class="card-desc">Use smaller models for cheaper inference</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Hybrid Routing</div>
+            <div class="card-desc">Send easy queries to cheaper models</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- OBSERVABILITY -->
+<div class="section">
+    <div class="section-label">Observability & Monitoring</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://www.langfuse.com" target="_blank">
+            <div class="card-name">Langfuse</div>
+            <div class="card-desc">Tracing, metrics, prompt tracking, and analytics</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://arize.com" target="_blank">
+            <div class="card-name">Arize Phoenix</div>
+            <div class="card-desc">LLM monitoring, drift detection, and evaluation</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://www.traceloop.com" target="_blank">
+            <div class="card-name">Traceloop</div>
+            <div class="card-desc">LLM observability with OpenTelemetry</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+    </div>
+</div>
+
+</body>
+</html>
