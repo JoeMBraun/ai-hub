@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Harness Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 24px;
+        }
+        .nav a {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .nav a:hover {
+            background: #22263a;
+            border-color: #5865f2;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        .vendor-section {
+            margin-bottom: 30px;
+        }
+        .vendor-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 10px;
+            border-left: 3px solid #444;
+            padding-left: 8px;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .card {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 16px 20px;
+            width: 220px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card:hover {
+            border-color: #5865f2;
+            background: #22263a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.2);
+        }
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 7px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+            width: fit-content;
+        }
+        .badge-free { background: #1e3a2f; color: #4ade80; }
+        .badge-pro { background: #2a1f3d; color: #a78bfa; }
+        .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
+        .badge-open { background: #2a2a1e; color: #facc15; }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="index.html">🤖 AI Chatbot Hub →</a>
+</div>
+
+<h1>🛠️ AI Harness Hub</h1>
+<p class="subtitle">AI-powered coding agents, IDE integrations, and developer copilots</p>
+
+<!-- Anthropic -->
+<div class="vendor-section">
+    <div class="vendor-label">Anthropic — Claude Code</div>
+    <div class="card-grid">
+        <a class="card" href="https://claude.ai/code" target="_blank">
+            <div class="card-name">Claude Code</div>
+            <div class="card-desc">Anthropic's agentic CLI and desktop coding tool — runs in your terminal or as a desktop app</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+    </div>
+</div>
+
+<!-- OpenAI -->
+<div class="vendor-section">
+    <div class="vendor-label">OpenAI — Codex & Operator</div>
+    <div class="card-grid">
+        <a class="card" href="https://chatgpt.com" target="_blank">
+            <div class="card-name">ChatGPT (Codex)</div>
+            <div class="card-desc">Codex is now embedded in ChatGPT — access via the coding agent in GPT-4o and o1</div>
+            <span class="badge badge-free-pro">Free + Plus</span>
+        </a>
+        <a class="card" href="https://platform.openai.com/playground" target="_blank">
+            <div class="card-name">OpenAI Playground</div>
+            <div class="card-desc">Direct model API access — test Codex and other models with custom parameters</div>
+            <span class="badge badge-pro">API Key</span>
+        </a>
+    </div>
+</div>
+
+<!-- Cursor -->
+<div class="vendor-section">
+    <div class="vendor-label">Anysphere — Cursor</div>
+    <div class="card-grid">
+        <a class="card" href="https://www.cursor.com" target="_blank">
+            <div class="card-name">Cursor</div>
+            <div class="card-desc">AI-first VS Code fork — multi-model support (GPT-4o, Claude, etc.) with deep codebase context</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+    </div>
+</div>
+
+<!-- GitHub Copilot -->
+<div class="vendor-section">
+    <div class="vendor-label">Microsoft / GitHub — Copilot</div>
+    <div class="card-grid">
+        <a class="card" href="https://github.com/features/copilot" target="_blank">
+            <div class="card-name">GitHub Copilot</div>
+            <div class="card-desc">Inline code completion and chat in VS Code, JetBrains, Visual Studio, and more</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+        <a class="card" href="https://github.com/features/copilot/workspace" target="_blank">
+            <div class="card-name">Copilot Workspace</div>
+            <div class="card-desc">GitHub's agentic task-to-PR tool — describe a feature, get a full implementation plan</div>
+            <span class="badge badge-pro">Beta / Pro</span>
+        </a>
+    </div>
+</div>
+
+<!-- Windsurf -->
+<div class="vendor-section">
+    <div class="vendor-label">Codeium — Windsurf</div>
+    <div class="card-grid">
+        <a class="card" href="https://codeium.com/windsurf" target="_blank">
+            <div class="card-name">Windsurf</div>
+            <div class="card-desc">Agentic IDE from Codeium — "Cascade" agent understands full repo context and can take actions</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+        <a class="card" href="https://codeium.com" target="_blank">
+            <div class="card-name">Codeium Extension</div>
+            <div class="card-desc">Free AI code completion plugin for VS Code, JetBrains, Vim, and others</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+    </div>
+</div>
+
+<!-- Replit -->
+<div class="vendor-section">
+    <div class="vendor-label">Replit — AI Agent</div>
+    <div class="card-grid">
+        <a class="card" href="https://replit.com" target="_blank">
+            <div class="card-name">Replit Agent</div>
+            <div class="card-desc">Browser-based coding environment with an AI agent that builds and deploys full apps from prompts</div>
+            <span class="badge badge-free-pro">Free + Core</span>
+        </a>
+    </div>
+</div>
+
+<!-- Prompt-to-App Builders -->
+<div class="vendor-section">
+    <div class="vendor-label">Prompt-to-App Builders</div>
+    <div class="card-grid">
+        <a class="card" href="https://v0.dev" target="_blank">
+            <div class="card-name">v0 by Vercel</div>
+            <div class="card-desc">Generate full React/Next.js UI components and apps from text prompts, deploy to Vercel</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+        <a class="card" href="https://lovable.dev" target="_blank">
+            <div class="card-name">Lovable</div>
+            <div class="card-desc">Full-stack app builder from natural language — generates React + Supabase apps with live preview</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+        <a class="card" href="https://bolt.new" target="_blank">
+            <div class="card-name">Bolt.new</div>
+            <div class="card-desc">StackBlitz's in-browser full-stack AI agent — builds, runs, and deploys apps in one environment</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+        <a class="card" href="https://create.t3.gg" target="_blank">
+            <div class="card-name">T3 Chat / Create T3</div>
+            <div class="card-desc">Theo's T3 stack scaffolder and AI-assisted app creation toolchain (Next.js, tRPC, Prisma, Tailwind)</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+    </div>
+</div>
+
+<!-- Autonomous SWE Agents -->
+<div class="vendor-section">
+    <div class="vendor-label">Autonomous SWE Agents</div>
+    <div class="card-grid">
+        <a class="card" href="https://devin.ai" target="_blank">
+            <div class="card-name">Devin</div>
+            <div class="card-desc">Cognition AI's fully autonomous software engineer — handles entire tickets end to end</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+        <a class="card" href="https://www.swe-agent.com" target="_blank">
+            <div class="card-name">SWE-agent</div>
+            <div class="card-desc">Princeton's open-source autonomous agent for GitHub issues — research-grade SWE benchmark tool</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://agentless.github.io" target="_blank">
+            <div class="card-name">Agentless</div>
+            <div class="card-desc">Lightweight open-source SWE agent — localize and repair bugs without a full agent loop</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+    </div>
+</div>
+
+<!-- JetBrains -->
+<div class="vendor-section">
+    <div class="vendor-label">JetBrains — AI Assistant</div>
+    <div class="card-grid">
+        <a class="card" href="https://www.jetbrains.com/ai/" target="_blank">
+            <div class="card-name">JetBrains AI</div>
+            <div class="card-desc">Native AI assistant across IntelliJ, PyCharm, WebStorm and other JetBrains IDEs</div>
+            <span class="badge badge-pro">Subscription</span>
+        </a>
+    </div>
+</div>
+
+<!-- Amazon -->
+<div class="vendor-section">
+    <div class="vendor-label">Amazon — CodeWhisperer / Q</div>
+    <div class="card-grid">
+        <a class="card" href="https://aws.amazon.com/q/developer/" target="_blank">
+            <div class="card-name">Amazon Q Developer</div>
+            <div class="card-desc">AWS's AI coding assistant (formerly CodeWhisperer) — code completion, security scanning, CLI agent</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+    </div>
+</div>
+
+<!-- Tabnine -->
+<div class="vendor-section">
+    <div class="vendor-label">Tabnine</div>
+    <div class="card-grid">
+        <a class="card" href="https://www.tabnine.com" target="_blank">
+            <div class="card-name">Tabnine</div>
+            <div class="card-desc">Privacy-focused AI code completion — can run on-prem with your own models</div>
+            <span class="badge badge-free-pro">Free + Pro</span>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
