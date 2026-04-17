@@ -135,11 +135,83 @@
             line-height: 1.55;
         }
         .text-block strong { color: #e0e0e0; }
+
+        .llm-actions { /* [2026-04-17] Added styling for LLM action container within cards. */
+            display: flex; /* [2026-04-17] Added flexbox display for icon alignment. */
+            gap: 8px; /* [2026-04-17] Added gap between icons. */
+            margin-top: auto; /* [2026-04-17] Added margin top auto to push buttons to the bottom of the card. */
+            padding-top: 10px; /* [2026-04-17] Added padding top for spacing from text. */
+        } /* [2026-04-17] Closed llm-actions class. */
+
+        .llm-icon-btn { /* [2026-04-17] Added styling for the individual LLM icon buttons. */
+            background: rgba(255, 255, 255, 0.05); /* [2026-04-17] Added semi-transparent background for dark theme. */
+            border: 1px solid #2a2d3e; /* [2026-04-17] Added border styling to match dark theme cards. */
+            border-radius: 6px; /* [2026-04-17] Added border radius for rounded buttons. */
+            padding: 6px; /* [2026-04-17] Added padding for sizing around the icon. */
+            cursor: pointer; /* [2026-04-17] Added cursor pointer for interactability indicator. */
+            transition: all 0.2s ease; /* [2026-04-17] Added transition for smooth hover effects. */
+            display: flex; /* [2026-04-17] Added flex to align the image inside. */
+            align-items: center; /* [2026-04-17] Added center alignment. */
+            justify-content: center; /* [2026-04-17] Added center justification. */
+        } /* [2026-04-17] Closed llm-icon-btn class. */
+
+        .llm-icon-btn:hover { /* [2026-04-17] Added hover effect for the LLM icon buttons. */
+            background: rgba(88, 101, 242, 0.2); /* [2026-04-17] Changed background on hover to match site accent. */
+            border-color: #5865f2; /* [2026-04-17] Changed border color on hover to match site accent. */
+        } /* [2026-04-17] Closed llm-icon-btn hover state. */
+
+        .llm-icon-img { /* [2026-04-17] Added sizing class for the provider favicons. */
+            width: 16px; /* [2026-04-17] Set explicit width. */
+            height: 16px; /* [2026-04-17] Set explicit height. */
+        } /* [2026-04-17] Closed llm-icon-img class. */
     </style>
+    <script>
+        class RoutingException extends Error { /* [2026-04-17] Added custom exception class to ensure structured error propagation. */
+            constructor(message, errorId) { /* [2026-04-17] Added constructor to accept message and specific error ID. */
+                super(message); /* [2026-04-17] Added super call to initialize the base Error object. */
+                this.name = "RoutingException"; /* [2026-04-17] Added name property for the custom exception type. */
+                this.errorId = errorId; /* [2026-04-17] Added property to retain the specific inline error ID. */
+            } /* [2026-04-17] Added closure for constructor. */
+        } /* [2026-04-17] Added closure for RoutingException class. */
+
+        function generatePromptAndRouteToLanguageModel(event, conceptText, languageModelProvider) { /* [2026-04-17] Added function for routing with event parameter to stop propagation. */
+            const isEventValid = event !== null && event !== undefined; /* [2026-04-17] Added positive logic check evaluation for event object. */
+            if (isEventValid) { event.stopPropagation(); } /* [2026-04-17] Added stop propagation to prevent parent clicks if event exists. */
+            
+            console.info("[SECUI100I] Starting prompt generation and routing..."); /* [2026-04-17] Added structured lifecycle start logging with SECUI prefix. */
+            try { /* [2026-04-17] Added try block for structured error handling. */
+                const aiPrefixedConcept = "AI " + conceptText; /* [2026-04-17] Added AI prefix to the concept text to ensure it is contextually related to AI. */
+                const generatedPromptText = "I would like a detailed explanation of how to implement " + aiPrefixedConcept + "."; /* [2026-04-17] Constructed the prompt text utilizing the prefixed concept. */
+                const urlEncodedPrompt = encodeURIComponent(generatedPromptText); /* [2026-04-17] Encoded the prompt for URL transmission. */
+                
+                const languageModelUrls = { /* [2026-04-17] Initialized mapping object for supported LLMs. */
+                    "ChatGPT": "https://chatgpt.com/?q=", /* [2026-04-17] Added ChatGPT URL string. */
+                    "Perplexity": "https://www.perplexity.ai/?q=", /* [2026-04-17] Added Perplexity URL string. */
+                    "Claude": "https://claude.ai/new?q=" /* [2026-04-17] Added Claude URL string. */
+                }; /* [2026-04-17] Closed mapping object. */
+
+                const isProviderValid = languageModelProvider in languageModelUrls; /* [2026-04-17] Added variable to explicitly evaluate the condition for the positive logic check. */
+
+                if (isProviderValid) { /* [2026-04-17] Added positive logic check to verify provider support. */
+                    const targetRoutingUrl = languageModelUrls[languageModelProvider] + urlEncodedPrompt; /* [2026-04-17] Constructed the final target URL. */
+                    window.open(targetRoutingUrl, '_blank'); /* [2026-04-17] Opened the target URL in a new browser tab. */
+                    console.info("[SECUI101I] Routing to " + languageModelProvider + " completed successfully."); /* [2026-04-17] Added structured lifecycle success logging. */
+                } else { /* [2026-04-17] Added fallback block. */
+                    throw new RoutingException("Provider mapping not found.", "[SECUI102E]"); /* [2026-04-17] Modified to throw custom RoutingException with a specific inline error ID for proper propagation. */
+                } /* [2026-04-17] Closed positive logic conditional. */
+            } catch (executionError) { /* [2026-04-17] Added catch block to intercept exceptions. */
+                const isCustomException = executionError instanceof RoutingException; /* [2026-04-17] Added positive logic check evaluation for exception type. */
+                if (isCustomException) { /* [2026-04-17] Added positive type check to catch structured exceptions. */
+                    console.error(`${executionError.errorId} Prompt generation and routing completed unsuccessfully. Details: ${executionError.message}`); /* [2026-04-17] Added structured lifecycle failure logging utilizing the propagated error ID. */
+                } else { /* [2026-04-17] Added fallback block for unexpected runtime errors. */
+                    console.error(`[SECUI103E] Prompt generation and routing completed unsuccessfully. Details: ${executionError.message}`); /* [2026-04-17] Added structured lifecycle failure logging for unexpected exceptions. */
+                } /* [2026-04-17] Added closure for exception type check. */
+            } /* [2026-04-17] Closed try-catch block. */
+        } /* [2026-04-17] Closed function. */
+    </script>
 </head>
 <body>
 
-<!-- GROUPED NAVIGATION -->
 <div class="nav">
 
     <div class="nav-group">
@@ -175,7 +247,6 @@
 <h1>🔒 AI Security Hub</h1>
 <p class="subtitle">Threat modeling, red‑teaming, hardening, and secure AI system design</p>
 
-<!-- INTRO -->
 <div class="section">
     <div class="section-label">Overview</div>
     <div class="text-block">
@@ -184,63 +255,36 @@
     </div>
 </div>
 
-<!-- THREAT MODELS -->
 <div class="section">
     <div class="section-label">Threat Models</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Prompt Injection</div>
+        <div class="card"> <div class="card-name">Prompt Injection</div>
             <div class="card-desc">Direct, indirect, and multi‑turn injection attacks</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Data Poisoning</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Injection Attacks', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Injection Attacks', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Injection Attacks', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Data Poisoning</div>
             <div class="card-desc">Malicious training or retrieval data manipulation</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Model Extraction</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Data Poisoning Defenses', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Data Poisoning Defenses', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Data Poisoning Defenses', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Model Extraction</div>
             <div class="card-desc">Stealing model weights or behavior via queries</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Model Evasion</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Extraction Prevention', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Extraction Prevention', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Extraction Prevention', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Model Evasion</div>
             <div class="card-desc">Crafted inputs designed to bypass safety filters</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Evasion Defense', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Evasion Defense', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Evasion Defense', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- DEFENSES -->
 <div class="section">
     <div class="section-label">Defensive Techniques</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Input Sanitization</div>
+        <div class="card"> <div class="card-name">Input Sanitization</div>
             <div class="card-desc">Strip, rewrite, or validate user inputs</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Output Filtering</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Input Sanitization', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Input Sanitization', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Input Sanitization', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Output Filtering</div>
             <div class="card-desc">Block unsafe or policy‑violating responses</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Guardrail Models</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Output Filtering', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Output Filtering', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Output Filtering', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Guardrail Models</div>
             <div class="card-desc">Use small models to enforce safety boundaries</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Context Isolation</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Guardrail Models', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Guardrail Models', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Guardrail Models', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Context Isolation</div>
             <div class="card-desc">Separate system prompts from user‑controlled content</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Context Isolation', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Context Isolation', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Context Isolation', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- RED TEAMING -->
 <div class="section">
     <div class="section-label">Red‑Teaming & Evaluation</div>
     <div class="card-grid">
@@ -266,55 +310,32 @@
     </div>
 </div>
 
-<!-- SUPPLY CHAIN -->
 <div class="section">
     <div class="section-label">AI Supply‑Chain Security</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Model Provenance</div>
+        <div class="card"> <div class="card-name">Model Provenance</div>
             <div class="card-desc">Track model origin, training data, and lineage</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Dependency Hardening</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Provenance', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Provenance', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Provenance', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Dependency Hardening</div>
             <div class="card-desc">Secure libraries, embeddings, and plugins</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Secure Model Hosting</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Dependency Hardening', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Dependency Hardening', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Dependency Hardening', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Secure Model Hosting</div>
             <div class="card-desc">Isolated runtimes, encrypted weights, access control</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Secure Model Hosting', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Secure Model Hosting', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Secure Model Hosting', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- SECURE DEPLOYMENT -->
 <div class="section">
     <div class="section-label">Secure Deployment Patterns</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Zero‑Trust AI</div>
+        <div class="card"> <div class="card-name">Zero‑Trust AI</div>
             <div class="card-desc">Authenticate every request, validate every output</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Sandboxed Execution</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Zero‑Trust AI', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Zero‑Trust AI', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Zero‑Trust AI', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Sandboxed Execution</div>
             <div class="card-desc">Run agents and tools in isolated environments</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Rate‑Limiting & Quotas</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Sandboxed Execution', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Sandboxed Execution', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Sandboxed Execution', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Rate‑Limiting & Quotas</div>
             <div class="card-desc">Prevent abuse and model extraction attempts</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Audit Logging</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Rate‑Limiting & Quotas', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Rate‑Limiting & Quotas', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Rate‑Limiting & Quotas', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Audit Logging</div>
             <div class="card-desc">Trace model decisions and user interactions</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Audit Logging', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Audit Logging', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Audit Logging', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
 </body>
