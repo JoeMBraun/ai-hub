@@ -179,9 +179,12 @@
             
             console.info("[AIAUI100I] Starting prompt generation and routing..."); /* [2026-04-17] Added structured lifecycle start logging. */
             try { /* [2026-04-17] Added try block for structured error handling. */
-                const generatedPromptText = "I would like a detailed explanation of how to implement " + conceptText + "."; /* [2026-04-17] Constructed the prompt text. */
+
+                const aiPrefixedConcept = "AI " + conceptText; /* [2026-04-17] Added AI prefix to the concept text to ensure it is contextually related to AI. */
+                const generatedPromptText = "I would like a detailed explanation of how to implement " + aiPrefixedConcept + "."; /* [2026-04-17] Constructed the prompt text utilizing the prefixed concept. */
                 const urlEncodedPrompt = encodeURIComponent(generatedPromptText); /* [2026-04-17] Encoded the prompt for URL transmission. */
                 
+               
                 const languageModelUrls = { /* [2026-04-17] Initialized mapping object for supported LLMs. */
                     "ChatGPT": "https://chatgpt.com/?q=", /* [2026-04-17] Added ChatGPT URL string. */
                     "Perplexity": "https://www.perplexity.ai/?q=", /* [2026-04-17] Added Perplexity URL string. */
