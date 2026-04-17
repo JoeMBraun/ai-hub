@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local AI Models Hub</title>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f1117;
+    color: #e0e0e0;
+    padding: 20px;
+}
+
+/* NAV (reuse your style) */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 32px;
+}
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.nav-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+}
+.nav a {
+    background: #1c1f2b;
+    border: 1px solid #2a2d3e;
+    border-radius: 8px;
+    padding: 6px 14px;
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+.nav a:hover {
+    background: #22263a;
+    border-color: #5865f2;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #fff;
+}
+.subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.vendor-section {
+    margin-bottom: 30px;
+}
+.vendor-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+    border-left: 3px solid #444;
+    padding-left: 8px;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.card {
+    background: #1c1f2b;
+    border: 1px solid #2a2d3e;
+    border-radius: 12px;
+    padding: 16px;
+    width: 240px;
+    text-decoration: none;
+    color: inherit;
+}
+.card:hover {
+    border-color: #5865f2;
+    background: #22263a;
+}
+
+.card-name {
+    font-weight: 600;
+    color: #fff;
+}
+.card-desc {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.code {
+    background: #0b0d12;
+    border: 1px solid #2a2d3e;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 Chatbots</a>
+        <a href="prompt-hub.html">✍️ Prompts</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ Harness</a>
+        <a href="agents-hub.html">🧠 Agents</a>
+        <a href="local-models-hub.html">💻 Local Models</a>
+    </div>
+</div>
+
+<h1>💻 Local AI Models Hub</h1>
+<p class="subtitle">Run powerful AI models locally — no API keys required</p>
+
+<!-- QUICK START -->
+<div class="vendor-section">
+<div class="vendor-label">⚡ Quick Start (5 Minutes)</div>
+<div class="card-grid">
+
+<div class="card">
+<div class="card-name">Install Ollama</div>
+<div class="card-desc">Easiest way to run models locally</div>
+<div class="code">https://ollama.com</div>
+</div>
+
+<div class="card">
+<div class="card-name">Run Your First Model</div>
+<div class="card-desc">Starts a local AI instantly</div>
+<div class="code">ollama run gemma</div>
+</div>
+
+</div>
+</div>
+
+<!-- MODELS -->
+<div class="vendor-section">
+<div class="vendor-label">🤖 Models</div>
+<div class="card-grid">
+
+<a class="card" href="https://ollama.com/library/gemma" target="_blank">
+<div class="card-name">Gemma</div>
+<div class="card-desc">Google lightweight model (2B / 7B)</div>
+<div class="code">ollama run gemma</div>
+</a>
+
+<a class="card" href="https://ollama.com/library/llama3" target="_blank">
+<div class="card-name">Llama 3</div>
+<div class="card-desc">Most popular general-purpose model</div>
+<div class="code">ollama run llama3</div>
+</a>
+
+<a class="card" href="https://ollama.com/library/mistral" target="_blank">
+<div class="card-name">Mistral</div>
+<div class="card-desc">Fast + efficient open model</div>
+<div class="code">ollama run mistral</div>
+</a>
+
+<a class="card" href="https://ollama.com/library/phi3" target="_blank">
+<div class="card-name">Phi-3</div>
+<div class="card-desc">Small but powerful (runs on low hardware)</div>
+<div class="code">ollama run phi3</div>
+</a>
+
+</div>
+</div>
+
+<!-- TOOLS -->
+<div class="vendor-section">
+<div class="vendor-label">🧰 Tools & Interfaces</div>
+<div class="card-grid">
+
+<a class="card" href="https://ollama.com" target="_blank">
+<div class="card-name">Ollama</div>
+<div class="card-desc">CLI + local API for running models</div>
+</a>
+
+<a class="card" href="https://lmstudio.ai" target="_blank">
+<div class="card-name">LM Studio</div>
+<div class="card-desc">GUI app — no coding required</div>
+</a>
+
+<a class="card" href="https://github.com/open-webui/open-webui" target="_blank">
+<div class="card-name">Open WebUI</div>
+<div class="card-desc">ChatGPT-style interface for local models</div>
+</a>
+
+</div>
+</div>
+
+<!-- API EXAMPLE -->
+<div class="vendor-section">
+<div class="vendor-label">🔌 Local API Example</div>
+<div class="card-grid">
+
+<div class="card">
+<div class="card-name">Call Local Model</div>
+<div class="card-desc">Ollama exposes a localhost API</div>
+<div class="code">
+curl http://localhost:11434/api/chat \n
+-d '{"model":"gemma","messages":[{"role":"user","content":"Hello"}]}'
+</div>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
