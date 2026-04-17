@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Benchmark Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .nav a {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .nav a:hover {
+            background: #22263a;
+            border-color: #5865f2;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 14px 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .intro strong { color: #e0e0e0; }
+        .vendor-section {
+            margin-bottom: 30px;
+        }
+        .vendor-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 10px;
+            padding-left: 4px;
+            border-left: 3px solid #444;
+            padding-left: 8px;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .card {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 16px 20px;
+            width: 220px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card:hover {
+            border-color: #5865f2;
+            background: #22263a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.2);
+        }
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 7px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+            width: fit-content;
+        }
+        .badge-free { background: #1e3a2f; color: #4ade80; }
+        .badge-pro { background: #2a1f3d; color: #a78bfa; }
+        .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
+        .badge-open { background: #3a2f1e; color: #fbbf24; }
+        .footnote {
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #2a2d3e;
+            color: #888;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        .footnote strong { color: #e0e0e0; }
+        .footnote a { color: #60a5fa; text-decoration: none; }
+        .footnote a:hover { color: #93c5fd; }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="index.html">🤖 AI Chatbot Hub →</a>
+    <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+</div>
+<h1>📊 AI Benchmark Hub</h1>
+<p class="subtitle">Leaderboards and evaluation platforms for comparing frontier AI models</p>
+
+<div class="intro">
+    <strong>Why so many?</strong> These benchmarks don't really disagree — they measure different things. Some focus on reasoning, others on coding, math, conversational quality, safety, or real-world usefulness. A model might top one leaderboard and lag on another. For a rounded view of any frontier model, cross-reference two or three benchmarks that match your use case.
+</div>
+
+<!-- Head-to-Head Arenas -->
+<div class="vendor-section">
+    <div class="vendor-label">Head-to-Head Arenas — Human Preference</div>
+    <div class="card-grid">
+        <a class="card" href="https://lmarena.ai" target="_blank">
+            <div class="card-name">LMArena</div>
+            <div class="card-desc">Blind pairwise voting produces Elo ratings across chat, vision, and coding. The de facto "real-world quality" leaderboard</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://web.lmarena.ai/leaderboard" target="_blank">
+            <div class="card-name">WebDev Arena</div>
+            <div class="card-desc">Head-to-head evaluation of models on full-stack web development prompts, judged by users</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://dynabench.org" target="_blank">
+            <div class="card-name">Dynabench</div>
+            <div class="card-desc">Dynamic, adversarial evaluation where humans generate challenge examples that fool current models</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+    </div>
+</div>
+
+<!-- Holistic / Multi-Dimensional -->
+<div class="vendor-section">
+    <div class="vendor-label">Holistic &amp; Multi-Dimensional Evaluations</div>
+    <div class="card-grid">
+        <a class="card" href="https://crfm.stanford.edu/helm/" target="_blank">
+            <div class="card-name">Stanford HELM</div>
+            <div class="card-desc">Evaluates accuracy, robustness, fairness, efficiency, and more across many scenarios</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://artificialanalysis.ai" target="_blank">
+            <div class="card-name">Artificial Analysis</div>
+            <div class="card-desc">Frontier model comparison across intelligence, speed, price, and context — great single-page overview</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://livebench.ai" target="_blank">
+            <div class="card-name">LiveBench</div>
+            <div class="card-desc">Contamination-free benchmark with questions refreshed monthly across reasoning, math, coding, and more</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://paperswithcode.com" target="_blank">
+            <div class="card-name">Papers with Code</div>
+            <div class="card-desc">Aggregates leaderboards across hundreds of NLP, vision, and ML benchmarks, linked to source papers</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+    </div>
+</div>
+
+<!-- Reasoning & Knowledge -->
+<div class="vendor-section">
+    <div class="vendor-label">Reasoning &amp; Knowledge</div>
+    <div class="card-grid">
+        <a class="card" href="https://github.com/idavidrein/gpqa" target="_blank">
+            <div class="card-name">GPQA Diamond</div>
+            <div class="card-desc">"Google-proof" graduate-level science questions by PhDs. A current frontier reasoning benchmark</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://agi.safe.ai" target="_blank">
+            <div class="card-name">Humanity's Last Exam</div>
+            <div class="card-desc">Expert-authored questions across 100+ subjects designed to challenge the strongest frontier models</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://github.com/hendrycks/test" target="_blank">
+            <div class="card-name">MMLU / MMLU-Pro</div>
+            <div class="card-desc">57-subject multitask test. MMLU-Pro is the harder, less-saturated successor</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://arcprize.org" target="_blank">
+            <div class="card-name">ARC-AGI</div>
+            <div class="card-desc">François Chollet's abstract visual reasoning benchmark — notoriously hard for LLMs</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://github.com/google/BIG-bench" target="_blank">
+            <div class="card-name">BIG-bench</div>
+            <div class="card-desc">Google's 200+ task benchmark spanning reasoning, creativity, and linguistics. BBH is the hard subset</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://allenai.org/data/arc" target="_blank">
+            <div class="card-name">AI2 Reasoning Challenge</div>
+            <div class="card-desc">Grade-school science questions requiring multi-step logical reasoning. Classic Allen AI benchmark</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+    </div>
+</div>
+
+<!-- Coding -->
+<div class="vendor-section">
+    <div class="vendor-label">Coding</div>
+    <div class="card-grid">
+        <a class="card" href="https://www.swebench.com" target="_blank">
+            <div class="card-name">SWE-bench Verified</div>
+            <div class="card-desc">Real GitHub issues — models must produce patches that pass the project's tests. Key agentic coding benchmark</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://livecodebench.github.io" target="_blank">
+            <div class="card-name">LiveCodeBench</div>
+            <div class="card-desc">Contamination-free coding benchmark from LeetCode, AtCoder, and Codeforces, refreshed continuously</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://www.terminal-bench.com" target="_blank">
+            <div class="card-name">Terminal-Bench</div>
+            <div class="card-desc">Evaluates AI agents on real terminal tasks — filesystems, commands, end-to-end shell workflows</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://aider.chat/docs/leaderboards/" target="_blank">
+            <div class="card-name">Aider Polyglot</div>
+            <div class="card-desc">Editing benchmark across C++, Go, Java, JavaScript, Python, and Rust</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+    </div>
+</div>
+
+<!-- Math -->
+<div class="vendor-section">
+    <div class="vendor-label">Math</div>
+    <div class="card-grid">
+        <a class="card" href="https://maa.org/maa-invitational-competitions" target="_blank">
+            <div class="card-name">AIME</div>
+            <div class="card-desc">American Invitational Mathematics Examination — a standard frontier-model math test</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://github.com/hendrycks/math" target="_blank">
+            <div class="card-name">MATH</div>
+            <div class="card-desc">12,500 competition-style problems across algebra, geometry, and number theory</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://github.com/openai/grade-school-math" target="_blank">
+            <div class="card-name">GSM8K</div>
+            <div class="card-desc">Grade-school word problems testing multi-step arithmetic reasoning. Largely saturated but widely cited</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://epoch.ai/frontiermath" target="_blank">
+            <div class="card-name">FrontierMath</div>
+            <div class="card-desc">Epoch AI's unpublished, expert-crafted problems at the edge of research mathematics</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+    </div>
+</div>
+
+<!-- Agentic / Real-World -->
+<div class="vendor-section">
+    <div class="vendor-label">Agentic &amp; Real-World Tasks</div>
+    <div class="card-grid">
+        <a class="card" href="https://os-world.github.io" target="_blank">
+            <div class="card-name">OSWorld</div>
+            <div class="card-desc">Benchmark for multimodal agents operating real desktop environments across Ubuntu, Windows, macOS</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://webarena.dev" target="_blank">
+            <div class="card-name">WebArena</div>
+            <div class="card-desc">Self-hostable web environment for evaluating agents on realistic e-commerce, forum, and dev tasks</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://metr.org" target="_blank">
+            <div class="card-name">METR Evaluations</div>
+            <div class="card-desc">Measures how long AI agents can autonomously work on real-world tasks</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://github.com/sierra-research/tau-bench" target="_blank">
+            <div class="card-name">τ-bench (Tau-bench)</div>
+            <div class="card-desc">Evaluates agents on realistic customer-service scenarios requiring tool use and multi-turn reasoning</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+    </div>
+</div>
+
+<!-- Open-Source Leaderboards & Hubs -->
+<div class="vendor-section">
+    <div class="vendor-label">Open-Source Leaderboards &amp; Model Hubs</div>
+    <div class="card-grid">
+        <a class="card" href="https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard" target="_blank">
+            <div class="card-name">Open LLM Leaderboard</div>
+            <div class="card-desc">Hugging Face's comparison of open-weight models on IFEval, BBH, MATH, GPQA, MuSR, MMLU-Pro</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://huggingface.co/models" target="_blank">
+            <div class="card-name">Hugging Face Model Hub</div>
+            <div class="card-desc">The largest repository of open models, with model cards reporting benchmark performance</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://super.gluebenchmark.com" target="_blank">
+            <div class="card-name">SuperGLUE</div>
+            <div class="card-desc">Classic NLP language-understanding suite. Largely saturated today but foundational</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+    </div>
+</div>
+
+<!-- Safety & Alignment -->
+<div class="vendor-section">
+    <div class="vendor-label">Safety &amp; Alignment</div>
+    <div class="card-grid">
+        <a class="card" href="https://www.harmbench.org" target="_blank">
+            <div class="card-name">HarmBench</div>
+            <div class="card-desc">Standardized evaluation framework for automated red-teaming and refusal robustness</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://www.wmdp.ai" target="_blank">
+            <div class="card-name">WMDP</div>
+            <div class="card-desc">Weapons of Mass Destruction Proxy — measures hazardous knowledge in bio, chem, and cyber domains</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://github.com/anthropics/evals" target="_blank">
+            <div class="card-name">Anthropic Evals</div>
+            <div class="card-desc">Public evaluation datasets covering sycophancy, advanced AI risks, and model-written evals</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+    </div>
+</div>
+
+<div class="footnote">
+    <strong>A note on benchmark fatigue:</strong> many older benchmarks (SuperGLUE, GSM8K, original MMLU, AI2 ARC) are now saturated by frontier models — scores cluster near 100%, making them poor discriminators. The current frontier is measured by things like GPQA Diamond, SWE-bench Verified, Humanity's Last Exam, FrontierMath, and ARC-AGI. For a quick cross-provider snapshot, <a href="https://artificialanalysis.ai" target="_blank">Artificial Analysis</a> and <a href="https://lmarena.ai" target="_blank">LMArena</a> are the most-consulted single pages.
+</div>
+
+</body>
+</html>
