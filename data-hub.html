@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Data Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        /* Grouped Navigation */
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-right: 6px;
+        }
+        .nav a {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 8px;
+            padding: 6px 14px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        .nav a:hover {
+            background: #22263a;
+            border-color: #5865f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 12px;
+            border-left: 3px solid #444;
+            padding-left: 8px;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .card {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 16px 20px;
+            width: 260px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card:hover {
+            border-color: #5865f2;
+            background: #22263a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.2);
+        }
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 7px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+            width: fit-content;
+        }
+        .badge-open { background: #2a2a1e; color: #facc15; }
+        .badge-free { background: #1e3a2f; color: #4ade80; }
+        .badge-pro { background: #2a1f3d; color: #a78bfa; }
+        .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
+
+        .text-block {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+        .text-block strong { color: #e0e0e0; }
+    </style>
+</head>
+<body>
+
+<!-- GROUPED NAVIGATION -->
+<div class="nav">
+
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 AI Chatbot Hub →</a>
+        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
+        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Data & Evaluation</div>
+        <a href="data-hub.html">📚 AI Data Hub →</a>
+        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
+        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Safety & Ops</div>
+        <a href="security-hub.html">🔒 AI Security Hub →</a>
+        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
+        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
+    </div>
+
+</div>
+
+<h1>📚 AI Data Hub</h1>
+<p class="subtitle">Data pipelines, embeddings, chunking, vector stores, and RAG foundations</p>
+
+<!-- INTRO -->
+<div class="section">
+    <div class="section-label">Overview</div>
+    <div class="text-block">
+        <strong>Data is the backbone of every AI system.</strong>  
+        This hub maps the full lifecycle of AI data: ingestion, cleaning, chunking, embedding, indexing, retrieval, governance, and quality.  
+        Whether you're building RAG, agents, or enterprise AI systems, this is the foundation.
+    </div>
+</div>
+
+<!-- DATA PIPELINES -->
+<div class="section">
+    <div class="section-label">Data Pipelines & ETL/ELT</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://airbyte.com" target="_blank">
+            <div class="card-name">Airbyte</div>
+            <div class="card-desc">Open-source ELT platform with 300+ connectors</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://www.fivetran.com" target="_blank">
+            <div class="card-name">Fivetran</div>
+            <div class="card-desc">Enterprise-grade managed ELT pipelines</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://dagster.io" target="_blank">
+            <div class="card-name">Dagster</div>
+            <div class="card-desc">Modern data orchestration for complex pipelines</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://www.prefect.io" target="_blank">
+            <div class="card-name">Prefect</div>
+            <div class="card-desc">Workflow orchestration for data and AI pipelines</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- CHUNKING STRATEGIES -->
+<div class="section">
+    <div class="section-label">Chunking Strategies</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Fixed-Size Chunking</div>
+            <div class="card-desc">Simple, predictable, but may split semantic units</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Semantic Chunking</div>
+            <div class="card-desc">Splits based on meaning using embeddings or LLMs</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Recursive Chunking</div>
+            <div class="card-desc">Hierarchical splitting for structured documents</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Hybrid Chunking</div>
+            <div class="card-desc">Combines fixed + semantic for optimal retrieval</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- EMBEDDINGS -->
+<div class="section">
+    <div class="section-label">Embeddings</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://platform.openai.com/docs/guides/embeddings" target="_blank">
+            <div class="card-name">OpenAI Embeddings</div>
+            <div class="card-desc">High-quality embeddings for semantic search</div>
+            <span class="badge badge-pro">API</span>
+        </a>
+
+        <a class="card" href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank">
+            <div class="card-name">MTEB Leaderboard</div>
+            <div class="card-desc">Benchmark for embedding models across 50+ tasks</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+
+        <a class="card" href="https://www.sbert.net" target="_blank">
+            <div class="card-name">Sentence Transformers</div>
+            <div class="card-desc">Open-source embeddings for semantic similarity</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- VECTOR DATABASES -->
+<div class="section">
+    <div class="section-label">Vector Databases</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://milvus.io" target="_blank">
+            <div class="card-name">Milvus</div>
+            <div class="card-desc">High-performance vector DB for large-scale AI</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://www.pinecone.io" target="_blank">
+            <div class="card-name">Pinecone</div>
+            <div class="card-desc">Managed vector DB with hybrid search</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://github.com/pgvector/pgvector" target="_blank">
+            <div class="card-name">pgvector</div>
+            <div class="card-desc">Vector search inside PostgreSQL</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://weaviate.io" target="_blank">
+            <div class="card-name">Weaviate</div>
+            <div class="card-desc">Modular vector DB with hybrid search and modules</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- SYNTHETIC DATA -->
+<div class="section">
+    <div class="section-label">Synthetic Data</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://gretel.ai" target="_blank">
+            <div class="card-name">Gretel</div>
+            <div class="card-desc">Synthetic data generation for training and privacy</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://mostly.ai" target="_blank">
+            <div class="card-name">Mostly AI</div>
+            <div class="card-desc">Structured synthetic data for enterprise use</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://github.com/sdv-dev/SDV" target="_blank">
+            <div class="card-name">SDV</div>
+            <div class="card-desc">Open-source synthetic data library</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- DATA GOVERNANCE -->
+<div class="section">
+    <div class="section-label">Data Governance & Quality</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://www.montecarlodata.com" target="_blank">
+            <div class="card-name">Monte Carlo</div>
+            <div class="card-desc">Data observability for pipelines and AI systems</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://www.great_expectations.io" target="_blank">
+            <div class="card-name">Great Expectations</div>
+            <div class="card-desc">Data validation and quality enforcement</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://www.collibra.com" target="_blank">
+            <div class="card-name">Collibra</div>
+            <div class="card-desc">Enterprise data governance platform</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+    </div>
+</div>
+
+</body>
+</html>
