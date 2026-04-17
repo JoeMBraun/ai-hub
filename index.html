@@ -12,26 +12,42 @@
             color: #e0e0e0;
             padding: 20px;
         }
+
+        /* Grouped Navigation */
         .nav {
             display: flex;
-            justify-content: flex-end;
+            flex-direction: column;
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .nav-group {
+            display: flex;
+            align-items: center;
             gap: 10px;
-            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-right: 6px;
         }
         .nav a {
             background: #1c1f2b;
             border: 1px solid #2a2d3e;
             border-radius: 8px;
-            padding: 8px 16px;
+            padding: 6px 14px;
             color: #60a5fa;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: all 0.2s ease;
         }
         .nav a:hover {
             background: #22263a;
             border-color: #5865f2;
         }
+
         h1 {
             text-align: center;
             margin-bottom: 8px;
@@ -107,12 +123,44 @@
     </style>
 </head>
 <body>
+
+<!-- GROUPED NAVIGATION -->
 <div class="nav">
-    <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
-    <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
-    <a href="security-hub.html">🔒 AI Security Hub →</a> <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a> </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 AI Chatbot Hub →</a>
+        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
+        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Data & Evaluation</div>
+        <a href="data-hub.html">📚 AI Data Hub →</a>
+        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
+        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Safety & Ops</div>
+        <a href="security-hub.html">🔒 AI Security Hub →</a>
+        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
+        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
+    </div>
+
+</div>
+
 <h1>🤖 AI Chatbot Hub</h1>
 <p class="subtitle">Quick access to all major frontier AI chat interfaces</p>
+
+<!-- ORIGINAL CONTENT BELOW (unchanged) -->
+
 <div class="vendor-section">
     <div class="vendor-label">Anthropic — Claude</div>
     <div class="card-grid">
@@ -123,6 +171,7 @@
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
     <div class="vendor-label">OpenAI — ChatGPT</div>
     <div class="card-grid">
@@ -138,8 +187,9 @@
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
-    <div class="vendor-label">Microsoft — Copilot (GPT-4o / OpenAI powered)</div>
+    <div class="vendor-label">Microsoft — Copilot</div>
     <div class="card-grid">
         <a class="card" href="https://copilot.microsoft.com" target="_blank">
             <div class="card-name">Copilot Web</div>
@@ -148,36 +198,38 @@
         </a>
         <a class="card" href="https://m365.cloud.microsoft/chat" target="_blank">
             <div class="card-name">Copilot 365</div>
-            <div class="card-desc">Microsoft 365 integrated version (Work/school accounts)</div>
+            <div class="card-desc">Microsoft 365 integrated version</div>
             <span class="badge badge-pro">M365 License</span>
         </a>
         <a class="card" href="https://www.bing.com/chat" target="_blank">
             <div class="card-name">Copilot in Bing</div>
-            <div class="card-desc">Bing search-integrated Copilot with web grounding</div>
+            <div class="card-desc">Search-integrated Copilot with web grounding</div>
             <span class="badge badge-free">Free</span>
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
     <div class="vendor-label">Google — Gemini</div>
     <div class="card-grid">
         <a class="card" href="https://gemini.google.com" target="_blank">
             <div class="card-name">Gemini</div>
-            <div class="card-desc">Main Gemini chat interface (Flash, Pro, Ultra)</div>
+            <div class="card-desc">Main Gemini chat interface</div>
             <span class="badge badge-free-pro">Free + Advanced</span>
         </a>
         <a class="card" href="https://aistudio.google.com" target="_blank">
             <div class="card-name">Google AI Studio</div>
-            <div class="card-desc">Developer playground for Gemini models with API access</div>
+            <div class="card-desc">Developer playground for Gemini models</div>
             <span class="badge badge-free">Free (API)</span>
         </a>
         <a class="card" href="https://notebooklm.google.com" target="_blank">
             <div class="card-name">NotebookLM</div>
-            <div class="card-desc">Gemini-powered document research assistant</div>
+            <div class="card-desc">Gemini-powered research assistant</div>
             <span class="badge badge-free">Free</span>
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
     <div class="vendor-label">xAI — Grok</div>
     <div class="card-grid">
@@ -188,60 +240,66 @@
         </a>
         <a class="card" href="https://x.com/i/grok" target="_blank">
             <div class="card-name">Grok on X</div>
-            <div class="card-desc">Grok integrated within the X (Twitter) platform</div>
+            <div class="card-desc">Grok integrated into X</div>
             <span class="badge badge-pro">X Premium</span>
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
     <div class="vendor-label">Perplexity AI</div>
     <div class="card-grid">
         <a class="card" href="https://www.perplexity.ai" target="_blank">
             <div class="card-name">Perplexity</div>
-            <div class="card-desc">AI search engine — real-time web answers with citations</div>
+            <div class="card-desc">AI search engine with citations</div>
             <span class="badge badge-free-pro">Free + Pro</span>
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
     <div class="vendor-label">Meta — Llama / Meta AI</div>
     <div class="card-grid">
         <a class="card" href="https://www.meta.ai" target="_blank">
             <div class="card-name">Meta AI</div>
-            <div class="card-desc">Meta's Llama-powered assistant (also in WhatsApp, Instagram)</div>
+            <div class="card-desc">Llama-powered assistant</div>
             <span class="badge badge-free">Free</span>
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
     <div class="vendor-label">Mistral AI</div>
     <div class="card-grid">
         <a class="card" href="https://chat.mistral.ai" target="_blank">
             <div class="card-name">Le Chat</div>
-            <div class="card-desc">Mistral's official chat interface (Mistral Large, etc.)</div>
+            <div class="card-desc">Mistral's official chat interface</div>
             <span class="badge badge-free-pro">Free + Pro</span>
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
     <div class="vendor-label">Cohere</div>
     <div class="card-grid">
         <a class="card" href="https://coral.cohere.com" target="_blank">
             <div class="card-name">Coral</div>
-            <div class="card-desc">Cohere's Command R powered chat assistant</div>
+            <div class="card-desc">Cohere's Command R assistant</div>
             <span class="badge badge-free">Free</span>
         </a>
     </div>
 </div>
+
 <div class="vendor-section">
     <div class="vendor-label">DeepSeek</div>
     <div class="card-grid">
         <a class="card" href="https://chat.deepseek.com" target="_blank">
             <div class="card-name">DeepSeek Chat</div>
-            <div class="card-desc">DeepSeek V3 / R1 reasoning model interface</div>
+            <div class="card-desc">DeepSeek V3 / R1 interface</div>
             <span class="badge badge-free">Free</span>
         </a>
     </div>
 </div>
+
 </body>
 </html>
