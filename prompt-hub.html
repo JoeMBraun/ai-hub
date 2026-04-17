@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        /* Grouped Navigation */
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-right: 6px;
+        }
+        .nav a {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 8px;
+            padding: 6px 14px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        .nav a:hover {
+            background: #22263a;
+            border-color: #5865f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 12px;
+            border-left: 3px solid #444;
+            padding-left: 8px;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .card {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 16px 20px;
+            width: 260px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card:hover {
+            border-color: #5865f2;
+            background: #22263a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.2);
+        }
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 7px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+            width: fit-content;
+        }
+        .badge-open { background: #2a2a1e; color: #facc15; }
+        .badge-free { background: #1e3a2f; color: #4ade80; }
+        .badge-pro { background: #2a1f3d; color: #a78bfa; }
+        .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
+
+        .text-block {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+        .text-block strong { color: #e0e0e0; }
+    </style>
+</head>
+<body>
+
+<!-- GROUPED NAVIGATION -->
+<div class="nav">
+
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 AI Chatbot Hub →</a>
+        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
+        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Data & Evaluation</div>
+        <a href="data-hub.html">📚 AI Data Hub →</a>
+        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
+        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Safety & Ops</div>
+        <a href="security-hub.html">🔒 AI Security Hub →</a>
+        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
+        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
+    </div>
+
+</div>
+
+<h1>✍️ AI Prompt Hub</h1>
+<p class="subtitle">Prompt engineering patterns, system prompts, frameworks, and orchestration</p>
+
+<!-- INTRO -->
+<div class="section">
+    <div class="section-label">Overview</div>
+    <div class="text-block">
+        <strong>Prompt engineering is the interface layer of AI systems.</strong>  
+        This hub covers prompt patterns, system prompt design, multi‑prompt orchestration, guardrails, and prompt versioning — the core tools for shaping model behavior.
+    </div>
+</div>
+
+<!-- SYSTEM PROMPTS -->
+<div class="section">
+    <div class="section-label">System Prompt Design</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Role Definition</div>
+            <div class="card-desc">Assigns identity, tone, and constraints to the model</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Behavioral Rules</div>
+            <div class="card-desc">Defines what the model must always or never do</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Output Formatting</div>
+            <div class="card-desc">Ensures structured, predictable responses</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Safety Boundaries</div>
+            <div class="card-desc">Refusal rules, guardrails, and compliance constraints</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- PROMPT PATTERNS -->
+<div class="section">
+    <div class="section-label">Prompt Patterns</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Chain-of-Thought</div>
+            <div class="card-desc">Step-by-step reasoning for complex tasks</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">ReAct</div>
+            <div class="card-desc">Reasoning + acting loops for tool use</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Tree-of-Thought</div>
+            <div class="card-desc">Branching reasoning paths with scoring</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Few-Shot Prompting</div>
+            <div class="card-desc">Provide examples to shape model behavior</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Self-Consistency</div>
+            <div class="card-desc">Sample multiple outputs and choose the best</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- MULTI-PROMPT ORCHESTRATION -->
+<div class="section">
+    <div class="section-label">Multi-Prompt Orchestration</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Router Prompts</div>
+            <div class="card-desc">Direct queries to specialized prompts or models</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Task Decomposition</div>
+            <div class="card-desc">Break complex tasks into smaller promptable units</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Prompt Chaining</div>
+            <div class="card-desc">Sequential prompts that build on each other</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Persona Switching</div>
+            <div class="card-desc">Swap roles dynamically for different tasks</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- STYLE GUIDES -->
+<div class="section">
+    <div class="section-label">Style Guides</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Tone Control</div>
+            <div class="card-desc">Define voice, formality, and emotional style</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Formatting Rules</div>
+            <div class="card-desc">Tables, bullet lists, JSON, and structured output</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Brand Alignment</div>
+            <div class="card-desc">Ensure responses match organizational style</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- GUARDRAILS -->
+<div class="section">
+    <div class="section-label">Guardrails & Safety Prompting</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Refusal Rules</div>
+            <div class="card-desc">Define what the model must decline to answer</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Content Filters</div>
+            <div class="card-desc">Prevent unsafe or disallowed outputs</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Boundary Prompts</div>
+            <div class="card-desc">Clarify limits and safe operating zones</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- VERSIONING -->
+<div class="section">
+    <div class="section-label">Prompt Versioning</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Prompt Registry</div>
+            <div class="card-desc">Track versions, changes, and metadata</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">A/B Testing</div>
+            <div class="card-desc">Compare prompt variants for performance</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Prompt Diffing</div>
+            <div class="card-desc">Identify changes between prompt versions</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- EVALUATION -->
+<div class="section">
+    <div class="section-label">Prompt Evaluation</div>
+    <div class="card-grid">
+
+        <a class="card" href="evaluation-hub.html">
+            <div class="card-name">Regression Testing</div>
+            <div class="card-desc">Ensure prompts behave consistently over time</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Golden Sets</div>
+            <div class="card-desc">Fixed test cases for prompt validation</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">LLM-as-a-Judge</div>
+            <div class="card-desc">Use models to evaluate prompt outputs</div>
+        </a>
+
+    </div>
+</div>
+
+</body>
+</html>
