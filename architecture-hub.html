@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Architecture & Patterns Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .nav a {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .nav a:hover {
+            background: #22263a;
+            border-color: #5865f2;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        .vendor-section {
+            margin-bottom: 30px;
+        }
+        .vendor-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 10px;
+            padding-left: 4px;
+            border-left: 3px solid #444;
+            padding-left: 8px;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .card {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 16px 20px;
+            width: 220px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card:hover {
+            border-color: #5865f2;
+            background: #22263a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.2);
+        }
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 7px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+            width: fit-content;
+        }
+        .badge-free { background: #1e3a2f; color: #4ade80; }
+        .badge-pro { background: #2a1f3d; color: #a78bfa; }
+        .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
+        .badge-open { background: #2a2a1e; color: #facc15; }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="index.html">🤖 AI Chatbot Hub →</a>
+    <a href="security-hub.html">🔒 AI Security Hub →</a>
+</div>
+<h1>🏗️ AI Architecture & Patterns Hub</h1>
+<p class="subtitle">Enterprise integration patterns, SDKs, and data pipelines for scalable AI</p>
+
+<div class="vendor-section">
+    <div class="vendor-label">Enterprise SDKs & Orchestration</div>
+    <div class="card-grid">
+        <a class="card" href="https://github.com/microsoft/semantic-kernel" target="_blank">
+            <div class="card-name">Semantic Kernel</div>
+            <div class="card-desc">Microsoft's robust SDK for C#, Java, and Python. Seamlessly integrates AI models with enterprise systems</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://www.langchain.com/" target="_blank">
+            <div class="card-name">LangChain</div>
+            <div class="card-desc">Standardized framework for developing applications powered by language models and complex RAG</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://www.llamaindex.ai/" target="_blank">
+            <div class="card-name">LlamaIndex</div>
+            <div class="card-desc">Leading data framework for connecting custom data sources to large language models</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+    </div>
+</div>
+
+<div class="vendor-section">
+    <div class="vendor-label">Database & Vector Integrations</div>
+    <div class="card-grid">
+        <a class="card" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/ai-artificial-intelligence-intelligent-applications" target="_blank">
+            <div class="card-name">Azure SQL Vector Search</div>
+            <div class="card-desc">Store and query vector embeddings natively within Azure SQL for secure enterprise RAG architectures</div>
+            <span class="badge badge-pro">Azure Subs</span>
+        </a>
+        <a class="card" href="https://github.com/pgvector/pgvector" target="_blank">
+            <div class="card-name">pgvector</div>
+            <div class="card-desc">Open-source vector similarity search for PostgreSQL. Essential for self-hosted data architectures</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://milvus.io/" target="_blank">
+            <div class="card-name">Milvus</div>
+            <div class="card-desc">Highly scalable open-source vector database built for massive enterprise AI workloads</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+    </div>
+</div>
+
+<div class="vendor-section">
+    <div class="vendor-label">Agentic Design Patterns</div>
+    <div class="card-grid">
+        <a class="card" href="https://microsoft.github.io/autogen/" target="_blank">
+            <div class="card-name">Microsoft AutoGen</div>
+            <div class="card-desc">Programming framework for building multi-agent conversations that collaborate to solve complex tasks</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+        <a class="card" href="https://www.crewai.com/" target="_blank">
+            <div class="card-name">CrewAI</div>
+            <div class="card-desc">Framework for orchestrating role-playing, autonomous AI agents to build reliable, complex pipelines</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
