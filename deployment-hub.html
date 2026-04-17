@@ -134,11 +134,83 @@
             line-height: 1.55;
         }
         .text-block strong { color: #e0e0e0; }
+
+        .llm-actions { /* [2026-04-17] Added styling for LLM action container within cards. */
+            display: flex; /* [2026-04-17] Added flexbox display for icon alignment. */
+            gap: 8px; /* [2026-04-17] Added gap between icons. */
+            margin-top: auto; /* [2026-04-17] Added margin top auto to push buttons to the bottom of the card. */
+            padding-top: 10px; /* [2026-04-17] Added padding top for spacing from text. */
+        } /* [2026-04-17] Closed llm-actions class. */
+
+        .llm-icon-btn { /* [2026-04-17] Added styling for the individual LLM icon buttons. */
+            background: rgba(255, 255, 255, 0.05); /* [2026-04-17] Added semi-transparent background for dark theme. */
+            border: 1px solid #2a2d3e; /* [2026-04-17] Added border styling to match dark theme cards. */
+            border-radius: 6px; /* [2026-04-17] Added border radius for rounded buttons. */
+            padding: 6px; /* [2026-04-17] Added padding for sizing around the icon. */
+            cursor: pointer; /* [2026-04-17] Added cursor pointer for interactability indicator. */
+            transition: all 0.2s ease; /* [2026-04-17] Added transition for smooth hover effects. */
+            display: flex; /* [2026-04-17] Added flex to align the image inside. */
+            align-items: center; /* [2026-04-17] Added center alignment. */
+            justify-content: center; /* [2026-04-17] Added center justification. */
+        } /* [2026-04-17] Closed llm-icon-btn class. */
+
+        .llm-icon-btn:hover { /* [2026-04-17] Added hover effect for the LLM icon buttons. */
+            background: rgba(88, 101, 242, 0.2); /* [2026-04-17] Changed background on hover to match site accent. */
+            border-color: #5865f2; /* [2026-04-17] Changed border color on hover to match site accent. */
+        } /* [2026-04-17] Closed llm-icon-btn hover state. */
+
+        .llm-icon-img { /* [2026-04-17] Added sizing class for the provider favicons. */
+            width: 16px; /* [2026-04-17] Set explicit width. */
+            height: 16px; /* [2026-04-17] Set explicit height. */
+        } /* [2026-04-17] Closed llm-icon-img class. */
     </style>
+    <script>
+        class RoutingException extends Error { /* [2026-04-17] Added custom exception class to ensure structured error propagation. */
+            constructor(message, errorId) { /* [2026-04-17] Added constructor to accept message and specific error ID. */
+                super(message); /* [2026-04-17] Added super call to initialize the base Error object. */
+                this.name = "RoutingException"; /* [2026-04-17] Added name property for the custom exception type. */
+                this.errorId = errorId; /* [2026-04-17] Added property to retain the specific inline error ID. */
+            } /* [2026-04-17] Added closure for constructor. */
+        } /* [2026-04-17] Added closure for RoutingException class. */
+
+        function generatePromptAndRouteToLanguageModel(event, conceptText, languageModelProvider) { /* [2026-04-17] Added function for routing with event parameter to stop propagation. */
+            const isEventValid = event !== null && event !== undefined; /* [2026-04-17] Added positive logic check evaluation for event object. */
+            if (isEventValid) { event.stopPropagation(); } /* [2026-04-17] Added stop propagation to prevent parent clicks if event exists. */
+            
+            console.info("[DEPUI100I] Starting prompt generation and routing..."); /* [2026-04-17] Added structured lifecycle start logging with DEPUI prefix. */
+            try { /* [2026-04-17] Added try block for structured error handling. */
+                const aiPrefixedConcept = "AI " + conceptText; /* [2026-04-17] Added AI prefix to the concept text to ensure it is contextually related to AI. */
+                const generatedPromptText = "I would like a detailed explanation of how to implement " + aiPrefixedConcept + "."; /* [2026-04-17] Constructed the prompt text utilizing the prefixed concept. */
+                const urlEncodedPrompt = encodeURIComponent(generatedPromptText); /* [2026-04-17] Encoded the prompt for URL transmission. */
+                
+                const languageModelUrls = { /* [2026-04-17] Initialized mapping object for supported LLMs. */
+                    "ChatGPT": "https://chatgpt.com/?q=", /* [2026-04-17] Added ChatGPT URL string. */
+                    "Perplexity": "https://www.perplexity.ai/?q=", /* [2026-04-17] Added Perplexity URL string. */
+                    "Claude": "https://claude.ai/new?q=" /* [2026-04-17] Added Claude URL string. */
+                }; /* [2026-04-17] Closed mapping object. */
+
+                const isProviderValid = languageModelProvider in languageModelUrls; /* [2026-04-17] Added variable to explicitly evaluate the condition for the positive logic check. */
+
+                if (isProviderValid) { /* [2026-04-17] Added positive logic check to verify provider support. */
+                    const targetRoutingUrl = languageModelUrls[languageModelProvider] + urlEncodedPrompt; /* [2026-04-17] Constructed the final target URL. */
+                    window.open(targetRoutingUrl, '_blank'); /* [2026-04-17] Opened the target URL in a new browser tab. */
+                    console.info("[DEPUI101I] Routing to " + languageModelProvider + " completed successfully."); /* [2026-04-17] Added structured lifecycle success logging. */
+                } else { /* [2026-04-17] Added fallback block. */
+                    throw new RoutingException("Provider mapping not found.", "[DEPUI102E]"); /* [2026-04-17] Modified to throw custom RoutingException with a specific inline error ID for proper propagation. */
+                } /* [2026-04-17] Closed positive logic conditional. */
+            } catch (executionError) { /* [2026-04-17] Added catch block to intercept exceptions. */
+                const isCustomException = executionError instanceof RoutingException; /* [2026-04-17] Added positive logic check evaluation for exception type. */
+                if (isCustomException) { /* [2026-04-17] Added positive type check to catch structured exceptions. */
+                    console.error(`${executionError.errorId} Prompt generation and routing completed unsuccessfully. Details: ${executionError.message}`); /* [2026-04-17] Added structured lifecycle failure logging utilizing the propagated error ID. */
+                } else { /* [2026-04-17] Added fallback block for unexpected runtime errors. */
+                    console.error(`[DEPUI103E] Prompt generation and routing completed unsuccessfully. Details: ${executionError.message}`); /* [2026-04-17] Added structured lifecycle failure logging for unexpected exceptions. */
+                } /* [2026-04-17] Added closure for exception type check. */
+            } /* [2026-04-17] Closed try-catch block. */
+        } /* [2026-04-17] Closed function. */
+    </script>
 </head>
 <body>
 
-<!-- GROUPED NAVIGATION -->
 <div class="nav">
 
     <div class="nav-group">
@@ -174,7 +246,6 @@
 <h1>🚀 AI Deployment Hub</h1>
 <p class="subtitle">Deployment patterns, scaling strategies, GPU provisioning, CI/CD, and production AI</p>
 
-<!-- INTRO -->
 <div class="section">
     <div class="section-label">Overview</div>
     <div class="text-block">
@@ -184,35 +255,21 @@
     </div>
 </div>
 
-<!-- DEPLOYMENT PATTERNS -->
 <div class="section">
     <div class="section-label">Deployment Patterns</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Serverless AI</div>
+        <div class="card"> <div class="card-name">Serverless AI</div>
             <div class="card-desc">On-demand inference with autoscaling and zero idle cost</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Containerized AI</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Serverless AI', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Serverless AI', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Serverless AI', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Containerized AI</div>
             <div class="card-desc">Docker + Kubernetes for predictable, portable deployments</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Edge Deployment</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Containerized AI', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Containerized AI', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Containerized AI', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Edge Deployment</div>
             <div class="card-desc">Run models locally for privacy and low latency</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Hybrid Cloud</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Edge Deployment', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Edge Deployment', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Edge Deployment', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Hybrid Cloud</div>
             <div class="card-desc">Combine cloud GPUs with on-prem data and compute</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Hybrid Cloud', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Hybrid Cloud', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Hybrid Cloud', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- GPU / TPU PROVISIONING -->
 <div class="section">
     <div class="section-label">GPU & TPU Provisioning</div>
     <div class="card-grid">
@@ -244,7 +301,6 @@
     </div>
 </div>
 
-<!-- CI/CD FOR AI -->
 <div class="section">
     <div class="section-label">CI/CD for AI</div>
     <div class="card-grid">
@@ -270,7 +326,6 @@
     </div>
 </div>
 
-<!-- MODEL VERSIONING -->
 <div class="section">
     <div class="section-label">Model Versioning</div>
     <div class="card-grid">
@@ -296,35 +351,21 @@
     </div>
 </div>
 
-<!-- COST OPTIMIZATION -->
 <div class="section">
     <div class="section-label">Cost Optimization</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Batching</div>
+        <div class="card"> <div class="card-name">Batching</div>
             <div class="card-desc">Group inference requests to reduce cost</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Caching</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Batching', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Batching', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Batching', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Caching</div>
             <div class="card-desc">Reuse previous responses to avoid recomputation</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Model Distillation</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Caching', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Caching', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Caching', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Model Distillation</div>
             <div class="card-desc">Use smaller models for cheaper inference</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Hybrid Routing</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Distillation', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Distillation', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Model Distillation', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Hybrid Routing</div>
             <div class="card-desc">Send easy queries to cheaper models</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Hybrid Routing', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Hybrid Routing', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Hybrid Routing', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- OBSERVABILITY -->
 <div class="section">
     <div class="section-label">Observability & Monitoring</div>
     <div class="card-grid">
