@@ -116,7 +116,7 @@
         .badge-free { background: #1e3a2f; color: #4ade80; }
         .badge-pro { background: #2a1f3d; color: #a78bfa; }
         .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
-        .badge-open { background: #3a2f1e; color: #fbbf24; }
+        .badge-open { background: #2a2a1e; color: #facc15; }
         .footnote {
             max-width: 900px;
             margin: 40px auto 0;
@@ -140,14 +140,14 @@
 <p class="subtitle">Leaderboards and evaluation platforms for comparing frontier AI models</p>
 
 <div class="intro">
-    <strong>Why so many?</strong> These benchmarks don't really disagree — they measure different things. Some focus on reasoning, others on coding, math, conversational quality, safety, or real-world usefulness. A model might top one leaderboard and lag on another. For a rounded view of any frontier model, cross-reference two or three benchmarks that match your use case.
+    <strong>Why so many?</strong> These benchmarks don't really disagree — they measure different things. Some focus on reasoning, others on coding, math, conversational quality, safety, or real-world usefulness. A model might top one leaderboard and lag on another. For a rounded view of any frontier model, cross-reference two or three benchmarks that match your use case. Note: some entries below link to a benchmark's <em>description</em> page rather than a live leaderboard — that's because many widely-cited benchmarks (MMLU, GPQA, MATH) were published as datasets, not hosted dashboards. In those cases we link to Papers with Code for live rankings.
 </div>
 
 <!-- Head-to-Head Arenas -->
 <div class="vendor-section">
     <div class="vendor-label">Head-to-Head Arenas — Human Preference</div>
     <div class="card-grid">
-        <a class="card" href="https://lmarena.ai" target="_blank">
+        <a class="card" href="https://lmarena.ai/leaderboard" target="_blank">
             <div class="card-name">LMArena</div>
             <div class="card-desc">Blind pairwise voting produces Elo ratings across chat, vision, and coding. The de facto "real-world quality" leaderboard</div>
             <span class="badge badge-free">Free</span>
@@ -174,7 +174,7 @@
             <div class="card-desc">Evaluates accuracy, robustness, fairness, efficiency, and more across many scenarios</div>
             <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://artificialanalysis.ai" target="_blank">
+        <a class="card" href="https://artificialanalysis.ai/leaderboards/models" target="_blank">
             <div class="card-name">Artificial Analysis</div>
             <div class="card-desc">Frontier model comparison across intelligence, speed, price, and context — great single-page overview</div>
             <span class="badge badge-free">Free</span>
@@ -184,7 +184,7 @@
             <div class="card-desc">Contamination-free benchmark with questions refreshed monthly across reasoning, math, coding, and more</div>
             <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://paperswithcode.com" target="_blank">
+        <a class="card" href="https://paperswithcode.com/sota" target="_blank">
             <div class="card-name">Papers with Code</div>
             <div class="card-desc">Aggregates leaderboards across hundreds of NLP, vision, and ML benchmarks, linked to source papers</div>
             <span class="badge badge-free">Free</span>
@@ -196,23 +196,23 @@
 <div class="vendor-section">
     <div class="vendor-label">Reasoning &amp; Knowledge</div>
     <div class="card-grid">
-        <a class="card" href="https://github.com/idavidrein/gpqa" target="_blank">
+        <a class="card" href="https://paperswithcode.com/sota/multiple-choice-question-answering-mcqa-on-11" target="_blank">
             <div class="card-name">GPQA Diamond</div>
             <div class="card-desc">"Google-proof" graduate-level science questions by PhDs. A current frontier reasoning benchmark</div>
-            <span class="badge badge-open">Open Source</span>
+            <span class="badge badge-free">Free</span>
         </a>
         <a class="card" href="https://agi.safe.ai" target="_blank">
             <div class="card-name">Humanity's Last Exam</div>
             <div class="card-desc">Expert-authored questions across 100+ subjects designed to challenge the strongest frontier models</div>
             <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://github.com/hendrycks/test" target="_blank">
-            <div class="card-name">MMLU / MMLU-Pro</div>
-            <div class="card-desc">57-subject multitask test. MMLU-Pro is the harder, less-saturated successor</div>
-            <span class="badge badge-open">Open Source</span>
+        <a class="card" href="https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro" target="_blank">
+            <div class="card-name">MMLU-Pro Leaderboard</div>
+            <div class="card-desc">57-subject multitask test. MMLU-Pro is the harder, less-saturated successor with live rankings</div>
+            <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://arcprize.org" target="_blank">
-            <div class="card-name">ARC-AGI</div>
+        <a class="card" href="https://arcprize.org/leaderboard" target="_blank">
+            <div class="card-name">ARC-AGI Leaderboard</div>
             <div class="card-desc">François Chollet's abstract visual reasoning benchmark — notoriously hard for LLMs</div>
             <span class="badge badge-free">Free</span>
         </a>
@@ -221,10 +221,10 @@
             <div class="card-desc">Google's 200+ task benchmark spanning reasoning, creativity, and linguistics. BBH is the hard subset</div>
             <span class="badge badge-open">Open Source</span>
         </a>
-        <a class="card" href="https://allenai.org/data/arc" target="_blank">
+        <a class="card" href="https://paperswithcode.com/sota/common-sense-reasoning-on-arc-challenge" target="_blank">
             <div class="card-name">AI2 Reasoning Challenge</div>
             <div class="card-desc">Grade-school science questions requiring multi-step logical reasoning. Classic Allen AI benchmark</div>
-            <span class="badge badge-open">Open Source</span>
+            <span class="badge badge-free">Free</span>
         </a>
     </div>
 </div>
@@ -233,17 +233,17 @@
 <div class="vendor-section">
     <div class="vendor-label">Coding</div>
     <div class="card-grid">
-        <a class="card" href="https://www.swebench.com" target="_blank">
-            <div class="card-name">SWE-bench Verified</div>
+        <a class="card" href="https://www.swebench.com/index.html" target="_blank">
+            <div class="card-name">SWE-bench Leaderboard</div>
             <div class="card-desc">Real GitHub issues — models must produce patches that pass the project's tests. Key agentic coding benchmark</div>
             <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://livecodebench.github.io" target="_blank">
+        <a class="card" href="https://livecodebench.github.io/leaderboard.html" target="_blank">
             <div class="card-name">LiveCodeBench</div>
             <div class="card-desc">Contamination-free coding benchmark from LeetCode, AtCoder, and Codeforces, refreshed continuously</div>
             <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://www.terminal-bench.com" target="_blank">
+        <a class="card" href="https://www.tbench.ai/leaderboard" target="_blank">
             <div class="card-name">Terminal-Bench</div>
             <div class="card-desc">Evaluates AI agents on real terminal tasks — filesystems, commands, end-to-end shell workflows</div>
             <span class="badge badge-free">Free</span>
@@ -260,20 +260,20 @@
 <div class="vendor-section">
     <div class="vendor-label">Math</div>
     <div class="card-grid">
-        <a class="card" href="https://maa.org/maa-invitational-competitions" target="_blank">
-            <div class="card-name">AIME</div>
-            <div class="card-desc">American Invitational Mathematics Examination — a standard frontier-model math test</div>
+        <a class="card" href="https://matharena.ai" target="_blank">
+            <div class="card-name">MathArena</div>
+            <div class="card-desc">Live leaderboard evaluating LLMs on recent AIME, USAMO, IMO, and other math olympiad problems</div>
             <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://github.com/hendrycks/math" target="_blank">
+        <a class="card" href="https://paperswithcode.com/sota/math-word-problem-solving-on-math" target="_blank">
             <div class="card-name">MATH</div>
             <div class="card-desc">12,500 competition-style problems across algebra, geometry, and number theory</div>
-            <span class="badge badge-open">Open Source</span>
+            <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://github.com/openai/grade-school-math" target="_blank">
+        <a class="card" href="https://paperswithcode.com/sota/arithmetic-reasoning-on-gsm8k" target="_blank">
             <div class="card-name">GSM8K</div>
             <div class="card-desc">Grade-school word problems testing multi-step arithmetic reasoning. Largely saturated but widely cited</div>
-            <span class="badge badge-open">Open Source</span>
+            <span class="badge badge-free">Free</span>
         </a>
         <a class="card" href="https://epoch.ai/frontiermath" target="_blank">
             <div class="card-name">FrontierMath</div>
@@ -310,6 +310,33 @@
     </div>
 </div>
 
+<!-- Vendor Announcement Pages -->
+<div class="vendor-section">
+    <div class="vendor-label">Vendor Benchmark Pages (first-day numbers)</div>
+    <div class="card-grid">
+        <a class="card" href="https://www.anthropic.com/news" target="_blank">
+            <div class="card-name">Anthropic News</div>
+            <div class="card-desc">Claude launch posts include full benchmark tables vs. competitor models — first numbers available on release day</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://openai.com/news/" target="_blank">
+            <div class="card-name">OpenAI News</div>
+            <div class="card-desc">GPT and reasoning-model launch posts with benchmark comparisons and methodology</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://blog.google/technology/google-deepmind/" target="_blank">
+            <div class="card-name">Google DeepMind Blog</div>
+            <div class="card-desc">Gemini launch posts and technical reports with benchmark tables</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+        <a class="card" href="https://llm-stats.com" target="_blank">
+            <div class="card-name">llm-stats.com</div>
+            <div class="card-desc">Aggregator of vendor-reported benchmarks across all major LLMs. Fast to update after launches</div>
+            <span class="badge badge-free">Free</span>
+        </a>
+    </div>
+</div>
+
 <!-- Open-Source Leaderboards & Hubs -->
 <div class="vendor-section">
     <div class="vendor-label">Open-Source Leaderboards &amp; Model Hubs</div>
@@ -324,7 +351,7 @@
             <div class="card-desc">The largest repository of open models, with model cards reporting benchmark performance</div>
             <span class="badge badge-free">Free</span>
         </a>
-        <a class="card" href="https://super.gluebenchmark.com" target="_blank">
+        <a class="card" href="https://super.gluebenchmark.com/leaderboard" target="_blank">
             <div class="card-name">SuperGLUE</div>
             <div class="card-desc">Classic NLP language-understanding suite. Largely saturated today but foundational</div>
             <span class="badge badge-free">Free</span>
@@ -355,7 +382,9 @@
 </div>
 
 <div class="footnote">
-    <strong>A note on benchmark fatigue:</strong> many older benchmarks (SuperGLUE, GSM8K, original MMLU, AI2 ARC) are now saturated by frontier models — scores cluster near 100%, making them poor discriminators. The current frontier is measured by things like GPQA Diamond, SWE-bench Verified, Humanity's Last Exam, FrontierMath, and ARC-AGI. For a quick cross-provider snapshot, <a href="https://artificialanalysis.ai" target="_blank">Artificial Analysis</a> and <a href="https://lmarena.ai" target="_blank">LMArena</a> are the most-consulted single pages.
+    <strong>A note on benchmark fatigue:</strong> many older benchmarks (SuperGLUE, GSM8K, original MMLU, AI2 ARC) are now saturated by frontier models — scores cluster near 100%, making them poor discriminators. The current frontier is measured by things like GPQA Diamond, SWE-bench Verified, Humanity's Last Exam, FrontierMath, and ARC-AGI. For a quick cross-provider snapshot, <a href="https://artificialanalysis.ai/leaderboards/models" target="_blank">Artificial Analysis</a> and <a href="https://lmarena.ai/leaderboard" target="_blank">LMArena</a> are the most-consulted single pages.
+    <br><br>
+    <strong>Why new models take days to appear:</strong> when a model launches (e.g. Claude Opus 4.7 on April 16, 2026), the first published numbers come from the vendor's own announcement. Independent dashboards like LMArena and Artificial Analysis need to actually run the model on their eval harness, which takes a few days. LMArena also needs thousands of human votes before posting a stable Elo rating. Plan on 3–10 days before independent numbers catch up.
 </div>
 
 </body>
