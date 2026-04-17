@@ -343,10 +343,21 @@
     <div class="section-label">Prompt Evaluation</div>
     <div class="card-grid">
 
-        <a class="card" href="evaluation-hub.html">
-            <div class="card-name">Regression Testing</div>
-            <div class="card-desc">Ensure prompts behave consistently over time</div>
-        </a>
+    <div class="card"> 
+        <div class="card-name">Regression Testing</div>
+        <div class="card-desc">Ensure prompts behave consistently over time</div>
+        <div class="llm-actions"> 
+            <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Regression Testing', 'ChatGPT')" title="Ask ChatGPT"> 
+                <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> 
+            </button> 
+            <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Regression Testing', 'Perplexity')" title="Ask Perplexity"> 
+                <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> 
+            </button> 
+            <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Regression Testing', 'Claude')" title="Ask Claude"> 
+                <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> 
+            </button> 
+        </div> 
+    </div>
 
         <div class="card"> <div class="card-name">Golden Sets</div>
             <div class="card-desc">Fixed test cases for prompt validation</div>
