@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Security & Compliance Hub</title>
+    <title>AI Security Hub</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -12,26 +12,42 @@
             color: #e0e0e0;
             padding: 20px;
         }
+
+        /* Grouped Navigation */
         .nav {
             display: flex;
-            justify-content: flex-end;
+            flex-direction: column;
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .nav-group {
+            display: flex;
+            align-items: center;
             gap: 10px;
-            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-right: 6px;
         }
         .nav a {
             background: #1c1f2b;
             border: 1px solid #2a2d3e;
             border-radius: 8px;
-            padding: 8px 16px;
+            padding: 6px 14px;
             color: #60a5fa;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: all 0.2s ease;
         }
         .nav a:hover {
             background: #22263a;
             border-color: #5865f2;
         }
+
         h1 {
             text-align: center;
             margin-bottom: 8px;
@@ -44,19 +60,20 @@
             margin-bottom: 30px;
             font-size: 0.95rem;
         }
-        .vendor-section {
-            margin-bottom: 30px;
+
+        .section {
+            margin-bottom: 40px;
         }
-        .vendor-label {
+        .section-label {
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #888;
-            margin-bottom: 10px;
-            padding-left: 4px;
+            margin-bottom: 12px;
             border-left: 3px solid #444;
             padding-left: 8px;
         }
+
         .card-grid {
             display: flex;
             flex-wrap: wrap;
@@ -67,7 +84,7 @@
             border: 1px solid #2a2d3e;
             border-radius: 12px;
             padding: 16px 20px;
-            width: 220px;
+            width: 260px;
             cursor: pointer;
             transition: all 0.2s ease;
             text-decoration: none;
@@ -92,6 +109,7 @@
             color: #888;
             line-height: 1.4;
         }
+
         .badge {
             display: inline-block;
             font-size: 0.65rem;
@@ -101,75 +119,200 @@
             margin-top: 4px;
             width: fit-content;
         }
+        .badge-open { background: #2a2a1e; color: #facc15; }
         .badge-free { background: #1e3a2f; color: #4ade80; }
         .badge-pro { background: #2a1f3d; color: #a78bfa; }
         .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
-        .badge-open { background: #2a2a1e; color: #facc15; }
+
+        .text-block {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+        .text-block strong { color: #e0e0e0; }
     </style>
 </head>
 <body>
+
+<!-- GROUPED NAVIGATION -->
 <div class="nav">
-    <a href="index.html">🤖 AI Chatbot Hub →</a>
-    <a href="harness-hub.html">🛠️ AI Harness Hub →</a> <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a> <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
-</div>
-<h1>🔒 AI Security & Compliance Hub</h1>
-<p class="subtitle">Enterprise-grade guardrails, DLP, and compliance tools for fintech AI deployments</p>
 
-<div class="vendor-section">
-    <div class="vendor-label">Cloud Native Security & Guardrails</div>
-    <div class="card-grid">
-        <a class="card" href="https://azure.microsoft.com/en-us/products/cognitive-services/ai-content-safety" target="_blank">
-            <div class="card-name">Azure AI Content Safety</div>
-            <div class="card-desc">Advanced enterprise content moderation and hallucination detection directly within Azure</div>
-            <span class="badge badge-pro">Azure Subs</span>
-        </a>
-        <a class="card" href="https://aws.amazon.com/bedrock/guardrails/" target="_blank">
-            <div class="card-name">Amazon Bedrock Guardrails</div>
-            <div class="card-desc">Implement customized safeguards, redact PII, and filter harmful content across foundation models</div>
-            <span class="badge badge-pro">AWS Subs</span>
-        </a>
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 AI Chatbot Hub →</a>
+        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
+        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Data & Evaluation</div>
+        <a href="data-hub.html">📚 AI Data Hub →</a>
+        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
+        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Safety & Ops</div>
+        <a href="security-hub.html">🔒 AI Security Hub →</a>
+        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
+        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
+    </div>
+
+</div>
+
+<h1>🔒 AI Security Hub</h1>
+<p class="subtitle">Threat modeling, red‑teaming, hardening, and secure AI system design</p>
+
+<!-- INTRO -->
+<div class="section">
+    <div class="section-label">Overview</div>
+    <div class="text-block">
+        <strong>AI security protects models, data, and systems from adversarial misuse.</strong>  
+        This hub covers prompt injection defenses, model hardening, supply‑chain security, red‑teaming, and secure deployment patterns for enterprise AI.
     </div>
 </div>
 
-<div class="vendor-section">
-    <div class="vendor-label">Prompt Guarding & DLP</div>
+<!-- THREAT MODELS -->
+<div class="section">
+    <div class="section-label">Threat Models</div>
     <div class="card-grid">
-        <a class="card" href="https://github.com/NVIDIA/NeMo-Guardrails" target="_blank">
-            <div class="card-name">NeMo Guardrails</div>
-            <div class="card-desc">Nvidia's open-source toolkit for easily adding programmable guardrails to conversational AI systems</div>
-            <span class="badge badge-open">Open Source</span>
+
+        <a class="card">
+            <div class="card-name">Prompt Injection</div>
+            <div class="card-desc">Direct, indirect, and multi‑turn injection attacks</div>
         </a>
-        <a class="card" href="https://www.lakera.ai/" target="_blank">
-            <div class="card-name">Lakera Guard</div>
-            <div class="card-desc">Low-latency API to protect LLM applications against prompt injection, data leakage, and toxicity</div>
-            <span class="badge badge-pro">Enterprise</span>
+
+        <a class="card">
+            <div class="card-name">Data Poisoning</div>
+            <div class="card-desc">Malicious training or retrieval data manipulation</div>
         </a>
-        <a class="card" href="https://protectai.com/" target="_blank">
-            <div class="card-name">Protect AI</div>
-            <div class="card-desc">Comprehensive AI Security Posture Management (AISPM) and MLSecOps tools for the enterprise</div>
-            <span class="badge badge-pro">Enterprise</span>
+
+        <a class="card">
+            <div class="card-name">Model Extraction</div>
+            <div class="card-desc">Stealing model weights or behavior via queries</div>
         </a>
+
+        <a class="card">
+            <div class="card-name">Model Evasion</div>
+            <div class="card-desc">Crafted inputs designed to bypass safety filters</div>
+        </a>
+
     </div>
 </div>
 
-<div class="vendor-section">
-    <div class="vendor-label">AI API Gateways & Observability</div>
+<!-- DEFENSES -->
+<div class="section">
+    <div class="section-label">Defensive Techniques</div>
     <div class="card-grid">
-        <a class="card" href="https://konghq.com/products/kong-ai-gateway" target="_blank">
-            <div class="card-name">Kong AI Gateway</div>
-            <div class="card-desc">Manage multiple LLMs, enforce rate limits, and ensure compliance across all enterprise AI traffic</div>
-            <span class="badge badge-free-pro">Free + Pro</span>
+
+        <a class="card">
+            <div class="card-name">Input Sanitization</div>
+            <div class="card-desc">Strip, rewrite, or validate user inputs</div>
         </a>
-        <a class="card" href="https://developers.cloudflare.com/ai-gateway/" target="_blank">
-            <div class="card-name">Cloudflare AI Gateway</div>
-            <div class="card-desc">Analytics, caching, and rate limiting for AI apps to control costs and improve performance</div>
-            <span class="badge badge-free-pro">Free + Pro</span>
+
+        <a class="card">
+            <div class="card-name">Output Filtering</div>
+            <div class="card-desc">Block unsafe or policy‑violating responses</div>
         </a>
-        <a class="card" href="https://langfuse.com/" target="_blank">
-            <div class="card-name">Langfuse</div>
-            <div class="card-desc">Open-source LLM engineering platform for tracing, evaluations, and prompt management</div>
+
+        <a class="card">
+            <div class="card-name">Guardrail Models</div>
+            <div class="card-desc">Use small models to enforce safety boundaries</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Context Isolation</div>
+            <div class="card-desc">Separate system prompts from user‑controlled content</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- RED TEAMING -->
+<div class="section">
+    <div class="section-label">Red‑Teaming & Evaluation</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://github.com/microsoft/promptbench" target="_blank">
+            <div class="card-name">PromptBench</div>
+            <div class="card-desc">Adversarial prompt evaluation suite</div>
             <span class="badge badge-open">Open Source</span>
         </a>
+
+        <a class="card" href="https://github.com/anthropics/awesome-redteaming" target="_blank">
+            <div class="card-name">Anthropic Red‑Teaming</div>
+            <div class="card-desc">Guides and tools for safety stress‑testing</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://github.com/llm-attacks" target="_blank">
+            <div class="card-name">LLM Attacks</div>
+            <div class="card-desc">Catalog of adversarial attacks on LLMs</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- SUPPLY CHAIN -->
+<div class="section">
+    <div class="section-label">AI Supply‑Chain Security</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Model Provenance</div>
+            <div class="card-desc">Track model origin, training data, and lineage</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Dependency Hardening</div>
+            <div class="card-desc">Secure libraries, embeddings, and plugins</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Secure Model Hosting</div>
+            <div class="card-desc">Isolated runtimes, encrypted weights, access control</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- SECURE DEPLOYMENT -->
+<div class="section">
+    <div class="section-label">Secure Deployment Patterns</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Zero‑Trust AI</div>
+            <div class="card-desc">Authenticate every request, validate every output</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Sandboxed Execution</div>
+            <div class="card-desc">Run agents and tools in isolated environments</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Rate‑Limiting & Quotas</div>
+            <div class="card-desc">Prevent abuse and model extraction attempts</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Audit Logging</div>
+            <div class="card-desc">Trace model decisions and user interactions</div>
+        </a>
+
     </div>
 </div>
 
