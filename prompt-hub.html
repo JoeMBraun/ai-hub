@@ -134,11 +134,82 @@
             line-height: 1.55;
         }
         .text-block strong { color: #e0e0e0; }
+
+        .llm-actions { /* [2026-04-17] Added styling for LLM action container within cards. */
+            display: flex; /* [2026-04-17] Added flexbox display for icon alignment. */
+            gap: 8px; /* [2026-04-17] Added gap between icons. */
+            margin-top: auto; /* [2026-04-17] Added margin top auto to push buttons to the bottom of the card. */
+            padding-top: 10px; /* [2026-04-17] Added padding top for spacing from text. */
+        } /* [2026-04-17] Closed llm-actions class. */
+
+        .llm-icon-btn { /* [2026-04-17] Added styling for the individual LLM icon buttons. */
+            background: rgba(255, 255, 255, 0.05); /* [2026-04-17] Added semi-transparent background for dark theme. */
+            border: 1px solid #2a2d3e; /* [2026-04-17] Added border styling to match dark theme cards. */
+            border-radius: 6px; /* [2026-04-17] Added border radius for rounded buttons. */
+            padding: 6px; /* [2026-04-17] Added padding for sizing around the icon. */
+            cursor: pointer; /* [2026-04-17] Added cursor pointer for interactability indicator. */
+            transition: all 0.2s ease; /* [2026-04-17] Added transition for smooth hover effects. */
+            display: flex; /* [2026-04-17] Added flex to align the image inside. */
+            align-items: center; /* [2026-04-17] Added center alignment. */
+            justify-content: center; /* [2026-04-17] Added center justification. */
+        } /* [2026-04-17] Closed llm-icon-btn class. */
+
+        .llm-icon-btn:hover { /* [2026-04-17] Added hover effect for the LLM icon buttons. */
+            background: rgba(88, 101, 242, 0.2); /* [2026-04-17] Changed background on hover to match site accent. */
+            border-color: #5865f2; /* [2026-04-17] Changed border color on hover to match site accent. */
+        } /* [2026-04-17] Closed llm-icon-btn hover state. */
+
+        .llm-icon-img { /* [2026-04-17] Added sizing class for the provider favicons. */
+            width: 16px; /* [2026-04-17] Set explicit width. */
+            height: 16px; /* [2026-04-17] Set explicit height. */
+        } /* [2026-04-17] Closed llm-icon-img class. */
     </style>
+    <script>
+        class RoutingException extends Error { /* [2026-04-17] Added custom exception class to ensure structured error propagation. */
+            constructor(message, errorId) { /* [2026-04-17] Added constructor to accept message and specific error ID. */
+                super(message); /* [2026-04-17] Added super call to initialize the base Error object. */
+                this.name = "RoutingException"; /* [2026-04-17] Added name property for the custom exception type. */
+                this.errorId = errorId; /* [2026-04-17] Added property to retain the specific inline error ID. */
+            } /* [2026-04-17] Added closure for constructor. */
+        } /* [2026-04-17] Added closure for RoutingException class. */
+
+        function generatePromptAndRouteToLanguageModel(event, conceptText, languageModelProvider) { /* [2026-04-17] Added function for routing with event parameter to stop propagation. */
+            const isEventValid = event !== null && event !== undefined; /* [2026-04-17] Added positive logic check evaluation for event object. */
+            if (isEventValid) { event.stopPropagation(); } /* [2026-04-17] Added stop propagation to prevent parent clicks if event exists. */
+            
+            console.info("[PRMUI100I] Starting prompt generation and routing..."); /* [2026-04-17] Added structured lifecycle start logging. */
+            try { /* [2026-04-17] Added try block for structured error handling. */
+                const generatedPromptText = "I would like a detailed explanation of how to implement " + conceptText + "."; /* [2026-04-17] Constructed the prompt text. */
+                const urlEncodedPrompt = encodeURIComponent(generatedPromptText); /* [2026-04-17] Encoded the prompt for URL transmission. */
+                
+                const languageModelUrls = { /* [2026-04-17] Initialized mapping object for supported LLMs. */
+                    "ChatGPT": "https://chatgpt.com/?q=", /* [2026-04-17] Added ChatGPT URL string. */
+                    "Perplexity": "https://www.perplexity.ai/?q=", /* [2026-04-17] Added Perplexity URL string. */
+                    "Claude": "https://claude.ai/new?q=" /* [2026-04-17] Added Claude URL string. */
+                }; /* [2026-04-17] Closed mapping object. */
+
+                const isProviderValid = languageModelProvider in languageModelUrls; /* [2026-04-17] Added variable to explicitly evaluate the condition for the positive logic check. */
+
+                if (isProviderValid) { /* [2026-04-17] Added positive logic check to verify provider support. */
+                    const targetRoutingUrl = languageModelUrls[languageModelProvider] + urlEncodedPrompt; /* [2026-04-17] Constructed the final target URL. */
+                    window.open(targetRoutingUrl, '_blank'); /* [2026-04-17] Opened the target URL in a new browser tab. */
+                    console.info("[PRMUI101I] Routing to " + languageModelProvider + " completed successfully."); /* [2026-04-17] Added structured lifecycle success logging. */
+                } else { /* [2026-04-17] Added fallback block. */
+                    throw new RoutingException("Provider mapping not found.", "[PRMUI102E]"); /* [2026-04-17] Modified to throw custom RoutingException with a specific inline error ID for proper propagation. */
+                } /* [2026-04-17] Closed positive logic conditional. */
+            } catch (executionError) { /* [2026-04-17] Added catch block to intercept exceptions. */
+                const isCustomException = executionError instanceof RoutingException; /* [2026-04-17] Added positive logic check evaluation for exception type. */
+                if (isCustomException) { /* [2026-04-17] Added positive type check to catch structured exceptions. */
+                    console.error(`${executionError.errorId} Prompt generation and routing completed unsuccessfully. Details: ${executionError.message}`); /* [2026-04-17] Added structured lifecycle failure logging utilizing the propagated error ID. */
+                } else { /* [2026-04-17] Added fallback block for unexpected runtime errors. */
+                    console.error(`[PRMUI103E] Prompt generation and routing completed unsuccessfully. Details: ${executionError.message}`); /* [2026-04-17] Added structured lifecycle failure logging for unexpected exceptions. */
+                } /* [2026-04-17] Added closure for exception type check. */
+            } /* [2026-04-17] Closed try-catch block. */
+        } /* [2026-04-17] Closed function. */
+    </script>
 </head>
 <body>
 
-<!-- GROUPED NAVIGATION -->
 <div class="nav">
 
     <div class="nav-group">
@@ -174,7 +245,6 @@
 <h1>✍️ AI Prompt Hub</h1>
 <p class="subtitle">Prompt engineering patterns, system prompts, frameworks, and orchestration</p>
 
-<!-- INTRO -->
 <div class="section">
     <div class="section-label">Overview</div>
     <div class="text-block">
@@ -183,165 +253,92 @@
     </div>
 </div>
 
-<!-- SYSTEM PROMPTS -->
 <div class="section">
     <div class="section-label">System Prompt Design</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Role Definition</div>
+        <div class="card"> <div class="card-name">Role Definition</div>
             <div class="card-desc">Assigns identity, tone, and constraints to the model</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Behavioral Rules</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Role Definition', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Role Definition', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Role Definition', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Behavioral Rules</div>
             <div class="card-desc">Defines what the model must always or never do</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Output Formatting</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Behavioral Rules', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Behavioral Rules', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Behavioral Rules', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Output Formatting</div>
             <div class="card-desc">Ensures structured, predictable responses</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Safety Boundaries</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Output Formatting', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Output Formatting', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Output Formatting', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Safety Boundaries</div>
             <div class="card-desc">Refusal rules, guardrails, and compliance constraints</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Safety Boundaries', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Safety Boundaries', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Safety Boundaries', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- PROMPT PATTERNS -->
 <div class="section">
     <div class="section-label">Prompt Patterns</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Chain-of-Thought</div>
+        <div class="card"> <div class="card-name">Chain-of-Thought</div>
             <div class="card-desc">Step-by-step reasoning for complex tasks</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">ReAct</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Chain-of-Thought', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Chain-of-Thought', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Chain-of-Thought', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">ReAct</div>
             <div class="card-desc">Reasoning + acting loops for tool use</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Tree-of-Thought</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'ReAct', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'ReAct', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'ReAct', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Tree-of-Thought</div>
             <div class="card-desc">Branching reasoning paths with scoring</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Few-Shot Prompting</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Tree-of-Thought', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Tree-of-Thought', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Tree-of-Thought', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Few-Shot Prompting</div>
             <div class="card-desc">Provide examples to shape model behavior</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Self-Consistency</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Few-Shot Prompting', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Few-Shot Prompting', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Few-Shot Prompting', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Self-Consistency</div>
             <div class="card-desc">Sample multiple outputs and choose the best</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Self-Consistency', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Self-Consistency', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Self-Consistency', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- MULTI-PROMPT ORCHESTRATION -->
 <div class="section">
     <div class="section-label">Multi-Prompt Orchestration</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Router Prompts</div>
+        <div class="card"> <div class="card-name">Router Prompts</div>
             <div class="card-desc">Direct queries to specialized prompts or models</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Task Decomposition</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Router Prompts', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Router Prompts', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Router Prompts', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Task Decomposition</div>
             <div class="card-desc">Break complex tasks into smaller promptable units</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Prompt Chaining</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Task Decomposition', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Task Decomposition', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Task Decomposition', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Prompt Chaining</div>
             <div class="card-desc">Sequential prompts that build on each other</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Persona Switching</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Chaining', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Chaining', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Chaining', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Persona Switching</div>
             <div class="card-desc">Swap roles dynamically for different tasks</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Persona Switching', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Persona Switching', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Persona Switching', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- STYLE GUIDES -->
 <div class="section">
     <div class="section-label">Style Guides</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Tone Control</div>
+        <div class="card"> <div class="card-name">Tone Control</div>
             <div class="card-desc">Define voice, formality, and emotional style</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Formatting Rules</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Tone Control', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Tone Control', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Tone Control', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Formatting Rules</div>
             <div class="card-desc">Tables, bullet lists, JSON, and structured output</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Brand Alignment</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Formatting Rules', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Formatting Rules', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Formatting Rules', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Brand Alignment</div>
             <div class="card-desc">Ensure responses match organizational style</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Brand Alignment', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Brand Alignment', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Brand Alignment', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- GUARDRAILS -->
 <div class="section">
     <div class="section-label">Guardrails & Safety Prompting</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Refusal Rules</div>
+        <div class="card"> <div class="card-name">Refusal Rules</div>
             <div class="card-desc">Define what the model must decline to answer</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Content Filters</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Refusal Rules', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Refusal Rules', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Refusal Rules', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Content Filters</div>
             <div class="card-desc">Prevent unsafe or disallowed outputs</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Boundary Prompts</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Content Filters', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Content Filters', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Content Filters', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Boundary Prompts</div>
             <div class="card-desc">Clarify limits and safe operating zones</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Boundary Prompts', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Boundary Prompts', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Boundary Prompts', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- VERSIONING -->
 <div class="section">
     <div class="section-label">Prompt Versioning</div>
     <div class="card-grid">
 
-        <a class="card">
-            <div class="card-name">Prompt Registry</div>
+        <div class="card"> <div class="card-name">Prompt Registry</div>
             <div class="card-desc">Track versions, changes, and metadata</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">A/B Testing</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Registry', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Registry', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Registry', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">A/B Testing</div>
             <div class="card-desc">Compare prompt variants for performance</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">Prompt Diffing</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'A/B Testing for Prompts', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'A/B Testing for Prompts', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'A/B Testing for Prompts', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Prompt Diffing</div>
             <div class="card-desc">Identify changes between prompt versions</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Diffing', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Diffing', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Prompt Diffing', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
-<!-- EVALUATION -->
 <div class="section">
     <div class="section-label">Prompt Evaluation</div>
     <div class="card-grid">
@@ -351,17 +348,11 @@
             <div class="card-desc">Ensure prompts behave consistently over time</div>
         </a>
 
-        <a class="card">
-            <div class="card-name">Golden Sets</div>
+        <div class="card"> <div class="card-name">Golden Sets</div>
             <div class="card-desc">Fixed test cases for prompt validation</div>
-        </a>
-
-        <a class="card">
-            <div class="card-name">LLM-as-a-Judge</div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Golden Sets for Prompt Validation', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Golden Sets for Prompt Validation', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Golden Sets for Prompt Validation', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">LLM-as-a-Judge</div>
             <div class="card-desc">Use models to evaluate prompt outputs</div>
-        </a>
-
-    </div>
+            <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'LLM-as-a-Judge Evaluation', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'LLM-as-a-Judge Evaluation', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'LLM-as-a-Judge Evaluation', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> </div>
 </div>
 
 </body>
