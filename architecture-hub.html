@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Architecture & Patterns Hub</title>
+    <title>AI Architecture Hub</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -12,26 +12,42 @@
             color: #e0e0e0;
             padding: 20px;
         }
+
+        /* Grouped Navigation */
         .nav {
             display: flex;
-            justify-content: flex-end;
+            flex-direction: column;
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .nav-group {
+            display: flex;
+            align-items: center;
             gap: 10px;
-            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-right: 6px;
         }
         .nav a {
             background: #1c1f2b;
             border: 1px solid #2a2d3e;
             border-radius: 8px;
-            padding: 8px 16px;
+            padding: 6px 14px;
             color: #60a5fa;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: all 0.2s ease;
         }
         .nav a:hover {
             background: #22263a;
             border-color: #5865f2;
         }
+
         h1 {
             text-align: center;
             margin-bottom: 8px;
@@ -44,19 +60,20 @@
             margin-bottom: 30px;
             font-size: 0.95rem;
         }
-        .vendor-section {
-            margin-bottom: 30px;
+
+        .section {
+            margin-bottom: 40px;
         }
-        .vendor-label {
+        .section-label {
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #888;
-            margin-bottom: 10px;
-            padding-left: 4px;
+            margin-bottom: 12px;
             border-left: 3px solid #444;
             padding-left: 8px;
         }
+
         .card-grid {
             display: flex;
             flex-wrap: wrap;
@@ -67,7 +84,7 @@
             border: 1px solid #2a2d3e;
             border-radius: 12px;
             padding: 16px 20px;
-            width: 220px;
+            width: 260px;
             cursor: pointer;
             transition: all 0.2s ease;
             text-decoration: none;
@@ -92,6 +109,7 @@
             color: #888;
             line-height: 1.4;
         }
+
         .badge {
             display: inline-block;
             font-size: 0.65rem;
@@ -101,75 +119,213 @@
             margin-top: 4px;
             width: fit-content;
         }
+        .badge-open { background: #2a2a1e; color: #facc15; }
         .badge-free { background: #1e3a2f; color: #4ade80; }
         .badge-pro { background: #2a1f3d; color: #a78bfa; }
         .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
-        .badge-open { background: #2a2a1e; color: #facc15; }
+
+        .text-block {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+        .text-block strong { color: #e0e0e0; }
     </style>
 </head>
 <body>
+
+<!-- GROUPED NAVIGATION -->
 <div class="nav">
-    <a href="index.html">🤖 AI Chatbot Hub →</a>
-    <a href="harness-hub.html">🛠️ AI Harness Hub →</a> <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a> <a href="security-hub.html">🔒 AI Security Hub →</a>
-</div>
-<h1>🏗️ AI Architecture & Patterns Hub</h1>
-<p class="subtitle">Enterprise integration patterns, SDKs, and data pipelines for scalable AI</p>
 
-<div class="vendor-section">
-    <div class="vendor-label">Enterprise SDKs & Orchestration</div>
-    <div class="card-grid">
-        <a class="card" href="https://github.com/microsoft/semantic-kernel" target="_blank">
-            <div class="card-name">Semantic Kernel</div>
-            <div class="card-desc">Microsoft's robust SDK for C#, Java, and Python. Seamlessly integrates AI models with enterprise systems</div>
-            <span class="badge badge-open">Open Source</span>
-        </a>
-        <a class="card" href="https://www.langchain.com/" target="_blank">
-            <div class="card-name">LangChain</div>
-            <div class="card-desc">Standardized framework for developing applications powered by language models and complex RAG</div>
-            <span class="badge badge-open">Open Source</span>
-        </a>
-        <a class="card" href="https://www.llamaindex.ai/" target="_blank">
-            <div class="card-name">LlamaIndex</div>
-            <div class="card-desc">Leading data framework for connecting custom data sources to large language models</div>
-            <span class="badge badge-open">Open Source</span>
-        </a>
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 AI Chatbot Hub →</a>
+        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
+        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Data & Evaluation</div>
+        <a href="data-hub.html">📚 AI Data Hub →</a>
+        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
+        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Safety & Ops</div>
+        <a href="security-hub.html">🔒 AI Security Hub →</a>
+        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
+        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
+    </div>
+
+</div>
+
+<h1>🏗️ AI Architecture Hub</h1>
+<p class="subtitle">Reference architectures, system patterns, and blueprints for modern AI systems</p>
+
+<!-- INTRO -->
+<div class="section">
+    <div class="section-label">Overview</div>
+    <div class="text-block">
+        <strong>AI architecture defines how models, data, tools, and systems fit together.</strong>  
+        This hub covers reference architectures for RAG, agents, multimodal systems, vector search, orchestration, and enterprise‑grade AI platforms.
     </div>
 </div>
 
-<div class="vendor-section">
-    <div class="vendor-label">Database & Vector Integrations</div>
+<!-- CORE ARCHITECTURES -->
+<div class="section">
+    <div class="section-label">Core AI Architectures</div>
     <div class="card-grid">
-        <a class="card" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/ai-artificial-intelligence-intelligent-applications" target="_blank">
-            <div class="card-name">Azure SQL Vector Search</div>
-            <div class="card-desc">Store and query vector embeddings natively within Azure SQL for secure enterprise RAG architectures</div>
-            <span class="badge badge-pro">Azure Subs</span>
+
+        <a class="card">
+            <div class="card-name">RAG Architecture</div>
+            <div class="card-desc">Retriever + vector DB + LLM + ranking + grounding</div>
         </a>
-        <a class="card" href="https://github.com/pgvector/pgvector" target="_blank">
-            <div class="card-name">pgvector</div>
-            <div class="card-desc">Open-source vector similarity search for PostgreSQL. Essential for self-hosted data architectures</div>
+
+        <a class="card">
+            <div class="card-name">Agent Architecture</div>
+            <div class="card-desc">Planner, tools, memory, environment, and execution loop</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Multimodal Systems</div>
+            <div class="card-desc">Vision, text, audio, and structured data pipelines</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Hybrid Routing</div>
+            <div class="card-desc">Route queries to different models based on complexity</div>
+        </a>
+
+    </div>
+</div>
+
+<!-- VECTOR DATABASES -->
+<div class="section">
+    <div class="section-label">Vector Databases</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://www.pinecone.io" target="_blank">
+            <div class="card-name">Pinecone</div>
+            <div class="card-desc">Managed vector DB for large‑scale RAG</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://weaviate.io" target="_blank">
+            <div class="card-name">Weaviate</div>
+            <div class="card-desc">Open‑source vector search with hybrid retrieval</div>
             <span class="badge badge-open">Open Source</span>
         </a>
-        <a class="card" href="https://milvus.io/" target="_blank">
+
+        <a class="card" href="https://milvus.io" target="_blank">
             <div class="card-name">Milvus</div>
-            <div class="card-desc">Highly scalable open-source vector database built for massive enterprise AI workloads</div>
+            <div class="card-desc">High‑performance vector DB for enterprise workloads</div>
             <span class="badge badge-open">Open Source</span>
         </a>
+
+        <a class="card" href="https://qdrant.tech" target="_blank">
+            <div class="card-name">Qdrant</div>
+            <div class="card-desc">Fast vector search with filters and embeddings</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
     </div>
 </div>
 
-<div class="vendor-section">
-    <div class="vendor-label">Agentic Design Patterns</div>
+<!-- ORCHESTRATION -->
+<div class="section">
+    <div class="section-label">Orchestration Frameworks</div>
     <div class="card-grid">
-        <a class="card" href="https://microsoft.github.io/autogen/" target="_blank">
-            <div class="card-name">Microsoft AutoGen</div>
-            <div class="card-desc">Programming framework for building multi-agent conversations that collaborate to solve complex tasks</div>
+
+        <a class="card" href="https://www.langchain.com" target="_blank">
+            <div class="card-name">LangChain</div>
+            <div class="card-desc">Chains, agents, tools, and RAG pipelines</div>
             <span class="badge badge-open">Open Source</span>
         </a>
-        <a class="card" href="https://www.crewai.com/" target="_blank">
-            <div class="card-name">CrewAI</div>
-            <div class="card-desc">Framework for orchestrating role-playing, autonomous AI agents to build reliable, complex pipelines</div>
+
+        <a class="card" href="https://www.llamaindex.ai" target="_blank">
+            <div class="card-name">LlamaIndex</div>
+            <div class="card-desc">Data connectors, RAG pipelines, and agent tooling</div>
             <span class="badge badge-open">Open Source</span>
         </a>
+
+        <a class="card" href="https://www.prefect.io" target="_blank">
+            <div class="card-name">Prefect</div>
+            <div class="card-desc">Workflow orchestration for AI pipelines</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+        <a class="card" href="https://airflow.apache.org" target="_blank">
+            <div class="card-name">Airflow</div>
+            <div class="card-desc">Enterprise workflow scheduling and DAG orchestration</div>
+            <span class="badge badge-open">Open Source</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- ENTERPRISE AI PLATFORMS -->
+<div class="section">
+    <div class="section-label">Enterprise AI Platforms</div>
+    <div class="card-grid">
+
+        <a class="card" href="https://azure.microsoft.com/en-us/products/ai-studio" target="_blank">
+            <div class="card-name">Azure AI Studio</div>
+            <div class="card-desc">Model catalog, RAG, safety, deployment, and monitoring</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://cloud.google.com/vertex-ai" target="_blank">
+            <div class="card-name">Google Vertex AI</div>
+            <div class="card-desc">Model training, tuning, pipelines, and deployment</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+        <a class="card" href="https://aws.amazon.com/bedrock/" target="_blank">
+            <div class="card-name">AWS Bedrock</div>
+            <div class="card-desc">Foundation models, agents, and enterprise integrations</div>
+            <span class="badge badge-pro">Paid</span>
+        </a>
+
+    </div>
+</div>
+
+<!-- SYSTEM PATTERNS -->
+<div class="section">
+    <div class="section-label">System Patterns</div>
+    <div class="card-grid">
+
+        <a class="card">
+            <div class="card-name">Grounded Generation</div>
+            <div class="card-desc">LLM outputs tied to retrieved or verified data</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Model Cascading</div>
+            <div class="card-desc">Use small models first, escalate to larger ones</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Feedback Loops</div>
+            <div class="card-desc">User feedback → retraining → improved responses</div>
+        </a>
+
+        <a class="card">
+            <div class="card-name">Memory Architectures</div>
+            <div class="card-desc">Short‑term, long‑term, and vector‑based memory</div>
+        </a>
+
     </div>
 </div>
 
