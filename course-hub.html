@@ -1,4 +1,262 @@
-    <h2>The best AI courses are FREE</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Courses Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        /* Grouped Navigation */
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-right: 6px;
+        }
+        .nav a {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 8px;
+            padding: 6px 14px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        .nav a:hover {
+            background: #22263a;
+            border-color: #5865f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 12px;
+            border-left: 3px solid #444;
+            padding-left: 8px;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .card {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 16px 20px;
+            width: 260px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card:hover {
+            border-color: #5865f2;
+            background: #22263a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.2);
+        }
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 7px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+            width: fit-content;
+        }
+        .badge-open { background: #2a2a1e; color: #facc15; }
+        .badge-free { background: #1e3a2f; color: #4ade80; }
+        .badge-pro { background: #2a1f3d; color: #a78bfa; }
+        .badge-free-pro { background: #1e2d3a; color: #60a5fa; }
+
+        .text-block {
+            background: #1c1f2b;
+            border: 1px solid #2a2d3e;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+        .text-block strong { color: #e0e0e0; }
+
+        .llm-actions { /* [2026-04-17] Added styling for LLM action container within cards. */
+            display: flex; /* [2026-04-17] Added flexbox display for icon alignment. */
+            gap: 8px; /* [2026-04-17] Added gap between icons. */
+            margin-top: auto; /* [2026-04-17] Added margin top auto to push buttons to the bottom of the card. */
+            padding-top: 10px; /* [2026-04-17] Added padding top for spacing from text. */
+        } /* [2026-04-17] Closed llm-actions class. */
+
+        .llm-icon-btn { /* [2026-04-17] Added styling for the individual LLM icon buttons. */
+            background: rgba(255, 255, 255, 0.05); /* [2026-04-17] Added semi-transparent background for dark theme. */
+            border: 1px solid #2a2d3e; /* [2026-04-17] Added border styling to match dark theme cards. */
+            border-radius: 6px; /* [2026-04-17] Added border radius for rounded buttons. */
+            padding: 6px; /* [2026-04-17] Added padding for sizing around the icon. */
+            cursor: pointer; /* [2026-04-17] Added cursor pointer for interactability indicator. */
+            transition: all 0.2s ease; /* [2026-04-17] Added transition for smooth hover effects. */
+            display: flex; /* [2026-04-17] Added flex to align the image inside. */
+            align-items: center; /* [2026-04-17] Added center alignment. */
+            justify-content: center; /* [2026-04-17] Added center justification. */
+        } /* [2026-04-17] Closed llm-icon-btn class. */
+
+        .llm-icon-btn:hover { /* [2026-04-17] Added hover effect for the LLM icon buttons. */
+            background: rgba(88, 101, 242, 0.2); /* [2026-04-17] Changed background on hover to match site accent. */
+            border-color: #5865f2; /* [2026-04-17] Changed border color on hover to match site accent. */
+        } /* [2026-04-17] Closed llm-icon-btn hover state. */
+
+        .llm-icon-img { /* [2026-04-17] Added sizing class for the provider favicons. */
+            width: 16px; /* [2026-04-17] Set explicit width. */
+            height: 16px; /* [2026-04-17] Set explicit height. */
+        } /* [2026-04-17] Closed llm-icon-img class. */
+    </style>
+    <script>
+        class RoutingException extends Error { /* [2026-04-17] Added custom exception class to ensure structured error propagation. */
+            constructor(message, errorId) { /* [2026-04-17] Added constructor to accept message and specific error ID. */
+                super(message); /* [2026-04-17] Added super call to initialize the base Error object. */
+                this.name = "RoutingException"; /* [2026-04-17] Added name property for the custom exception type. */
+                this.errorId = errorId; /* [2026-04-17] Added property to retain the specific inline error ID. */
+            } /* [2026-04-17] Added closure for constructor. */
+        } /* [2026-04-17] Added closure for RoutingException class. */
+
+        function generatePromptAndRouteToLanguageModel(event, conceptText, languageModelProvider) { /* [2026-04-17] Added function for routing with event parameter to stop propagation. */
+            const isEventValid = event !== null && event !== undefined; /* [2026-04-17] Added positive logic check evaluation for event object. */
+            if (isEventValid) { event.stopPropagation(); } /* [2026-04-17] Added stop propagation to prevent parent clicks if event exists. */
+            
+            console.info("[AIAUI100I] Starting prompt generation and routing..."); /* [2026-04-17] Added structured lifecycle start logging. */
+            try { /* [2026-04-17] Added try block for structured error handling. */
+
+                const aiPrefixedConcept = "AI " + conceptText; /* [2026-04-17] Added AI prefix to the concept text to ensure it is contextually related to AI. */
+                const generatedPromptText = "I would like a detailed explanation of how to implement " + aiPrefixedConcept + "."; /* [2026-04-17] Constructed the prompt text utilizing the prefixed concept. */
+                const urlEncodedPrompt = encodeURIComponent(generatedPromptText); /* [2026-04-17] Encoded the prompt for URL transmission. */
+                
+               
+                const languageModelUrls = { /* [2026-04-17] Initialized mapping object for supported LLMs. */
+                    "ChatGPT": "https://chatgpt.com/?q=", /* [2026-04-17] Added ChatGPT URL string. */
+                    "Perplexity": "https://www.perplexity.ai/?q=", /* [2026-04-17] Added Perplexity URL string. */
+                    "Claude": "https://claude.ai/new?q=" /* [2026-04-17] Added Claude URL string. */
+                }; /* [2026-04-17] Closed mapping object. */
+
+                const isProviderValid = languageModelProvider in languageModelUrls; /* [2026-04-17] Added variable to explicitly evaluate the condition for the positive logic check. */
+
+                if (isProviderValid) { /* [2026-04-17] Added positive logic check to verify provider support. */
+                    const targetRoutingUrl = languageModelUrls[languageModelProvider] + urlEncodedPrompt; /* [2026-04-17] Constructed the final target URL. */
+                    window.open(targetRoutingUrl, '_blank'); /* [2026-04-17] Opened the target URL in a new browser tab. */
+                    console.info("[AIAUI101I] Routing to " + languageModelProvider + " completed successfully."); /* [2026-04-17] Added structured lifecycle success logging. */
+                } else { /* [2026-04-17] Added fallback block. */
+                    throw new RoutingException("Provider mapping not found.", "[AIAUI102E]"); /* [2026-04-17] Modified to throw custom RoutingException with a specific inline error ID for proper propagation. */
+                } /* [2026-04-17] Closed positive logic conditional. */
+            } catch (executionError) { /* [2026-04-17] Added catch block to intercept exceptions. */
+                const isCustomException = executionError instanceof RoutingException; /* [2026-04-17] Added positive logic check evaluation for exception type. */
+                if (isCustomException) { /* [2026-04-17] Added positive type check to catch structured exceptions. */
+                    console.error(`${executionError.errorId} Prompt generation and routing completed unsuccessfully. Details: ${executionError.message}`); /* [2026-04-17] Added structured lifecycle failure logging utilizing the propagated error ID. */
+                } else { /* [2026-04-17] Added fallback block for unexpected runtime errors. */
+                    console.error(`[AIAUI103E] Prompt generation and routing completed unsuccessfully. Details: ${executionError.message}`); /* [2026-04-17] Added structured lifecycle failure logging for unexpected exceptions. */
+                } /* [2026-04-17] Added closure for exception type check. */
+            } /* [2026-04-17] Closed try-catch block. */
+        } /* [2026-04-17] Closed function. */
+    </script>
+</head>
+<body>
+
+<div class="nav">
+
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 AI Chatbot Hub →</a>
+        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
+        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
+        <a href="local-models-hub.html">💻 AI Local Models Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Data & Evaluation</div>
+        <a href="data-hub.html">📚 AI Data Hub →</a>
+        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
+        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Safety & Ops</div>
+        <a href="security-hub.html">🔒 AI Security Hub →</a>
+        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
+        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
+    </div>
+
+</div>
+
+<h1>🧠 AI Courses Hub</h1>
+<p class="subtitle">Free Education</p>
+
+<div class="section">
+    <div class="section-label">Course Foundations</div>
+    <div class="text-block">
+        <strong>AI course</strong> are web apps that AI vendors providew to interact with there tooling.
+    </div>
+</div>
+
+<div class="section">
+     <h2>The best AI courses are FREE</h2>
     <ol>
         <li><strong>Anthropic:</strong> <a href="http://anthropic.skilljar.com">http://anthropic.skilljar.com</a></li>
         <li><strong>Google:</strong> <a href="http://grow.google/ai">http://grow.google/ai</a></li>
@@ -13,3 +271,7 @@
     </ol>
     <p>Never pay for AI courses.<br>
     The best ones from the industry LEADERS are completely free.</p>
+</div>
+
+</body>
+</html>
