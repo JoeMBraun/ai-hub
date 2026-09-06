@@ -36,11 +36,18 @@ body {
     outline-offset: 2px;
 }
 .nav-toggle-icon {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    color: #60a5fa;
-    font-size: 0.95rem;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
     margin-left: 12px;
     flex-shrink: 0;
+    border-right: 2px solid #60a5fa;
+    border-bottom: 2px solid #60a5fa;
+    transform: rotate(45deg);
+    transition: transform 0.15s ease;
+}
+.nav-shell:not(.is-collapsed) .nav-toggle-icon {
+    transform: rotate(-135deg);
 }
 .nav-shell.is-collapsed .nav-toggle {
     margin-bottom: 0;

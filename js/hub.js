@@ -85,22 +85,19 @@ function writeNavCollapsed(isCollapsed) {
 
 function applyNavCollapsed(shell, isCollapsed) {
     const toggle = shell.querySelector(".nav-toggle");
-    const icon = shell.querySelector(".nav-toggle-icon");
     const label = shell.querySelector(".nav-toggle-label");
-    const controlsArePresent = toggle !== null && icon !== null && label !== null;
+    const controlsArePresent = toggle !== null && label !== null;
     if (!controlsArePresent) {
         return;
     }
 
     if (isCollapsed) {
         shell.classList.add("is-collapsed");
-        icon.textContent = "\\/";
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Expand directory navigation");
         label.textContent = "Directory · " + currentHubLabel();
     } else {
         shell.classList.remove("is-collapsed");
-        icon.textContent = "/\\";
         toggle.setAttribute("aria-expanded", "true");
         toggle.setAttribute("aria-label", "Collapse directory navigation");
         label.textContent = "Directory";
@@ -121,7 +118,7 @@ function ensureNavShell(nav) {
     toggle.className = "nav-toggle";
     toggle.setAttribute("aria-controls", "hub-directory");
     nav.id = "hub-directory";
-    toggle.innerHTML = '<span class="nav-toggle-label">Directory</span><span class="nav-toggle-icon" aria-hidden="true">/\\</span>';
+    toggle.innerHTML = '<span class="nav-toggle-label">Directory</span><span class="nav-toggle-icon" aria-hidden="true"></span>';
     nav.parentNode.insertBefore(shell, nav);
     shell.appendChild(toggle);
     shell.appendChild(nav);
@@ -130,6 +127,13 @@ function ensureNavShell(nav) {
         const willCollapse = !shell.classList.contains("is-collapsed");
         applyNavCollapsed(shell, willCollapse);
         writeNavCollapsed(willCollapse);
+    });
+    nav.addEventListener("click", function (event) {
+        const link = event.target.closest("a[href]");
+        const isDirectoryLink = link !== null && nav.contains(link);
+        if (isDirectoryLink) {
+            writeNavCollapsed(true);
+        }
     });
     return shell;
 }
