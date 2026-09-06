@@ -280,12 +280,14 @@ function renderMeasurements(report) {
 
     grid.innerHTML = report.dimensions.map(function (dimension) {
         const isFrequencyGoal = dimension.goal === "frequency";
-        const cardClass = isFrequencyGoal ? "measure-card measure-card-frequency" : "measure-card";
+        const cardClass = isFrequencyGoal ? "card measure-card measure-card-frequency" : "card measure-card";
+        const frequencyBadge = isFrequencyGoal ? '<span class="badge badge-free-pro">Visit frequency</span>' : "";
         return '<div class="' + cardClass + '">' +
-            "<h3>" + dimension.label + "</h3>" +
+            '<div class="card-name">' + dimension.label + "</div>" +
             '<div class="measure-score">' + dimension.score.toFixed(1) + " <span>/ " + maxScore + "</span></div>" +
             '<div class="measure-bar"><div class="measure-bar-fill" style="width:' + scorePercent(dimension.score, maxScore) + '%"></div></div>' +
-            '<p class="measure-summary">' + dimension.summary + "</p>" +
+            '<p class="card-desc">' + dimension.summary + "</p>" +
+            frequencyBadge +
             "</div>";
     }).join("");
 

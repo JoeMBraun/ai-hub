@@ -94,19 +94,6 @@ body {
     background: #22263a;
     color: #ffffff;
 }
-.nav-group.nav-admin .nav-label {
-    color: #f59e0b;
-}
-.nav-group.nav-admin a {
-    color: #fbbf24;
-    border-color: #3f3a28;
-}
-.nav-group.nav-admin a:hover,
-.nav-group.nav-admin a.nav-current {
-    background: #2a2418;
-    border-color: #f59e0b;
-    color: #ffffff;
-}
 
 h1 {
     text-align: center;
@@ -268,16 +255,18 @@ ol a {
 }
 .suite-run-btn {
     background: #1c1f2b;
-    border: 1px solid #f59e0b;
+    border: 1px solid #2a2d3e;
     border-radius: 8px;
     padding: 8px 16px;
-    color: #fbbf24;
+    color: #60a5fa;
+    font-family: inherit;
     font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 .suite-run-btn:hover {
-    background: #2a2418;
+    background: #22263a;
+    border-color: #5865f2;
     color: #ffffff;
 }
 .suite-run-btn:disabled {
@@ -361,11 +350,22 @@ ol a {
     color: #93c5fd;
 }
 
-.measure-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 12px;
+.measure-grid,
+.card-grid#measure-grid {
     margin-bottom: 20px;
+}
+.card.measure-card {
+    width: min(100%, 280px);
+    cursor: default;
+}
+.card.measure-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #2a2d3e;
+    background: #1c1f2b;
+}
+.card.measure-card-frequency:hover {
+    border-color: #5865f2;
 }
 .measure-card {
     background: #1c1f2b;
@@ -374,17 +374,7 @@ ol a {
     padding: 18px 20px;
 }
 .measure-card-frequency {
-    border-color: #3f3a28;
-}
-.measure-card-frequency h3::after {
-    content: " visit frequency";
-    display: inline-block;
-    margin-left: 8px;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #f59e0b;
+    border-color: #5865f2;
 }
 .measure-card h3 {
     font-size: 0.95rem;

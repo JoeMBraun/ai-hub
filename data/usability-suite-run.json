@@ -1,8 +1,8 @@
 {
   "suite": "AI Hub website usability",
   "source": "scripts/usability_suite.py",
-  "startedAt": "2026-09-06T22:12:24Z",
-  "finishedAt": "2026-09-06T22:12:24Z",
+  "startedAt": "2026-09-06T22:17:57Z",
+  "finishedAt": "2026-09-06T22:17:57Z",
   "summary": {
     "total": 132,
     "passed": 132,
@@ -912,7 +912,7 @@
       "id": "TITLE-admin-hub.html",
       "name": "Document title",
       "status": "pass",
-      "detail": "Site Admin \u2014 Site Evaluation",
+      "detail": "Site Evaluation",
       "page": "admin-hub.html"
     },
     {

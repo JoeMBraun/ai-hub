@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Admin — Site Evaluation</title>
+    <title>Site Evaluation</title>
     <link rel="stylesheet" href="css/hub.css">
     <script src="js/hub.js"></script>
     <script src="js/usability-suite.js"></script>
@@ -54,13 +54,10 @@
 <div class="section">
     <div class="section-label">Why this page exists</div>
     <div class="text-block">
-        <strong>This is the Site Admin view of https://joembraun.github.io/ai-hub/.</strong>
-        The <a href="evaluation-hub.html">AI Evaluation Hub</a> is the catalog of LLM eval tools.
-        This page scores the <em>website itself</em> — usefulness, usability, value, ease of use,
-        plus <strong>freshness</strong> and <strong>return-visit pull</strong> (the two scores most tied to coming back more often) —
-        and records the automated suite that checks the directory (including Evaluation) from every hub.
-        The archived cloud agent in this environment was a deploy run, not a scored UX report,
-        so the measurements below are from a 6 Sep 2026 review of the live directory.
+        <strong>This page scores the hub site itself</strong> — usefulness, usability, value, ease of use,
+        plus <strong>freshness</strong> and <strong>return-visit pull</strong> (the two scores most tied to coming back more often).
+        The <a href="evaluation-hub.html">AI Evaluation Hub</a> is the catalog of LLM eval tools, not this report.
+        Measurements are from a 6 Sep 2026 review of the live directory.
         Open it from Directory → <strong>Admin</strong> → Site Evaluation on any hub.
     </div>
 </div>
@@ -68,7 +65,7 @@
 <div class="section">
     <div class="section-label">Measurements</div>
     <div class="suite-meta" id="measure-meta">Loading site evaluation scores…</div>
-    <div class="measure-grid" id="measure-grid"></div>
+    <div class="card-grid" id="measure-grid"></div>
     <div class="measure-detail" id="measure-detail"></div>
 </div>
 
@@ -103,7 +100,7 @@
     <div class="section-label">Directory</div>
     <div class="text-block">
         The directory below is the same navigation model rendered on every hub page,
-        including Evaluation and this Site Admin suite run.
+        including Evaluation and this Site Evaluation suite run.
     </div>
     <ul class="directory-list" id="directory-list"></ul>
 </div>

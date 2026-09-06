@@ -160,8 +160,7 @@ function renderHubDirectory() {
             const ariaAttr = isCurrent ? ' aria-current="page"' : "";
             return '<a href="' + link.href + '"' + classAttr + ariaAttr + ">" + link.text + "</a>";
         }).join("\n        ");
-        const groupClass = group.id === "admin" ? "nav-group nav-admin" : "nav-group";
-        return '<div class="' + groupClass + '">\n        <div class="nav-label">' + group.label + "</div>\n        " + linksMarkup + "\n    </div>";
+        return '<div class="nav-group">\n        <div class="nav-label">' + group.label + "</div>\n        " + linksMarkup + "\n    </div>";
     }).join("\n\n    ");
 
     const shell = ensureNavShell(nav);
