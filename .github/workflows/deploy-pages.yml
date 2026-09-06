@@ -46,6 +46,10 @@ jobs:
           for f in "${required[@]}"; do
             test -f "$f" || { echo "Missing $f"; exit 1; }
           done
+          test -d css || { echo "Missing css/"; exit 1; }
+          test -d js || { echo "Missing js/"; exit 1; }
+          test -f css/hub.css || { echo "Missing css/hub.css"; exit 1; }
+          test -f js/hub.js || { echo "Missing js/hub.js"; exit 1; }
 
       - name: Smoke-test local server
         run: |
@@ -72,6 +76,8 @@ jobs:
             /local-models-hub.html
             /prompt-hub.html
             /security-hub.html
+            /css/hub.css
+            /js/hub.js
           )
           for p in "${pages[@]}"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:8080$p")
@@ -102,6 +108,7 @@ jobs:
           set -euo pipefail
           mkdir -p _site
           cp *.html _site/
+          cp -R css js _site/
           cp .nojekyll _site/
 
       - name: Upload artifact

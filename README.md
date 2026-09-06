@@ -1,6 +1,6 @@
 # AI Hub
 
-Static HTML collection of AI tools, courses, and references.
+Static HTML collection of AI tools, courses, and references. Shared styles live in `css/`, shared scripts in `js/`.
 
 **Live site:** https://joembraun.github.io/ai-hub/
 
