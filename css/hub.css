@@ -311,3 +311,62 @@ ol a {
 .directory-list a:hover {
     color: #93c5fd;
 }
+
+.measure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.measure-card {
+    background: #1c1f2b;
+    border: 1px solid #2a2d3e;
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+.measure-card h3 {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+.measure-score {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+.measure-score span {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 500;
+}
+.measure-bar {
+    height: 8px;
+    background: #2a2d3e;
+    border-radius: 99px;
+    margin: 10px 0 12px;
+    overflow: hidden;
+}
+.measure-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: #5865f2;
+}
+.measure-summary {
+    color: #aaa;
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+.measure-detail {
+    margin-top: 16px;
+}
+.measure-detail h3 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 18px 0 8px;
+}
+.measure-detail ul {
+    margin: 0 0 8px 18px;
+    color: #aaa;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}

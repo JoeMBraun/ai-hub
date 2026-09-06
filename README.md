@@ -4,7 +4,7 @@ Static HTML collection of AI tools, courses, and references. Shared styles live 
 
 **Live site:** https://joembraun.github.io/ai-hub/
 
-**Site Admin:** [Usability Suite Run](admin-hub.html) — recorded checks that the Evaluation page and every other hub are reachable from navigation.
+**Site Admin:** [Site Evaluation](admin-hub.html) — usefulness, usability, value, and ease-of-use scores for the website, plus the recorded directory/usability suite.
 
 ## Deploy
 

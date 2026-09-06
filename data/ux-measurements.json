@@ -1,0 +1,95 @@
+{
+  "site": "https://joembraun.github.io/ai-hub/",
+  "title": "AI Hub website evaluation",
+  "evaluatedAt": "2026-09-06T15:50:00Z",
+  "method": "Expert review of the live directory (all hubs) using a 1–5 Likert scale. Each dimension is the mean of the criteria below. Supporting automated checks are in the usability suite run on this page.",
+  "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+      "1": "Poor",
+      "2": "Weak",
+      "3": "Adequate",
+      "4": "Good",
+      "5": "Excellent"
+    }
+  },
+  "overall": {
+    "score": 3.9,
+    "label": "Good"
+  },
+  "dimensions": [
+    {
+      "id": "usefulness",
+      "label": "Usefulness",
+      "score": 3.7,
+      "summary": "The directory gets someone to the right chat UI, coding harness, eval toolkit, or free vendor course quickly. Depth is uneven: Chatbot, Harness, and Evaluation hubs are dense; Courses Hub is a short list with copy errors.",
+      "criteria": [
+        { "name": "Helps find a chat interface", "score": 4.5 },
+        { "name": "Helps find eval and benchmark tools", "score": 4.2 },
+        { "name": "Helps find free courses", "score": 3.0 },
+        { "name": "Explains concepts in-place", "score": 3.2 }
+      ],
+      "evidence": [
+        "Fourteen hubs cover chat, prompts, harnesses, agents, local models, data, benchmarks, evaluation, security, governance, deployment, and courses.",
+        "Evaluation Hub lists Ragas, TruLens, DeepEval, Giskard plus RAG/agent/safety evals.",
+        "Prompt and Evaluation concept cards route to ChatGPT, Perplexity, or Claude instead of teaching on the page.",
+        "Courses Hub has typos (\"providew\", \"there tooling\") and little beyond a vendor URL list."
+      ]
+    },
+    {
+      "id": "usability",
+      "label": "Usability",
+      "score": 3.8,
+      "summary": "Shared dark theme, grouped navigation, and card grids are easy to scan. Automated checks passed 131/131. Remaining friction: dense nav, cards that look clickable but are not links, and thin Courses copy.",
+      "criteria": [
+        { "name": "Consistent navigation and visual system", "score": 4.4 },
+        { "name": "Page structure (title, heading, viewport, language)", "score": 4.6 },
+        { "name": "Affordances (what is clickable)", "score": 3.0 },
+        { "name": "Content quality and error prevention", "score": 3.2 }
+      ],
+      "evidence": [
+        "Canonical directory in js/hub.js now includes Evaluation, Courses, and this Site Admin page on every hub.",
+        "Automated usability suite: 131 passed, 0 failed, 0 warnings (titles, lang, viewport, CSS/JS, alt text, HTTPS).",
+        ".card { cursor: pointer } is applied to non-link concept cards, so they look clickable when only the LLM icons act.",
+        "No site search; fourteen destinations compete in the top nav."
+      ]
+    },
+    {
+      "id": "value",
+      "label": "Value",
+      "score": 4.1,
+      "summary": "Free, no account, and current as of September 2026 frontier models. It replaces a pile of bookmarks. Highest value is the Chatbot/Harness snapshot and the Evaluation directory; Courses adds less unique value.",
+      "criteria": [
+        { "name": "Time saved vs hunting vendor sites", "score": 4.4 },
+        { "name": "Currency of the catalog", "score": 4.3 },
+        { "name": "Cost to the visitor", "score": 5.0 },
+        { "name": "Unique teaching content", "score": 2.8 }
+      ],
+      "evidence": [
+        "Chatbot Hub lists Claude Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash, Grok 4.6, Muse Spark 1.3, and Kimi K3.",
+        "Harness Hub lists Claude Code, Codex, Grok Build, Antigravity, OpenCode, Cursor, and Kiro.",
+        "Static GitHub Pages hosting: no login, no paywall.",
+        "Most concept pages are indexes plus outbound links rather than original tutorials."
+      ]
+    },
+    {
+      "id": "easeOfUse",
+      "label": "Ease of use",
+      "score": 4.0,
+      "summary": "First useful click is fast: open a hub, tap a card, land on the vendor. Evaluation is one hop from any page. Remaining ease issues are nav length and mixed card behavior.",
+      "criteria": [
+        { "name": "Time to first useful action", "score": 4.5 },
+        { "name": "Find Evaluation from any hub", "score": 4.6 },
+        { "name": "Cognitive load of the directory", "score": 3.4 },
+        { "name": "Mobile / small viewport use", "score": 3.5 }
+      ],
+      "evidence": [
+        "No authentication or onboarding; pages are static HTML.",
+        "Evaluation Hub is in AI Data & Evaluation on every page; this report is under Site Admin.",
+        "Nav groups wrap into a tall stack on narrower viewports, pushing page content down.",
+        "LLM icon buttons are small but labeled with title tooltips."
+      ]
+    }
+  ]
+}

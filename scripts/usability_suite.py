@@ -194,7 +194,7 @@ def run_suite() -> dict:
         "DIR-ADMIN",
         "Usability suite is in Site Admin",
         "pass" if admin_has_suite else "fail",
-        "Usability Suite Run is a navigation option under Site Admin." if admin_has_suite else "admin-hub.html is missing from the Site Admin group.",
+        "Site Evaluation is a navigation option under Site Admin." if admin_has_suite else "admin-hub.html is missing from the Site Admin group.",
     ))
 
     course_listed = "course-hub.html" in pages

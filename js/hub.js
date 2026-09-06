@@ -40,7 +40,7 @@ const HUB_DIRECTORY = [
         id: "admin",
         label: "Site Admin",
         links: [
-            { href: "admin-hub.html", text: "🧭 Usability Suite Run →" }
+            { href: "admin-hub.html", text: "🧭 Site Evaluation →" }
         ]
     }
 ];

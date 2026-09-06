@@ -1,8 +1,8 @@
 {
   "suite": "AI Hub website usability",
   "source": "scripts/usability_suite.py",
-  "startedAt": "2026-09-06T15:36:17Z",
-  "finishedAt": "2026-09-06T15:36:17Z",
+  "startedAt": "2026-09-06T15:52:18Z",
+  "finishedAt": "2026-09-06T15:52:18Z",
   "summary": {
     "total": 131,
     "passed": 131,
@@ -44,7 +44,7 @@
       "id": "DIR-ADMIN",
       "name": "Usability suite is in Site Admin",
       "status": "pass",
-      "detail": "Usability Suite Run is a navigation option under Site Admin.",
+      "detail": "Site Evaluation is a navigation option under Site Admin.",
       "page": "directory"
     },
     {
@@ -905,7 +905,7 @@
       "id": "TITLE-admin-hub.html",
       "name": "Document title",
       "status": "pass",
-      "detail": "Site Admin \u2014 Usability Suite Run",
+      "detail": "Site Admin \u2014 Usefulness, Usability, Value, Ease of Use",
       "page": "admin-hub.html"
     },
     {

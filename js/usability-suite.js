@@ -115,7 +115,7 @@ async function runUsabilitySuite() {
         "Usability suite is in Site Admin",
         directoryGroupContains("admin", "admin-hub.html") ? "pass" : "fail",
         directoryGroupContains("admin", "admin-hub.html")
-            ? "Usability Suite Run is a navigation option under Site Admin."
+            ? "Site Evaluation is a navigation option under Site Admin."
             : "admin-hub.html is missing from the Site Admin group."
     ));
 
@@ -246,11 +246,69 @@ async function handleRunSuiteClick() {
     }
 }
 
+function scorePercent(score, maxScore) {
+    return Math.max(0, Math.min(100, (score / maxScore) * 100));
+}
+
+function renderMeasurements(report) {
+    const grid = document.getElementById("measure-grid");
+    const detail = document.getElementById("measure-detail");
+    const meta = document.getElementById("measure-meta");
+    const rootsArePresent = grid !== null && detail !== null && meta !== null;
+    if (!rootsArePresent) {
+        return;
+    }
+
+    const maxScore = report.scale.max;
+    meta.textContent = report.site + " · " + report.method + " Overall " + report.overall.score + " / " + maxScore + " (" + report.overall.label + "). Evaluated " + report.evaluatedAt + ".";
+
+    grid.innerHTML = report.dimensions.map(function (dimension) {
+        return '<div class="measure-card">' +
+            "<h3>" + dimension.label + "</h3>" +
+            '<div class="measure-score">' + dimension.score.toFixed(1) + " <span>/ " + maxScore + "</span></div>" +
+            '<div class="measure-bar"><div class="measure-bar-fill" style="width:' + scorePercent(dimension.score, maxScore) + '%"></div></div>' +
+            '<p class="measure-summary">' + dimension.summary + "</p>" +
+            "</div>";
+    }).join("");
+
+    detail.innerHTML = report.dimensions.map(function (dimension) {
+        const criteria = dimension.criteria.map(function (item) {
+            return "<li>" + item.name + " — " + item.score.toFixed(1) + " / " + maxScore + "</li>";
+        }).join("");
+        const evidence = dimension.evidence.map(function (item) {
+            return "<li>" + item + "</li>";
+        }).join("");
+        return "<h3>" + dimension.label + "</h3>" +
+            "<p class=\"measure-summary\"><strong>Criteria</strong></p><ul>" + criteria + "</ul>" +
+            "<p class=\"measure-summary\"><strong>Evidence</strong></p><ul>" + evidence + "</ul>";
+    }).join("");
+}
+
+async function loadMeasurements() {
+    const response = await fetch("data/ux-measurements.json", { cache: "no-store" });
+    const responseOk = response.ok;
+    if (!responseOk) {
+        throw new Error("UX measurements file was not found.");
+    }
+    return response.json();
+}
+
 async function initializeUsabilitySuitePage() {
     const button = document.getElementById("run-suite-btn");
     const buttonIsPresent = button !== null && button !== undefined;
     if (buttonIsPresent) {
         button.addEventListener("click", handleRunSuiteClick);
+    }
+
+    try {
+        const measurements = await loadMeasurements();
+        renderMeasurements(measurements);
+    } catch (measurementError) {
+        const meta = document.getElementById("measure-meta");
+        const metaIsPresent = meta !== null && meta !== undefined;
+        if (metaIsPresent) {
+            meta.textContent = "Measurements could not be loaded. " + measurementError.message;
+        }
     }
 
     try {

@@ -87,6 +87,7 @@ jobs:
             /js/hub.js
             /js/usability-suite.js
             /data/usability-suite-run.json
+            /data/ux-measurements.json
           )
           for p in "${pages[@]}"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:8080$p")
