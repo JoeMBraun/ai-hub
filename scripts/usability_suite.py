@@ -190,11 +190,12 @@ def run_suite() -> dict:
     ))
 
     admin_in_directory = "admin-hub.html" in pages
+    admin_is_option = bool(re.search(r'id:\s*"admin"[\s\S]*?admin-hub\.html', hub_js))
     checks.append(make_check(
         "DIR-ADMIN",
-        "Site Admin is hidden from public nav",
-        "pass" if not admin_in_directory else "fail",
-        "admin-hub.html is not in HUB_DIRECTORY." if not admin_in_directory else "admin-hub.html is still listed in public navigation.",
+        "Site Evaluation is an Admin directory option",
+        "pass" if admin_in_directory and admin_is_option else "fail",
+        "admin-hub.html is listed under Admin." if admin_in_directory and admin_is_option else "admin-hub.html is missing from the Admin group.",
     ))
 
     course_in_start = bool(re.search(r'label:\s*"Start Here"[\s\S]*?course-hub\.html', hub_js))
@@ -206,12 +207,12 @@ def run_suite() -> dict:
         "course-hub.html is listed under Start Here." if course_in_start and not course_in_safety else "course-hub.html is not in the Start Here group.",
     ))
 
-    admin_group_exists = 'label: "Site Admin"' in hub_js
+    admin_group_exists = bool(re.search(r'id:\s*"admin"', hub_js)) and 'label: "Admin"' in hub_js
     checks.append(make_check(
         "DIR-ADMIN-GROUP",
-        "Site Admin navigation group is absent",
-        "pass" if not admin_group_exists else "fail",
-        "No Site Admin group in HUB_DIRECTORY." if not admin_group_exists else "Site Admin group is still present.",
+        "Admin navigation group exists",
+        "pass" if admin_group_exists else "fail",
+        'Found the "Admin" group.' if admin_group_exists else "Admin group is missing.",
     ))
 
     start_here_exists = 'label: "Start Here"' in hub_js

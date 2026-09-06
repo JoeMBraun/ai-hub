@@ -112,11 +112,11 @@ async function runUsabilitySuite() {
 
     checks.push(makeCheck(
         "DIR-ADMIN",
-        "Site Admin is hidden from public nav",
-        directoryContains("admin-hub.html") ? "fail" : "pass",
-        directoryContains("admin-hub.html")
-            ? "admin-hub.html is still listed in public navigation."
-            : "admin-hub.html is not in HUB_DIRECTORY."
+        "Site Evaluation is an Admin directory option",
+        directoryContains("admin-hub.html") && directoryGroupContains("admin", "admin-hub.html") ? "pass" : "fail",
+        directoryContains("admin-hub.html") && directoryGroupContains("admin", "admin-hub.html")
+            ? "admin-hub.html is listed under Admin."
+            : "admin-hub.html is missing from the Admin group."
     ));
 
     checks.push(makeCheck(
@@ -129,13 +129,13 @@ async function runUsabilitySuite() {
     ));
 
     const siteAdminGroup = HUB_DIRECTORY.filter(function (group) {
-        return group.id === "admin";
+        return group.id === "admin" && group.label === "Admin";
     });
     checks.push(makeCheck(
         "DIR-ADMIN-GROUP",
-        "Site Admin navigation group is absent",
-        siteAdminGroup.length === 0 ? "pass" : "fail",
-        siteAdminGroup.length === 0 ? "No Site Admin group in HUB_DIRECTORY." : "Site Admin group is still present."
+        "Admin navigation group exists",
+        siteAdminGroup.length === 1 ? "pass" : "fail",
+        siteAdminGroup.length === 1 ? 'Found the "Admin" group.' : "Admin group is missing."
     ));
 
     const startHereGroup = HUB_DIRECTORY.filter(function (group) {
@@ -280,12 +280,14 @@ function renderMeasurements(report) {
 
     grid.innerHTML = report.dimensions.map(function (dimension) {
         const isFrequencyGoal = dimension.goal === "frequency";
-        const cardClass = isFrequencyGoal ? "measure-card measure-card-frequency" : "measure-card";
+        const cardClass = isFrequencyGoal ? "card measure-card measure-card-frequency" : "card measure-card";
+        const frequencyBadge = isFrequencyGoal ? '<span class="badge badge-free-pro">Visit frequency</span>' : "";
         return '<div class="' + cardClass + '">' +
-            "<h3>" + dimension.label + "</h3>" +
+            '<div class="card-name">' + dimension.label + "</div>" +
             '<div class="measure-score">' + dimension.score.toFixed(1) + " <span>/ " + maxScore + "</span></div>" +
             '<div class="measure-bar"><div class="measure-bar-fill" style="width:' + scorePercent(dimension.score, maxScore) + '%"></div></div>' +
-            '<p class="measure-summary">' + dimension.summary + "</p>" +
+            '<p class="card-desc">' + dimension.summary + "</p>" +
+            frequencyBadge +
             "</div>";
     }).join("");
 

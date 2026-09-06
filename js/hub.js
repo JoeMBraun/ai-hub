@@ -35,6 +35,13 @@ const HUB_DIRECTORY = [
             { href: "governance-hub.html", text: "⚖️ AI Governance Hub →" },
             { href: "deployment-hub.html", text: "🚀 AI Deployment Hub →" }
         ]
+    },
+    {
+        id: "admin",
+        label: "Admin",
+        links: [
+            { href: "admin-hub.html", text: "🧭 Site Evaluation →" }
+        ]
     }
 ];
 
