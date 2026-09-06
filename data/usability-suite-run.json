@@ -1,8 +1,8 @@
 {
   "suite": "AI Hub website usability",
   "source": "scripts/usability_suite.py",
-  "startedAt": "2026-09-06T18:11:40Z",
-  "finishedAt": "2026-09-06T18:11:40Z",
+  "startedAt": "2026-09-06T22:12:24Z",
+  "finishedAt": "2026-09-06T22:12:24Z",
   "summary": {
     "total": 132,
     "passed": 132,
@@ -22,7 +22,8 @@
     "evaluation-hub.html",
     "security-hub.html",
     "governance-hub.html",
-    "deployment-hub.html"
+    "deployment-hub.html",
+    "admin-hub.html"
   ],
   "checks": [
     {
@@ -41,9 +42,9 @@
     },
     {
       "id": "DIR-ADMIN",
-      "name": "Site Admin is hidden from public nav",
+      "name": "Site Evaluation is an Admin directory option",
       "status": "pass",
-      "detail": "admin-hub.html is not in HUB_DIRECTORY.",
+      "detail": "admin-hub.html is listed under Admin.",
       "page": "directory"
     },
     {
@@ -55,9 +56,9 @@
     },
     {
       "id": "DIR-ADMIN-GROUP",
-      "name": "Site Admin navigation group is absent",
+      "name": "Admin navigation group exists",
       "status": "pass",
-      "detail": "No Site Admin group in HUB_DIRECTORY.",
+      "detail": "Found the \"Admin\" group.",
       "page": "directory"
     },
     {

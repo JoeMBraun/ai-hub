@@ -94,6 +94,19 @@ body {
     background: #22263a;
     color: #ffffff;
 }
+.nav-group.nav-admin .nav-label {
+    color: #f59e0b;
+}
+.nav-group.nav-admin a {
+    color: #fbbf24;
+    border-color: #3f3a28;
+}
+.nav-group.nav-admin a:hover,
+.nav-group.nav-admin a.nav-current {
+    background: #2a2418;
+    border-color: #f59e0b;
+    color: #ffffff;
+}
 
 h1 {
     text-align: center;

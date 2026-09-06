@@ -35,6 +35,13 @@ const HUB_DIRECTORY = [
             { href: "governance-hub.html", text: "⚖️ AI Governance Hub →" },
             { href: "deployment-hub.html", text: "🚀 AI Deployment Hub →" }
         ]
+    },
+    {
+        id: "admin",
+        label: "Admin",
+        links: [
+            { href: "admin-hub.html", text: "🧭 Site Evaluation →" }
+        ]
     }
 ];
 
@@ -153,7 +160,8 @@ function renderHubDirectory() {
             const ariaAttr = isCurrent ? ' aria-current="page"' : "";
             return '<a href="' + link.href + '"' + classAttr + ariaAttr + ">" + link.text + "</a>";
         }).join("\n        ");
-        return '<div class="nav-group">\n        <div class="nav-label">' + group.label + "</div>\n        " + linksMarkup + "\n    </div>";
+        const groupClass = group.id === "admin" ? "nav-group nav-admin" : "nav-group";
+        return '<div class="' + groupClass + '">\n        <div class="nav-label">' + group.label + "</div>\n        " + linksMarkup + "\n    </div>";
     }).join("\n\n    ");
 
     const shell = ensureNavShell(nav);
