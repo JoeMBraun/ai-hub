@@ -1,0 +1,114 @@
+# Publish the static AI Hub to GitHub Pages.
+# Live site: https://joembraun.github.io/ai-hub/
+#
+# One-time: Settings → Pages → Source → GitHub Actions
+# (until then, Pages still publishes from the main branch).
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check required pages exist
+        run: |
+          set -euo pipefail
+          required=(
+            index.html
+            agents-hub.html
+            architecture-hub.html
+            benchmark-hub.html
+            course-hub.html
+            data-hub.html
+            deployment-hub.html
+            evaluation-hub.html
+            governance-hub.html
+            harness-hub.html
+            local-models-hub.html
+            prompt-hub.html
+            security-hub.html
+          )
+          for f in "${required[@]}"; do
+            test -f "$f" || { echo "Missing $f"; exit 1; }
+          done
+
+      - name: Smoke-test local server
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8080 --bind 127.0.0.1 &
+          pid=$!
+          trap 'kill "$pid"' EXIT
+          for _ in $(seq 1 20); do
+            curl -sf http://127.0.0.1:8080/ >/dev/null && break
+            sleep 0.25
+          done
+          pages=(
+            /
+            /index.html
+            /agents-hub.html
+            /architecture-hub.html
+            /benchmark-hub.html
+            /course-hub.html
+            /data-hub.html
+            /deployment-hub.html
+            /evaluation-hub.html
+            /governance-hub.html
+            /harness-hub.html
+            /local-models-hub.html
+            /prompt-hub.html
+            /security-hub.html
+          )
+          for p in "${pages[@]}"; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:8080$p")
+            echo "$code $p"
+            test "$code" = "200"
+          done
+
+  deploy:
+    needs: verify
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Stage site files
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp *.html _site/
+          cp .nojekyll _site/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
