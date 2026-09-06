@@ -2,7 +2,7 @@
   "site": "https://joembraun.github.io/ai-hub/",
   "title": "AI Hub website evaluation",
   "evaluatedAt": "2026-09-06T15:50:00Z",
-  "method": "Expert review of the live directory (all hubs) using a 1–5 Likert scale. Each dimension is the mean of the criteria below. Supporting automated checks are in the usability suite run on this page.",
+  "method": "Expert review of the live directory (all hubs) using a 1–5 Likert scale, recorded in this PR. The only archived cloud agent in this environment (General deployment process) is a GitHub Pages deploy chat and does not contain usefulness, usability, value, or ease-of-use scores. Each dimension is the mean of the criteria below. Supporting automated checks are in the usability suite run on this page.",
   "scale": {
     "min": 1,
     "max": 5,
