@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Admin — Usefulness, Usability, Value, Ease of Use</title>
+    <link rel="stylesheet" href="css/hub.css">
+    <script src="js/hub.js"></script>
+    <script src="js/usability-suite.js"></script>
+</head>
+<body>
+
+<div class="nav">
+
+    <div class="nav-group">
+        <div class="nav-label">AI Interfaces</div>
+        <a href="index.html">🤖 AI Chatbot Hub →</a>
+        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Development</div>
+        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
+        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
+        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
+        <a href="local-models-hub.html">💻 AI Local Models Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Data & Evaluation</div>
+        <a href="data-hub.html">📚 AI Data Hub →</a>
+        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
+        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-label">AI Safety & Ops</div>
+        <a href="security-hub.html">🔒 AI Security Hub →</a>
+        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
+        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
+        <a href="course-hub.html">🎓 AI Courses Hub →</a>
+    </div>
+
+    <div class="nav-group nav-admin">
+        <div class="nav-label">Site Admin</div>
+        <a href="admin-hub.html">🧭 Site Evaluation →</a>
+    </div>
+
+</div>
+
+<h1>🧭 Site Evaluation</h1>
+<p class="subtitle">Usefulness, usability, value, and ease of use for the AI Hub website</p>
+
+<div class="section">
+    <div class="section-label">Why this page exists</div>
+    <div class="text-block">
+        <strong>This is the Site Admin view of https://joembraun.github.io/ai-hub/.</strong>
+        The <a href="evaluation-hub.html">AI Evaluation Hub</a> is the catalog of LLM eval tools.
+        This page scores the <em>website itself</em> — usefulness, usability, value, and ease of use —
+        and records the automated suite that checks the directory (including Evaluation) from every hub.
+        The archived cloud agent in this environment was a deploy run, not a scored UX report,
+        so the measurements below are from a 6 Sep 2026 review of the live directory.
+        Open it from <a href="course-hub.html">Courses Hub</a> or any other page under <strong>Site Admin</strong>.
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Measurements</div>
+    <div class="suite-meta" id="measure-meta">Loading usefulness, usability, value, and ease-of-use scores…</div>
+    <div class="measure-grid" id="measure-grid"></div>
+    <div class="measure-detail" id="measure-detail"></div>
+</div>
+
+<div class="section">
+    <div class="section-label">Usability suite run</div>
+    <div class="suite-toolbar">
+        <button type="button" class="suite-run-btn" id="run-suite-btn">Run suite now</button>
+        <div class="suite-meta" id="suite-meta">Loading recorded suite run…</div>
+    </div>
+    <div class="suite-summary" id="suite-summary"></div>
+    <div class="suite-table-wrap">
+        <table class="suite-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Check</th>
+                    <th>Page</th>
+                    <th>Result</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+            <tbody id="suite-results-body">
+                <tr>
+                    <td colspan="5">Waiting for the recorded suite run.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Directory</div>
+    <div class="text-block">
+        The directory below is the same navigation model rendered on every hub page,
+        including Evaluation and this Site Admin suite run.
+    </div>
+    <ul class="directory-list" id="directory-list"></ul>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const list = document.getElementById("directory-list");
+        const listIsPresent = list !== null && list !== undefined;
+        if (!listIsPresent) {
+            return;
+        }
+        list.innerHTML = HUB_DIRECTORY.map(function (group) {
+            const links = group.links.map(function (link) {
+                return '<a href="' + link.href + '">' + link.text + "</a>";
+            }).join(" · ");
+            return "<li><strong>" + group.label + ":</strong> " + links + "</li>";
+        }).join("");
+    });
+</script>
+
+</body>
+</html>
