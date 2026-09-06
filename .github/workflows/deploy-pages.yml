@@ -30,6 +30,7 @@ jobs:
           set -euo pipefail
           required=(
             index.html
+            admin-hub.html
             agents-hub.html
             architecture-hub.html
             benchmark-hub.html
@@ -50,6 +51,11 @@ jobs:
           test -d js || { echo "Missing js/"; exit 1; }
           test -f css/hub.css || { echo "Missing css/hub.css"; exit 1; }
           test -f js/hub.js || { echo "Missing js/hub.js"; exit 1; }
+          test -f js/usability-suite.js || { echo "Missing js/usability-suite.js"; exit 1; }
+          test -f admin-hub.html || { echo "Missing admin-hub.html"; exit 1; }
+
+      - name: Run website usability suite
+        run: python3 scripts/usability_suite.py
 
       - name: Smoke-test local server
         run: |
@@ -64,6 +70,7 @@ jobs:
           pages=(
             /
             /index.html
+            /admin-hub.html
             /agents-hub.html
             /architecture-hub.html
             /benchmark-hub.html
@@ -78,6 +85,8 @@ jobs:
             /security-hub.html
             /css/hub.css
             /js/hub.js
+            /js/usability-suite.js
+            /data/usability-suite-run.json
           )
           for p in "${pages[@]}"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:8080$p")
@@ -108,7 +117,7 @@ jobs:
           set -euo pipefail
           mkdir -p _site
           cp *.html _site/
-          cp -R css js _site/
+          cp -R css js data _site/
           cp .nojekyll _site/
 
       - name: Upload artifact

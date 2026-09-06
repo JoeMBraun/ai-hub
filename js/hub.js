@@ -1,3 +1,86 @@
+const HUB_DIRECTORY = [
+    {
+        id: "interfaces",
+        label: "AI Interfaces",
+        links: [
+            { href: "index.html", text: "🤖 AI Chatbot Hub →" },
+            { href: "prompt-hub.html", text: "✍️ AI Prompt Hub →" }
+        ]
+    },
+    {
+        id: "development",
+        label: "AI Development",
+        links: [
+            { href: "harness-hub.html", text: "🛠️ AI Harness Hub →" },
+            { href: "architecture-hub.html", text: "🏗️ AI Architecture Hub →" },
+            { href: "agents-hub.html", text: "🧠 AI Agents Hub →" },
+            { href: "local-models-hub.html", text: "💻 AI Local Models Hub →" }
+        ]
+    },
+    {
+        id: "data",
+        label: "AI Data & Evaluation",
+        links: [
+            { href: "data-hub.html", text: "📚 AI Data Hub →" },
+            { href: "benchmark-hub.html", text: "📊 AI Benchmark Hub →" },
+            { href: "evaluation-hub.html", text: "🧪 AI Evaluation Hub →" }
+        ]
+    },
+    {
+        id: "safety",
+        label: "AI Safety & Ops",
+        links: [
+            { href: "security-hub.html", text: "🔒 AI Security Hub →" },
+            { href: "governance-hub.html", text: "⚖️ AI Governance Hub →" },
+            { href: "deployment-hub.html", text: "🚀 AI Deployment Hub →" },
+            { href: "course-hub.html", text: "🎓 AI Courses Hub →" }
+        ]
+    },
+    {
+        id: "admin",
+        label: "Site Admin",
+        links: [
+            { href: "admin-hub.html", text: "🧭 Usability Suite Run →" }
+        ]
+    }
+];
+
+function getCurrentHubPage() {
+    const pathSegment = window.location.pathname.split("/").pop();
+    const isEmptyPath = pathSegment === null || pathSegment === undefined || pathSegment === "";
+    if (isEmptyPath) {
+        return "index.html";
+    }
+    const isHtmlPage = pathSegment.endsWith(".html");
+    if (isHtmlPage) {
+        return pathSegment;
+    }
+    return "index.html";
+}
+
+function renderHubDirectory() {
+    const nav = document.querySelector(".nav");
+    const navIsPresent = nav !== null && nav !== undefined;
+    if (!navIsPresent) {
+        return;
+    }
+
+    const currentPage = getCurrentHubPage();
+    nav.innerHTML = HUB_DIRECTORY.map(function (group) {
+        const isAdminGroup = group.id === "admin";
+        const groupClass = isAdminGroup ? "nav-group nav-admin" : "nav-group";
+        const linksMarkup = group.links.map(function (link) {
+            const isCurrent = link.href === currentPage;
+            const classAttr = isCurrent ? ' class="nav-current"' : "";
+            const ariaAttr = isCurrent ? ' aria-current="page"' : "";
+            return '<a href="' + link.href + '"' + classAttr + ariaAttr + ">" + link.text + "</a>";
+        }).join("\n        ");
+        return '<div class="' + groupClass + '">\n        <div class="nav-label">' + group.label + "</div>\n        " + linksMarkup + "\n    </div>";
+    }).join("\n\n    ");
+}
+
+document.addEventListener("DOMContentLoaded", renderHubDirectory);
+
 class RoutingException extends Error {
     constructor(message, errorId) {
         super(message);

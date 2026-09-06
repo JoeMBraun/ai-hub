@@ -1,0 +1,947 @@
+{
+  "suite": "AI Hub website usability",
+  "source": "scripts/usability_suite.py",
+  "startedAt": "2026-09-06T15:36:17Z",
+  "finishedAt": "2026-09-06T15:36:17Z",
+  "summary": {
+    "total": 131,
+    "passed": 131,
+    "failed": 0,
+    "warned": 0
+  },
+  "pages": [
+    "index.html",
+    "prompt-hub.html",
+    "harness-hub.html",
+    "architecture-hub.html",
+    "agents-hub.html",
+    "local-models-hub.html",
+    "data-hub.html",
+    "benchmark-hub.html",
+    "evaluation-hub.html",
+    "security-hub.html",
+    "governance-hub.html",
+    "deployment-hub.html",
+    "course-hub.html",
+    "admin-hub.html"
+  ],
+  "checks": [
+    {
+      "id": "DIR-EVAL",
+      "name": "Evaluation page is in the directory",
+      "status": "pass",
+      "detail": "evaluation-hub.html is listed under AI Data & Evaluation.",
+      "page": "directory"
+    },
+    {
+      "id": "DIR-EVAL-GROUP",
+      "name": "Evaluation sits in Data & Evaluation",
+      "status": "pass",
+      "detail": "AI Evaluation Hub is a navigation option in AI Data & Evaluation.",
+      "page": "directory"
+    },
+    {
+      "id": "DIR-ADMIN",
+      "name": "Usability suite is in Site Admin",
+      "status": "pass",
+      "detail": "Usability Suite Run is a navigation option under Site Admin.",
+      "page": "directory"
+    },
+    {
+      "id": "DIR-COURSE",
+      "name": "Courses hub is in the directory",
+      "status": "pass",
+      "detail": "course-hub.html is listed under AI Safety & Ops.",
+      "page": "directory"
+    },
+    {
+      "id": "DIR-ADMIN-GROUP",
+      "name": "Site Admin navigation group exists",
+      "status": "pass",
+      "detail": "Found the \"Site Admin\" group.",
+      "page": "directory"
+    },
+    {
+      "id": "LOAD-index.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "index.html"
+    },
+    {
+      "id": "LANG-index.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "index.html"
+    },
+    {
+      "id": "VIEW-index.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "index.html"
+    },
+    {
+      "id": "TITLE-index.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Chatbot Hub",
+      "page": "index.html"
+    },
+    {
+      "id": "H1-index.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "index.html"
+    },
+    {
+      "id": "CSS-index.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "index.html"
+    },
+    {
+      "id": "JS-index.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "index.html"
+    },
+    {
+      "id": "ALT-index.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "index.html"
+    },
+    {
+      "id": "HTTPS-index.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "index.html"
+    },
+    {
+      "id": "LOAD-prompt-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "LANG-prompt-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "VIEW-prompt-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "TITLE-prompt-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Prompt Hub",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "H1-prompt-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "CSS-prompt-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "JS-prompt-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "ALT-prompt-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "75 image(s) include alt text.",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "HTTPS-prompt-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "LOAD-harness-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "LANG-harness-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "VIEW-harness-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "TITLE-harness-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Harness Hub",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "H1-harness-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "CSS-harness-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "JS-harness-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "ALT-harness-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "HTTPS-harness-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "LOAD-architecture-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "LANG-architecture-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "VIEW-architecture-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "TITLE-architecture-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Architecture Hub",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "H1-architecture-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "CSS-architecture-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "JS-architecture-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "ALT-architecture-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "24 image(s) include alt text.",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "HTTPS-architecture-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "architecture-hub.html"
+    },
+    {
+      "id": "LOAD-agents-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "LANG-agents-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "VIEW-agents-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "TITLE-agents-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Agents Hub",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "H1-agents-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "CSS-agents-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "JS-agents-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "ALT-agents-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "51 image(s) include alt text.",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "HTTPS-agents-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "agents-hub.html"
+    },
+    {
+      "id": "LOAD-local-models-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "LANG-local-models-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "VIEW-local-models-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "TITLE-local-models-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "Local AI Models Hub",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "H1-local-models-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "CSS-local-models-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "JS-local-models-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "ALT-local-models-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "HTTPS-local-models-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "LOAD-data-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "LANG-data-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "VIEW-data-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "TITLE-data-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Data Hub",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "H1-data-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "CSS-data-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "JS-data-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "ALT-data-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "12 image(s) include alt text.",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "HTTPS-data-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "data-hub.html"
+    },
+    {
+      "id": "LOAD-benchmark-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "LANG-benchmark-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "VIEW-benchmark-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "TITLE-benchmark-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Benchmark Hub",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "H1-benchmark-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "CSS-benchmark-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "JS-benchmark-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "ALT-benchmark-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "HTTPS-benchmark-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "benchmark-hub.html"
+    },
+    {
+      "id": "LOAD-evaluation-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "LANG-evaluation-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "VIEW-evaluation-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "TITLE-evaluation-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Evaluation Hub",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "H1-evaluation-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "CSS-evaluation-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "JS-evaluation-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "ALT-evaluation-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "21 image(s) include alt text.",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "HTTPS-evaluation-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "evaluation-hub.html"
+    },
+    {
+      "id": "LOAD-security-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "LANG-security-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "VIEW-security-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "TITLE-security-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Security Hub",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "H1-security-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "CSS-security-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "JS-security-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "ALT-security-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "48 image(s) include alt text.",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "HTTPS-security-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "LOAD-governance-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "LANG-governance-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "VIEW-governance-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "TITLE-governance-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Governance Hub",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "H1-governance-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "CSS-governance-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "JS-governance-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "ALT-governance-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "27 image(s) include alt text.",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "HTTPS-governance-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "governance-hub.html"
+    },
+    {
+      "id": "LOAD-deployment-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "LANG-deployment-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "VIEW-deployment-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "TITLE-deployment-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Deployment Hub",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "H1-deployment-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "CSS-deployment-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "JS-deployment-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "ALT-deployment-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "24 image(s) include alt text.",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "HTTPS-deployment-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "deployment-hub.html"
+    },
+    {
+      "id": "LOAD-course-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "LANG-course-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "VIEW-course-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "TITLE-course-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Courses Hub",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "H1-course-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "CSS-course-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "JS-course-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "ALT-course-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "HTTPS-course-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "LOAD-admin-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "admin-hub.html"
+    },
+    {
+      "id": "LANG-admin-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "admin-hub.html"
+    },
+    {
+      "id": "VIEW-admin-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "admin-hub.html"
+    },
+    {
+      "id": "TITLE-admin-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "Site Admin \u2014 Usability Suite Run",
+      "page": "admin-hub.html"
+    },
+    {
+      "id": "H1-admin-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "admin-hub.html"
+    },
+    {
+      "id": "CSS-admin-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "admin-hub.html"
+    },
+    {
+      "id": "JS-admin-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "admin-hub.html"
+    },
+    {
+      "id": "ALT-admin-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "admin-hub.html"
+    },
+    {
+      "id": "HTTPS-admin-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "admin-hub.html"
+    }
+  ]
+}
