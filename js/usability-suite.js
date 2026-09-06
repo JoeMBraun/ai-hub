@@ -112,20 +112,20 @@ async function runUsabilitySuite() {
 
     checks.push(makeCheck(
         "DIR-ADMIN",
-        "Usability suite is in Site Admin",
-        directoryGroupContains("admin", "admin-hub.html") ? "pass" : "fail",
-        directoryGroupContains("admin", "admin-hub.html")
-            ? "Site Evaluation is a navigation option under Site Admin."
-            : "admin-hub.html is missing from the Site Admin group."
+        "Site Admin is hidden from public nav",
+        directoryContains("admin-hub.html") ? "fail" : "pass",
+        directoryContains("admin-hub.html")
+            ? "admin-hub.html is still listed in public navigation."
+            : "admin-hub.html is not in HUB_DIRECTORY."
     ));
 
     checks.push(makeCheck(
         "DIR-COURSE",
-        "Courses hub is in the directory",
-        directoryContains("course-hub.html") ? "pass" : "fail",
-        directoryContains("course-hub.html")
-            ? "course-hub.html is listed under AI Safety & Ops."
-            : "course-hub.html is missing from HUB_DIRECTORY."
+        "Courses hub is in Start Here",
+        directoryGroupContains("interfaces", "course-hub.html") ? "pass" : "fail",
+        directoryGroupContains("interfaces", "course-hub.html")
+            ? "course-hub.html is listed under Start Here."
+            : "course-hub.html is not in the Start Here group."
     ));
 
     const siteAdminGroup = HUB_DIRECTORY.filter(function (group) {
@@ -133,13 +133,29 @@ async function runUsabilitySuite() {
     });
     checks.push(makeCheck(
         "DIR-ADMIN-GROUP",
-        "Site Admin navigation group exists",
-        siteAdminGroup.length === 1 ? "pass" : "fail",
-        siteAdminGroup.length === 1 ? 'Found the "' + siteAdminGroup[0].label + '" group.' : "Site Admin group is missing."
+        "Site Admin navigation group is absent",
+        siteAdminGroup.length === 0 ? "pass" : "fail",
+        siteAdminGroup.length === 0 ? "No Site Admin group in HUB_DIRECTORY." : "Site Admin group is still present."
     ));
 
-    for (let index = 0; index < pages.length; index += 1) {
-        const page = pages[index];
+    const startHereGroup = HUB_DIRECTORY.filter(function (group) {
+        return group.label === "Start Here";
+    });
+    checks.push(makeCheck(
+        "DIR-START",
+        "Start Here navigation group exists",
+        startHereGroup.length === 1 ? "pass" : "fail",
+        startHereGroup.length === 1 ? 'Found the "Start Here" group.' : "Start Here group is missing."
+    ));
+
+    const pagesToInspect = pages.slice();
+    const adminAlreadyListed = pagesToInspect.indexOf("admin-hub.html") !== -1;
+    if (!adminAlreadyListed) {
+        pagesToInspect.push("admin-hub.html");
+    }
+
+    for (let index = 0; index < pagesToInspect.length; index += 1) {
+        const page = pagesToInspect[index];
         try {
             const response = await fetch(page, { cache: "no-store" });
             const responseOk = response.ok;
