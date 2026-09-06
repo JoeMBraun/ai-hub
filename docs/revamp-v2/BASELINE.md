@@ -74,6 +74,7 @@ Rendered groups: **Start Here**, **AI Development**, **AI Data & Evaluation**, *
 - Start Here already includes Chatbot, Prompt, and Courses.
 - Admin still exposes `admin-hub.html` (“Site Evaluation”) on every page.
 - All **14** public HTML files still contain a stale static nav: label **AI Interfaces** (not Start Here), Courses still under **AI Safety & Ops**, and a **Site Admin** group. `renderHubDirectory()` overwrites this on load, so two taxonomies exist.
+- **Owner decision (2026-09-06):** Site Admin quality metrics stay. Later nav cleanup may unlist Admin from the public visitor menu, but `admin-hub.html`, the scores, the suite, the README link, and https://joembraun.github.io/ai-hub/admin-hub.html are kept. If preferred, Admin can remain in the public menu.
 
 ### Cards and Ask AI (P2 / P4 / P5 gap)
 
