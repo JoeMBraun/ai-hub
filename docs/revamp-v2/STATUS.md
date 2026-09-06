@@ -23,7 +23,7 @@ Policy: one phase at a time. Stop after each phase until requested. No framework
 
 | Date | Phase | SHA / PR | Summary |
 |---|---|---|---|
-| 2026-09-06 | P0 | `5b2f1dba0cc81b495dfc1e4ac6116203044db8fb` on `cursor/revamp-v2-16ec` | Add `docs/revamp-v2/BASELINE.md` and `STATUS.md`. |
+| 2026-09-06 | P0 | `5b2f1dba0cc81b495dfc1e4ac6116203044db8fb` — https://github.com/JoeMBraun/ai-hub/pull/14 | Add `docs/revamp-v2/BASELINE.md` and `STATUS.md`. |
 
 ## Tests
 
