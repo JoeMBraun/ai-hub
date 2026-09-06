@@ -9,7 +9,7 @@ Policy: one phase at a time. Stop after each phase until requested. No framework
 | Phase | Title | Status | Notes |
 |---|---|---|---|
 | P0 | Re-baseline | **DONE** | Branch created; suite 132/132 recorded; this ledger created. No production behavior change. |
-| P1 | Navigation source of truth / hide admin | NOT STARTED | **Site Admin stays.** Unlist from the public visitor menu only. Keep `admin-hub.html`, scores, suite, README link, and https://joembraun.github.io/ai-hub/admin-hub.html. Show Admin in nav while that page is open so the dashboard is not a dead end. Update `DIR-ADMIN*` checks in the same change. |
+| P1 | Navigation source of truth / hide admin | NOT STARTED | **Owner override:** keep the Admin / Site Evaluation link in the shared directory on **every page**. Do not unlist it. Nav cleanup may still replace stale HTML nav, but `HUB_DIRECTORY` keeps the Admin group. `DIR-ADMIN-PUBLIC` guards this. |
 | P2 | Responsive shell / honest affordances | NOT STARTED | No `@media` or inert-card split today. |
 | P3 | Task-oriented homepage / What’s New | NOT STARTED | Wait for P4 before glossary links; P7 makes What’s New data-driven. |
 | P4 | Searchable catalog/glossary | NOT STARTED | Unique card names today: 234 (95 concept `div.card` names). |
@@ -24,6 +24,7 @@ Policy: one phase at a time. Stop after each phase until requested. No framework
 | Date | Phase | SHA / PR | Summary |
 |---|---|---|---|
 | 2026-09-06 | P0 | `5b2f1dba0cc81b495dfc1e4ac6116203044db8fb` — https://github.com/JoeMBraun/ai-hub/pull/14 | Add `docs/revamp-v2/BASELINE.md` and `STATUS.md`. |
+| 2026-09-06 | Keep Site Admin on every page | https://github.com/JoeMBraun/ai-hub/pull/14 | Owner override: Admin / Site Evaluation stays in the public directory on every page. |
 
 ## Tests
 
@@ -31,6 +32,7 @@ Policy: one phase at a time. Stop after each phase until requested. No framework
 |---|---|---|---|
 | 2026-09-06 | P0 | `python3 scripts/usability_suite.py` | passed=132 failed=0 warned=0 total=132 |
 | 2026-09-06 | P0 stored | `data/usability-suite-run.json` | 132/132 at 2026-09-06T22:17:57Z (left unchanged) |
+| 2026-09-06 | Keep Site Admin on every page | `python3 scripts/usability_suite.py` | passed=133 failed=0 warned=0 total=133 (`DIR-ADMIN-PUBLIC` added) |
 
 ## P0 definition of done
 
@@ -38,18 +40,16 @@ Policy: one phase at a time. Stop after each phase until requested. No framework
 - [x] Phase ledger created
 - [x] Production site behavior unchanged
 
-## Owner decision — keep Site Admin
+## Owner decision — keep Site Admin on every page
 
-Site Evaluation (`admin-hub.html`) is the quality-metrics dashboard (Likert scores + usability suite). It is **not** deleted.
+Site Evaluation stays in the **public directory on every hub**. Do not remove the Admin group from `HUB_DIRECTORY`.
 
-When public nav is cleaned up:
+- Keep `admin-hub.html`, the scores, the suite, and “Run suite now”.
+- Keep Directory → Admin → Site Evaluation on every page (this is how the quality dashboard is opened).
+- The README and https://joembraun.github.io/ai-hub/admin-hub.html remain extra entry points.
 
-- Visitors no longer see an Admin / Site Evaluation item in the shared directory.
-- The page, `data/ux-measurements.json`, `data/usability-suite-run.json`, `js/usability-suite.js`, and “Run suite now” remain.
-- Open it from the bookmark URL, the README **Site Admin** link, or the Admin item that still renders **on this page only**.
-
-If you would rather keep Admin in the public menu on every hub, say so and that part of the nav cleanup will be skipped.
+`DIR-ADMIN`, `DIR-ADMIN-GROUP`, and `DIR-ADMIN-PUBLIC` in the usability suite must keep passing.
 
 ## Next
 
-Resume with the public-nav cleanup only when requested. Site Admin quality metrics stay either way.
+Public-nav cleanup (one shared menu, drop the old duplicate HTML nav) can still happen later. That cleanup must **not** drop Site Admin from the menu.

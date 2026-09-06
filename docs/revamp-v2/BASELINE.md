@@ -74,7 +74,7 @@ Rendered groups: **Start Here**, **AI Development**, **AI Data & Evaluation**, *
 - Start Here already includes Chatbot, Prompt, and Courses.
 - Admin still exposes `admin-hub.html` (“Site Evaluation”) on every page.
 - All **14** public HTML files still contain a stale static nav: label **AI Interfaces** (not Start Here), Courses still under **AI Safety & Ops**, and a **Site Admin** group. `renderHubDirectory()` overwrites this on load, so two taxonomies exist.
-- **Owner decision (2026-09-06):** Site Admin quality metrics stay. Later nav cleanup may unlist Admin from the public visitor menu, but `admin-hub.html`, the scores, the suite, the README link, and https://joembraun.github.io/ai-hub/admin-hub.html are kept. If preferred, Admin can remain in the public menu.
+- **Owner decision (2026-09-06):** Keep the Admin / Site Evaluation link in the shared directory on **every page**. Do not unlist it from public nav.
 
 ### Cards and Ask AI (P2 / P4 / P5 gap)
 
@@ -139,7 +139,7 @@ Catalog sizing note for P4: unique `card-name` strings are **234**; unique `div.
 
 ## Remaining risks (for later phases, not P0)
 
-- P1 will fail the current `DIR-ADMIN` / `DIR-ADMIN-GROUP` checks unless the suite is updated in the same phase.
+- Public-nav cleanup must not remove Admin from `HUB_DIRECTORY`; `DIR-ADMIN-PUBLIC` now encodes that owner decision.
 - Stale HTML nav is a no-JS fallback that still advertises Site Admin and the old taxonomy.
 - V1 `docs/revamp/CONTEXT.md` still says 256 cards; current tree has **266**. Treat this baseline, not CONTEXT.md, as the V2 source of truth.
 - Do not fabricate model facts, course URLs, verification dates, or prompt provenance in later phases.

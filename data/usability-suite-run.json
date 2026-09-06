@@ -1,11 +1,11 @@
 {
   "suite": "AI Hub website usability",
   "source": "scripts/usability_suite.py",
-  "startedAt": "2026-09-06T22:17:57Z",
-  "finishedAt": "2026-09-06T22:17:57Z",
+  "startedAt": "2026-09-06T23:26:15Z",
+  "finishedAt": "2026-09-06T23:26:15Z",
   "summary": {
-    "total": 132,
-    "passed": 132,
+    "total": 133,
+    "passed": 133,
     "failed": 0,
     "warned": 0
   },
@@ -42,9 +42,9 @@
     },
     {
       "id": "DIR-ADMIN",
-      "name": "Site Evaluation is an Admin directory option",
+      "name": "Site Evaluation is an Admin directory option on every page",
       "status": "pass",
-      "detail": "admin-hub.html is listed under Admin.",
+      "detail": "admin-hub.html is listed under Admin in the shared directory.",
       "page": "directory"
     },
     {
@@ -59,6 +59,13 @@
       "name": "Admin navigation group exists",
       "status": "pass",
       "detail": "Found the \"Admin\" group.",
+      "page": "directory"
+    },
+    {
+      "id": "DIR-ADMIN-PUBLIC",
+      "name": "Site Evaluation stays in the public directory",
+      "status": "pass",
+      "detail": "Owner decision: Admin / Site Evaluation remains in HUB_DIRECTORY so the link renders on every page.",
       "page": "directory"
     },
     {

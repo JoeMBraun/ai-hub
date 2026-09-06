@@ -112,10 +112,10 @@ async function runUsabilitySuite() {
 
     checks.push(makeCheck(
         "DIR-ADMIN",
-        "Site Evaluation is an Admin directory option",
+        "Site Evaluation is an Admin directory option on every page",
         directoryContains("admin-hub.html") && directoryGroupContains("admin", "admin-hub.html") ? "pass" : "fail",
         directoryContains("admin-hub.html") && directoryGroupContains("admin", "admin-hub.html")
-            ? "admin-hub.html is listed under Admin."
+            ? "admin-hub.html is listed under Admin in the shared directory."
             : "admin-hub.html is missing from the Admin group."
     ));
 
@@ -136,6 +136,18 @@ async function runUsabilitySuite() {
         "Admin navigation group exists",
         siteAdminGroup.length === 1 ? "pass" : "fail",
         siteAdminGroup.length === 1 ? 'Found the "Admin" group.' : "Admin group is missing."
+    ));
+
+    const adminStaysPublic = directoryContains("admin-hub.html")
+        && directoryGroupContains("admin", "admin-hub.html")
+        && siteAdminGroup.length === 1;
+    checks.push(makeCheck(
+        "DIR-ADMIN-PUBLIC",
+        "Site Evaluation stays in the public directory",
+        adminStaysPublic ? "pass" : "fail",
+        adminStaysPublic
+            ? "Owner decision: Admin / Site Evaluation remains in HUB_DIRECTORY so the link renders on every page."
+            : "Site Evaluation was removed from the public directory; restore the Admin group in js/hub.js."
     ));
 
     const startHereGroup = HUB_DIRECTORY.filter(function (group) {

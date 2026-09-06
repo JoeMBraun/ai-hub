@@ -1,6 +1,6 @@
 // Site Evaluation (admin-hub.html) is the quality-metrics dashboard.
-// It must keep working at its direct URL. Public directory nav may hide
-// the Admin group later; do not delete the page, suite, or measurement data.
+// Owner decision: keep the Admin / Site Evaluation link in this directory
+// so it renders on every page. Do not delete the page, suite, or scores.
 const HUB_DIRECTORY = [
     {
         id: "interfaces",
