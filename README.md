@@ -4,7 +4,7 @@ Static HTML collection of AI tools, courses, and references. Shared styles live 
 
 **Live site:** https://joembraun.github.io/ai-hub/
 
-**Site Admin:** [Site Evaluation](admin-hub.html) — usefulness, usability, value, and ease-of-use scores for the website, plus the recorded directory/usability suite.
+**Site Admin:** [Site Evaluation](admin-hub.html) — usefulness, usability, value, ease of use, freshness, and return-visit pull, plus the recorded directory/usability suite.
 
 ## Deploy
 
