@@ -189,31 +189,44 @@ def run_suite() -> dict:
         "AI Evaluation Hub is a navigation option in AI Data & Evaluation." if data_group_has_eval else "AI Evaluation Hub is not in the AI Data & Evaluation group.",
     ))
 
-    admin_has_suite = bool(re.search(r'id:\s*"admin"[\s\S]*?admin-hub\.html', hub_js))
+    admin_in_directory = "admin-hub.html" in pages
     checks.append(make_check(
         "DIR-ADMIN",
-        "Usability suite is in Site Admin",
-        "pass" if admin_has_suite else "fail",
-        "Site Evaluation is a navigation option under Site Admin." if admin_has_suite else "admin-hub.html is missing from the Site Admin group.",
+        "Site Admin is hidden from public nav",
+        "pass" if not admin_in_directory else "fail",
+        "admin-hub.html is not in HUB_DIRECTORY." if not admin_in_directory else "admin-hub.html is still listed in public navigation.",
     ))
 
-    course_listed = "course-hub.html" in pages
+    course_in_start = bool(re.search(r'label:\s*"Start Here"[\s\S]*?course-hub\.html', hub_js))
+    course_in_safety = bool(re.search(r'id:\s*"safety"[\s\S]*?course-hub\.html', hub_js))
     checks.append(make_check(
         "DIR-COURSE",
-        "Courses hub is in the directory",
-        "pass" if course_listed else "fail",
-        "course-hub.html is listed under AI Safety & Ops." if course_listed else "course-hub.html is missing from HUB_DIRECTORY.",
+        "Courses hub is in Start Here",
+        "pass" if course_in_start and not course_in_safety else "fail",
+        "course-hub.html is listed under Start Here." if course_in_start and not course_in_safety else "course-hub.html is not in the Start Here group.",
     ))
 
     admin_group_exists = 'label: "Site Admin"' in hub_js
     checks.append(make_check(
         "DIR-ADMIN-GROUP",
-        "Site Admin navigation group exists",
-        "pass" if admin_group_exists else "fail",
-        'Found the "Site Admin" group.' if admin_group_exists else "Site Admin group is missing.",
+        "Site Admin navigation group is absent",
+        "pass" if not admin_group_exists else "fail",
+        "No Site Admin group in HUB_DIRECTORY." if not admin_group_exists else "Site Admin group is still present.",
     ))
 
-    for page in pages:
+    start_here_exists = 'label: "Start Here"' in hub_js
+    checks.append(make_check(
+        "DIR-START",
+        "Start Here navigation group exists",
+        "pass" if start_here_exists else "fail",
+        'Found the "Start Here" group.' if start_here_exists else "Start Here group is missing.",
+    ))
+
+    pages_to_inspect = list(pages)
+    if "admin-hub.html" not in pages_to_inspect:
+        pages_to_inspect.append("admin-hub.html")
+
+    for page in pages_to_inspect:
         checks.extend(inspect_page(page))
 
     passed = sum(1 for check in checks if check["status"] == "pass")

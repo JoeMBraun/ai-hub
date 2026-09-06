@@ -1,17 +1,18 @@
 {
   "suite": "AI Hub website usability",
   "source": "scripts/usability_suite.py",
-  "startedAt": "2026-09-06T17:32:18Z",
-  "finishedAt": "2026-09-06T17:32:18Z",
+  "startedAt": "2026-09-06T18:11:40Z",
+  "finishedAt": "2026-09-06T18:11:40Z",
   "summary": {
-    "total": 131,
-    "passed": 131,
+    "total": 132,
+    "passed": 132,
     "failed": 0,
     "warned": 0
   },
   "pages": [
     "index.html",
     "prompt-hub.html",
+    "course-hub.html",
     "harness-hub.html",
     "architecture-hub.html",
     "agents-hub.html",
@@ -21,9 +22,7 @@
     "evaluation-hub.html",
     "security-hub.html",
     "governance-hub.html",
-    "deployment-hub.html",
-    "course-hub.html",
-    "admin-hub.html"
+    "deployment-hub.html"
   ],
   "checks": [
     {
@@ -42,23 +41,30 @@
     },
     {
       "id": "DIR-ADMIN",
-      "name": "Usability suite is in Site Admin",
+      "name": "Site Admin is hidden from public nav",
       "status": "pass",
-      "detail": "Site Evaluation is a navigation option under Site Admin.",
+      "detail": "admin-hub.html is not in HUB_DIRECTORY.",
       "page": "directory"
     },
     {
       "id": "DIR-COURSE",
-      "name": "Courses hub is in the directory",
+      "name": "Courses hub is in Start Here",
       "status": "pass",
-      "detail": "course-hub.html is listed under AI Safety & Ops.",
+      "detail": "course-hub.html is listed under Start Here.",
       "page": "directory"
     },
     {
       "id": "DIR-ADMIN-GROUP",
-      "name": "Site Admin navigation group exists",
+      "name": "Site Admin navigation group is absent",
       "status": "pass",
-      "detail": "Found the \"Site Admin\" group.",
+      "detail": "No Site Admin group in HUB_DIRECTORY.",
+      "page": "directory"
+    },
+    {
+      "id": "DIR-START",
+      "name": "Start Here navigation group exists",
+      "status": "pass",
+      "detail": "Found the \"Start Here\" group.",
       "page": "directory"
     },
     {
@@ -186,6 +192,69 @@
       "status": "pass",
       "detail": "No insecure http:// links.",
       "page": "prompt-hub.html"
+    },
+    {
+      "id": "LOAD-course-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "LANG-course-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "VIEW-course-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "TITLE-course-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Courses Hub",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "H1-course-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "CSS-course-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "JS-course-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "ALT-course-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "course-hub.html"
+    },
+    {
+      "id": "HTTPS-course-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "course-hub.html"
     },
     {
       "id": "LOAD-harness-hub.html",
@@ -816,69 +885,6 @@
       "status": "pass",
       "detail": "No insecure http:// links.",
       "page": "deployment-hub.html"
-    },
-    {
-      "id": "LOAD-course-hub.html",
-      "name": "Page loads",
-      "status": "pass",
-      "detail": "HTML file is present in the site.",
-      "page": "course-hub.html"
-    },
-    {
-      "id": "LANG-course-hub.html",
-      "name": "Language declared",
-      "status": "pass",
-      "detail": "html lang=\"en\"",
-      "page": "course-hub.html"
-    },
-    {
-      "id": "VIEW-course-hub.html",
-      "name": "Responsive viewport",
-      "status": "pass",
-      "detail": "Viewport meta tag is present.",
-      "page": "course-hub.html"
-    },
-    {
-      "id": "TITLE-course-hub.html",
-      "name": "Document title",
-      "status": "pass",
-      "detail": "AI Courses Hub",
-      "page": "course-hub.html"
-    },
-    {
-      "id": "H1-course-hub.html",
-      "name": "Single page heading",
-      "status": "pass",
-      "detail": "Found 1 h1 element(s).",
-      "page": "course-hub.html"
-    },
-    {
-      "id": "CSS-course-hub.html",
-      "name": "Shared stylesheet",
-      "status": "pass",
-      "detail": "Links css/hub.css.",
-      "page": "course-hub.html"
-    },
-    {
-      "id": "JS-course-hub.html",
-      "name": "Shared directory script",
-      "status": "pass",
-      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
-      "page": "course-hub.html"
-    },
-    {
-      "id": "ALT-course-hub.html",
-      "name": "Images have alt text",
-      "status": "pass",
-      "detail": "0 image(s) include alt text.",
-      "page": "course-hub.html"
-    },
-    {
-      "id": "HTTPS-course-hub.html",
-      "name": "Prefers HTTPS links",
-      "status": "pass",
-      "detail": "No insecure http:// links.",
-      "page": "course-hub.html"
     },
     {
       "id": "LOAD-admin-hub.html",

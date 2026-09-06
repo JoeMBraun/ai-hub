@@ -1,10 +1,11 @@
 const HUB_DIRECTORY = [
     {
         id: "interfaces",
-        label: "AI Interfaces",
+        label: "Start Here",
         links: [
             { href: "index.html", text: "🤖 AI Chatbot Hub →" },
-            { href: "prompt-hub.html", text: "✍️ AI Prompt Hub →" }
+            { href: "prompt-hub.html", text: "✍️ AI Prompt Hub →" },
+            { href: "course-hub.html", text: "🎓 AI Courses Hub →" }
         ]
     },
     {
@@ -32,15 +33,7 @@ const HUB_DIRECTORY = [
         links: [
             { href: "security-hub.html", text: "🔒 AI Security Hub →" },
             { href: "governance-hub.html", text: "⚖️ AI Governance Hub →" },
-            { href: "deployment-hub.html", text: "🚀 AI Deployment Hub →" },
-            { href: "course-hub.html", text: "🎓 AI Courses Hub →" }
-        ]
-    },
-    {
-        id: "admin",
-        label: "Site Admin",
-        links: [
-            { href: "admin-hub.html", text: "🧭 Site Evaluation →" }
+            { href: "deployment-hub.html", text: "🚀 AI Deployment Hub →" }
         ]
     }
 ];
@@ -150,15 +143,13 @@ function renderHubDirectory() {
 
     const currentPage = getCurrentHubPage();
     nav.innerHTML = HUB_DIRECTORY.map(function (group) {
-        const isAdminGroup = group.id === "admin";
-        const groupClass = isAdminGroup ? "nav-group nav-admin" : "nav-group";
         const linksMarkup = group.links.map(function (link) {
             const isCurrent = link.href === currentPage;
             const classAttr = isCurrent ? ' class="nav-current"' : "";
             const ariaAttr = isCurrent ? ' aria-current="page"' : "";
             return '<a href="' + link.href + '"' + classAttr + ariaAttr + ">" + link.text + "</a>";
         }).join("\n        ");
-        return '<div class="' + groupClass + '">\n        <div class="nav-label">' + group.label + "</div>\n        " + linksMarkup + "\n    </div>";
+        return '<div class="nav-group">\n        <div class="nav-label">' + group.label + "</div>\n        " + linksMarkup + "\n    </div>";
     }).join("\n\n    ");
 
     const shell = ensureNavShell(nav);
