@@ -1,8 +1,8 @@
 {
   "site": "https://joembraun.github.io/ai-hub/",
   "title": "AI Hub website evaluation",
-  "evaluatedAt": "2026-09-06T15:50:00Z",
-  "method": "Expert review of the live directory (all hubs) using a 1–5 Likert scale, recorded in this PR. The only archived cloud agent in this environment (General deployment process) is a GitHub Pages deploy chat and does not contain usefulness, usability, value, or ease-of-use scores. Each dimension is the mean of the criteria below. Supporting automated checks are in the usability suite run on this page.",
+  "evaluatedAt": "2026-09-06T17:30:00Z",
+  "method": "Expert review of the live directory (all hubs) using a 1–5 Likert scale. Each dimension is the mean of the criteria below. Freshness and Return-visit pull were added to show what would make people come back more often. Supporting automated checks are in the usability suite run on this page.",
   "scale": {
     "min": 1,
     "max": 5,
@@ -15,8 +15,8 @@
     }
   },
   "overall": {
-    "score": 3.9,
-    "label": "Good"
+    "score": 3.5,
+    "label": "Adequate"
   },
   "dimensions": [
     {
@@ -89,6 +89,44 @@
         "Evaluation Hub is in AI Data & Evaluation on every page; this report is under Site Admin.",
         "Nav groups wrap into a tall stack on narrower viewports, pushing page content down.",
         "LLM icon buttons are small but labeled with title tooltips."
+      ]
+    },
+    {
+      "id": "freshness",
+      "label": "Freshness",
+      "goal": "frequency",
+      "score": 2.9,
+      "summary": "People come back when the catalog changes. Chatbot and Harness hubs are labeled September 2026, but there is no What's New strip, changelog, or last-updated date on most pages — so a repeat visitor cannot tell what is new.",
+      "criteria": [
+        { "name": "Visible as-of date on hubs", "score": 3.6 },
+        { "name": "What's New or changelog", "score": 1.4 },
+        { "name": "Cadence of catalog updates", "score": 3.2 },
+        { "name": "Stale-content signals", "score": 3.4 }
+      ],
+      "evidence": [
+        "Chatbot, Harness, and Local Models hubs advertise a September 2026 lineup; Courses and Evaluation do not show a review date.",
+        "No homepage changelog, RSS feed, or \"updated this week\" list.",
+        "The site did get a real refresh on 6 Sep 2026 (frontier models + Site Evaluation), which is the kind of change that earns a return visit — it just is not surfaced as news.",
+        "To raise this score: add a dated What's New block on the Chatbot Hub and stamp every hub with last reviewed."
+      ]
+    },
+    {
+      "id": "returnVisitPull",
+      "label": "Return-visit pull",
+      "goal": "frequency",
+      "score": 2.4,
+      "summary": "The hub is a strong launcher, then it sends people away. There is no in-site habit loop (favorites, recents, alerts, weekly roundup), so frequency depends on someone remembering the URL.",
+      "criteria": [
+        { "name": "Bookmarkable hub permalinks", "score": 4.2 },
+        { "name": "Reason to reopen next week", "score": 2.0 },
+        { "name": "Stay-on-site depth (vs bounce to vendors)", "score": 2.2 },
+        { "name": "Repeat-use features (search, saves, recents)", "score": 1.2 }
+      ],
+      "evidence": [
+        "Each hub has a stable URL (index.html, evaluation-hub.html, course-hub.html) that is easy to bookmark or share.",
+        "Most cards open a vendor in a new tab, so the session ends on ChatGPT, Claude, or a course site.",
+        "No search, no saved-tools list, no email/RSS, no \"continue where you left off\".",
+        "To raise this score: keep a rotating What's New on the homepage, and add a short in-page note on each new model so the hub itself is worth a weekly check."
       ]
     }
   ]

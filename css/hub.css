@@ -366,6 +366,19 @@ ol a {
     border-radius: 12px;
     padding: 18px 20px;
 }
+.measure-card-frequency {
+    border-color: #3f3a28;
+}
+.measure-card-frequency h3::after {
+    content: " visit frequency";
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f59e0b;
+}
 .measure-card h3 {
     font-size: 0.95rem;
     color: #ffffff;

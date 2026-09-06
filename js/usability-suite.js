@@ -263,7 +263,9 @@ function renderMeasurements(report) {
     meta.textContent = report.site + " · " + report.method + " Overall " + report.overall.score + " / " + maxScore + " (" + report.overall.label + "). Evaluated " + report.evaluatedAt + ".";
 
     grid.innerHTML = report.dimensions.map(function (dimension) {
-        return '<div class="measure-card">' +
+        const isFrequencyGoal = dimension.goal === "frequency";
+        const cardClass = isFrequencyGoal ? "measure-card measure-card-frequency" : "measure-card";
+        return '<div class="' + cardClass + '">' +
             "<h3>" + dimension.label + "</h3>" +
             '<div class="measure-score">' + dimension.score.toFixed(1) + " <span>/ " + maxScore + "</span></div>" +
             '<div class="measure-bar"><div class="measure-bar-fill" style="width:' + scorePercent(dimension.score, maxScore) + '%"></div></div>' +
