@@ -1,0 +1,13 @@
+{
+  "name": "AI Hub",
+  "ports": [
+    { "name": "web", "port": 8080 }
+  ],
+  "terminals": [
+    {
+      "name": "web",
+      "command": "python3 -m http.server 8080",
+      "description": "Serves the static AI Hub site at http://localhost:8080. Open index.html to browse the hub pages."
+    }
+  ]
+}
