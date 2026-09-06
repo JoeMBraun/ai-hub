@@ -58,6 +58,89 @@ function getCurrentHubPage() {
     return "index.html";
 }
 
+function currentHubLabel() {
+    const page = getCurrentHubPage();
+    let label = "Directory";
+    HUB_DIRECTORY.forEach(function (group) {
+        group.links.forEach(function (link) {
+            const isCurrent = link.href === page;
+            if (isCurrent) {
+                label = link.text.replace(" →", "");
+            }
+        });
+    });
+    return label;
+}
+
+const NAV_COLLAPSE_STORAGE_KEY = "aiHub.navCollapsed";
+
+function readNavCollapsed() {
+    try {
+        return window.localStorage.getItem(NAV_COLLAPSE_STORAGE_KEY) === "1";
+    } catch (storageError) {
+        return false;
+    }
+}
+
+function writeNavCollapsed(isCollapsed) {
+    try {
+        window.localStorage.setItem(NAV_COLLAPSE_STORAGE_KEY, isCollapsed ? "1" : "0");
+    } catch (storageError) {
+        return;
+    }
+}
+
+function applyNavCollapsed(shell, isCollapsed) {
+    const toggle = shell.querySelector(".nav-toggle");
+    const icon = shell.querySelector(".nav-toggle-icon");
+    const label = shell.querySelector(".nav-toggle-label");
+    const controlsArePresent = toggle !== null && icon !== null && label !== null;
+    if (!controlsArePresent) {
+        return;
+    }
+
+    if (isCollapsed) {
+        shell.classList.add("is-collapsed");
+        icon.textContent = "\\/";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Expand directory navigation");
+        label.textContent = "Directory · " + currentHubLabel();
+    } else {
+        shell.classList.remove("is-collapsed");
+        icon.textContent = "/\\";
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("aria-label", "Collapse directory navigation");
+        label.textContent = "Directory";
+    }
+}
+
+function ensureNavShell(nav) {
+    const parent = nav.parentElement;
+    const shellAlreadyExists = parent !== null && parent.classList.contains("nav-shell");
+    if (shellAlreadyExists) {
+        return parent;
+    }
+
+    const shell = document.createElement("div");
+    shell.className = "nav-shell";
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "nav-toggle";
+    toggle.setAttribute("aria-controls", "hub-directory");
+    nav.id = "hub-directory";
+    toggle.innerHTML = '<span class="nav-toggle-label">Directory</span><span class="nav-toggle-icon" aria-hidden="true">/\\</span>';
+    nav.parentNode.insertBefore(shell, nav);
+    shell.appendChild(toggle);
+    shell.appendChild(nav);
+
+    toggle.addEventListener("click", function () {
+        const willCollapse = !shell.classList.contains("is-collapsed");
+        applyNavCollapsed(shell, willCollapse);
+        writeNavCollapsed(willCollapse);
+    });
+    return shell;
+}
+
 function renderHubDirectory() {
     const nav = document.querySelector(".nav");
     const navIsPresent = nav !== null && nav !== undefined;
@@ -77,6 +160,9 @@ function renderHubDirectory() {
         }).join("\n        ");
         return '<div class="' + groupClass + '">\n        <div class="nav-label">' + group.label + "</div>\n        " + linksMarkup + "\n    </div>";
     }).join("\n\n    ");
+
+    const shell = ensureNavShell(nav);
+    applyNavCollapsed(shell, readNavCollapsed());
 }
 
 document.addEventListener("DOMContentLoaded", renderHubDirectory);
