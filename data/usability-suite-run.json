@@ -1,16 +1,17 @@
 {
   "suite": "AI Hub website usability",
   "source": "scripts/usability_suite.py",
-  "startedAt": "2026-09-06T23:26:15Z",
-  "finishedAt": "2026-09-06T23:26:15Z",
+  "startedAt": "2026-09-07T03:05:21Z",
+  "finishedAt": "2026-09-07T03:05:21Z",
   "summary": {
-    "total": 133,
-    "passed": 133,
+    "total": 147,
+    "passed": 147,
     "failed": 0,
     "warned": 0
   },
   "pages": [
     "index.html",
+    "chatbot-hub.html",
     "prompt-hub.html",
     "course-hub.html",
     "harness-hub.html",
@@ -76,6 +77,41 @@
       "page": "directory"
     },
     {
+      "id": "DIR-HOME",
+      "name": "Start Here includes the AI Hub home page",
+      "status": "pass",
+      "detail": "index.html is the home page in Start Here.",
+      "page": "directory"
+    },
+    {
+      "id": "DIR-CHATBOT",
+      "name": "Chatbot Hub has its own directory page",
+      "status": "pass",
+      "detail": "chatbot-hub.html is listed under Start Here.",
+      "page": "directory"
+    },
+    {
+      "id": "HOME-FRONT-DOOR",
+      "name": "Root page explains AI Hub and routes by goal",
+      "status": "pass",
+      "detail": "index.html is the product home page with goal routes.",
+      "page": "directory"
+    },
+    {
+      "id": "COURSE-WORDING",
+      "name": "Courses copy is not absolute",
+      "status": "pass",
+      "detail": "Courses recommends free first-party training without a never-pay absolute.",
+      "page": "directory"
+    },
+    {
+      "id": "NAV-SHARED",
+      "name": "Public pages do not ship a second stale nav taxonomy",
+      "status": "pass",
+      "detail": "Shared .nav target only; HUB_DIRECTORY is the source of truth.",
+      "page": "directory"
+    },
+    {
       "id": "LOAD-index.html",
       "name": "Page loads",
       "status": "pass",
@@ -100,7 +136,7 @@
       "id": "TITLE-index.html",
       "name": "Document title",
       "status": "pass",
-      "detail": "AI Chatbot Hub",
+      "detail": "AI Hub \u2014 A practical map of modern AI",
       "page": "index.html"
     },
     {
@@ -137,6 +173,69 @@
       "status": "pass",
       "detail": "No insecure http:// links.",
       "page": "index.html"
+    },
+    {
+      "id": "LOAD-chatbot-hub.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "LANG-chatbot-hub.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "VIEW-chatbot-hub.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "TITLE-chatbot-hub.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "AI Chatbot Hub",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "H1-chatbot-hub.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "CSS-chatbot-hub.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css.",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "JS-chatbot-hub.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "ALT-chatbot-hub.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "HTTPS-chatbot-hub.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "chatbot-hub.html"
     },
     {
       "id": "LOAD-prompt-hub.html",

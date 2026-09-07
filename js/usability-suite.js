@@ -84,6 +84,34 @@ function inspectPageDocument(page, doc, responseOk) {
     const httpStatus = httpLinks.length === 0 ? "pass" : "warn";
     checks.push(makeCheck("HTTPS-" + page, "Prefers HTTPS links", httpStatus, httpLinks.length === 0 ? "No insecure http:// links." : httpLinks.length + " http:// link(s) should be https://.", page));
 
+    if (page === "index.html") {
+        const heading = doc.querySelector("h1");
+        const headingText = heading ? heading.textContent : "";
+        const bodyText = doc.body ? doc.body.textContent : "";
+        const isFrontDoor = headingText.indexOf("practical map of modern AI") !== -1
+            && bodyText.indexOf("What do you want to do?") !== -1
+            && titleText.indexOf("AI Chatbot Hub") === -1;
+        checks.push(makeCheck(
+            "HOME-FRONT-DOOR",
+            "Root page explains AI Hub and routes by goal",
+            isFrontDoor ? "pass" : "fail",
+            isFrontDoor ? "index.html is the product home page with goal routes." : "index.html is not a goal-based home page.",
+            page
+        ));
+    }
+    if (page === "course-hub.html") {
+        const bodyText = doc.body ? doc.body.textContent : "";
+        const wordingOk = bodyText.indexOf("Never pay for AI courses") === -1
+            && bodyText.indexOf("Start with free first-party AI training") !== -1;
+        checks.push(makeCheck(
+            "COURSE-WORDING",
+            "Courses copy is not absolute",
+            wordingOk ? "pass" : "fail",
+            wordingOk ? "Courses recommends free first-party training without a never-pay absolute." : "course-hub.html still uses absolute never-pay wording.",
+            page
+        ));
+    }
+
     return checks;
 }
 
@@ -158,6 +186,30 @@ async function runUsabilitySuite() {
         "Start Here navigation group exists",
         startHereGroup.length === 1 ? "pass" : "fail",
         startHereGroup.length === 1 ? 'Found the "Start Here" group.' : "Start Here group is missing."
+    ));
+
+    const homeInStart = directoryGroupContains("interfaces", "index.html");
+    const chatbotStillOnIndex = HUB_DIRECTORY.some(function (group) {
+        return group.links.some(function (link) {
+            return link.href === "index.html" && /Chatbot/.test(link.text);
+        });
+    });
+    checks.push(makeCheck(
+        "DIR-HOME",
+        "Start Here includes the AI Hub home page",
+        homeInStart && !chatbotStillOnIndex ? "pass" : "fail",
+        homeInStart && !chatbotStillOnIndex
+            ? "index.html is the home page in Start Here."
+            : "index.html is missing from Start Here or still labeled as Chatbot Hub."
+    ));
+
+    checks.push(makeCheck(
+        "DIR-CHATBOT",
+        "Chatbot Hub has its own directory page",
+        directoryGroupContains("interfaces", "chatbot-hub.html") ? "pass" : "fail",
+        directoryGroupContains("interfaces", "chatbot-hub.html")
+            ? "chatbot-hub.html is listed under Start Here."
+            : "chatbot-hub.html is missing from Start Here."
     ));
 
     const pagesToInspect = pages.slice();

@@ -1,6 +1,6 @@
 # AI Hub — Progress board
 
-Last updated **2026-09-07**.  
+Last updated **2026-09-07** (R1).  
 Plan: product roadmap R0→R10. One release at a time.  
 Standing rule: **Site Evaluation stays in the Directory on every page.**
 
@@ -8,15 +8,15 @@ I will refresh this file at the end of each release.
 
 ## Now
 
-**R0 — Baseline** is done. Waiting for you to say **start R1** (true home page).
+**R1 — True home page** is implemented on `cursor/product-r1-homepage-16ec`. Waiting for review before **R2**.
 
 ## In order of execution
 
 | # | Release | Status | What it is |
 |---|---|---|---|
 | R0 | Baseline and safeguards | **Done** | Recorded tests, links, menu, deploy, screen sizes. No site redesign. |
-| R1 | True home page | **Next** | `index.html` becomes AI Hub home. Chatbot list moves to `chatbot-hub.html`. Goal cards. Courses wording. Keep Site Admin in the menu. |
-| R2 | Goal-based guides | Waiting | Six how-to guides (choose an AI, coding tool, RAG, agent, local, evaluate). |
+| R1 | True home page | **Done (this branch)** | `index.html` is the AI Hub front door. Chatbot list is `chatbot-hub.html`. Goal cards. Courses wording. Site Admin still in the menu. |
+| R2 | Goal-based guides | **Next** | Six how-to guides (choose an AI, coding tool, RAG, agent, local, evaluate). |
 | R3 | Knowledge units | Waiting | Expand ~20 high-value concepts (what / when / when not / how). |
 | R4 | Ask-an-AI 2.0 | Waiting | Explain / Implement / Compare / Troubleshoot + ChatGPT, Claude, Perplexity. |
 | R5 | Decision support | Waiting | Help choose on Chatbot, Harness, Local Models, Architecture hubs. |

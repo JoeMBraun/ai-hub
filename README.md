@@ -1,8 +1,10 @@
 # AI Hub
 
-Static HTML collection of AI tools, courses, and references. Shared styles live in `css/`, shared scripts in `js/`. The directory (including Evaluation and the Site Admin usability suite) is defined in `js/hub.js`.
+A practical map of modern AI — concepts, tools, and a path from idea to implementation. Static HTML, shared styles in `css/`, shared scripts in `js/`. The directory (including Evaluation and Site Evaluation) is defined in `js/hub.js`.
 
 **Live site:** https://joembraun.github.io/ai-hub/
+
+**Chatbot directory:** [AI Chatbot Hub](chatbot-hub.html)
 
 **Site Admin (quality metrics):** [Site Evaluation](https://joembraun.github.io/ai-hub/admin-hub.html) — usefulness, usability, value, ease of use, freshness, and return-visit pull, plus the recorded directory/usability suite. The Site Evaluation link stays in the directory on every hub page.
 
