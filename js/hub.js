@@ -6,7 +6,8 @@ const HUB_DIRECTORY = [
         id: "interfaces",
         label: "Start Here",
         links: [
-            { href: "index.html", text: "🤖 AI Chatbot Hub →" },
+            { href: "index.html", text: "🏠 AI Hub Home →" },
+            { href: "chatbot-hub.html", text: "🤖 AI Chatbot Hub →" },
             { href: "prompt-hub.html", text: "✍️ AI Prompt Hub →" },
             { href: "course-hub.html", text: "🎓 AI Courses Hub →" }
         ]
@@ -79,10 +80,17 @@ const NAV_COLLAPSE_STORAGE_KEY = "aiHub.navCollapsed";
 
 function readNavCollapsed() {
     try {
-        return window.localStorage.getItem(NAV_COLLAPSE_STORAGE_KEY) === "1";
+        const stored = window.localStorage.getItem(NAV_COLLAPSE_STORAGE_KEY);
+        if (stored === "1") {
+            return true;
+        }
+        if (stored === "0") {
+            return false;
+        }
     } catch (storageError) {
-        return false;
+        return getCurrentHubPage() === "index.html";
     }
+    return getCurrentHubPage() === "index.html";
 }
 
 function writeNavCollapsed(isCollapsed) {

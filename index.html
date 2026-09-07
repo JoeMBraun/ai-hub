@@ -3,233 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot Hub</title>
+    <title>AI Hub — A practical map of modern AI</title>
     <link rel="stylesheet" href="css/hub.css">
     <script src="js/hub.js"></script>
 </head>
-<body>
+<body class="home">
 
-<div class="nav">
+<nav class="nav" aria-label="AI Hub directory"></nav>
 
-    <div class="nav-group">
-        <div class="nav-label">AI Interfaces</div>
-        <a href="index.html">🤖 AI Chatbot Hub →</a>
-        <a href="prompt-hub.html">✍️ AI Prompt Hub →</a>
+<header class="home-hero">
+    <p class="home-kicker">AI Hub</p>
+    <h1>A practical map of modern AI</h1>
+    <p class="subtitle">Learn the concepts, compare the tools, and move from idea to implementation.</p>
+    <p class="home-ctas">
+        <a class="home-cta" href="chatbot-hub.html">Choose an AI</a>
+        <a class="home-cta" href="course-hub.html">Learn AI</a>
+        <a class="home-cta" href="#build-ai">Build with AI</a>
+        <a class="home-cta home-cta-secondary" href="#what-to-do">Explore the full directory</a>
+    </p>
+</header>
+
+<section class="section" id="what-to-do">
+    <div class="section-label">What do you want to do?</div>
+    <p class="home-section-intro">Pick a goal. Each path opens an existing hub — no extra signup.</p>
+
+    <h2 class="home-group-title">Use AI</h2>
+    <div class="card-grid home-goal-grid">
+        <a class="card" href="chatbot-hub.html">
+            <div class="card-name">Choose a chatbot</div>
+            <div class="card-desc">Frontier chat interfaces and where to open them</div>
+        </a>
+        <a class="card" href="harness-hub.html">
+            <div class="card-name">Find a coding assistant</div>
+            <div class="card-desc">Tools for writing and changing code with AI</div>
+        </a>
+        <a class="card" href="prompt-hub.html">
+            <div class="card-name">Find prompts</div>
+            <div class="card-desc">Prompt patterns, system prompts, and orchestration</div>
+        </a>
+        <a class="card" href="course-hub.html">
+            <div class="card-name">Learn with free courses</div>
+            <div class="card-desc">First-party training from major AI vendors</div>
+        </a>
     </div>
 
-    <div class="nav-group">
-        <div class="nav-label">AI Development</div>
-        <a href="harness-hub.html">🛠️ AI Harness Hub →</a>
-        <a href="architecture-hub.html">🏗️ AI Architecture Hub →</a>
-        <a href="agents-hub.html">🧠 AI Agents Hub →</a>
-        <a href="local-models-hub.html">💻 AI Local Models Hub →</a>
-    </div>
-
-    <div class="nav-group">
-        <div class="nav-label">AI Data & Evaluation</div>
-        <a href="data-hub.html">📚 AI Data Hub →</a>
-        <a href="benchmark-hub.html">📊 AI Benchmark Hub →</a>
-        <a href="evaluation-hub.html">🧪 AI Evaluation Hub →</a>
-    </div>
-
-    <div class="nav-group">
-        <div class="nav-label">AI Safety & Ops</div>
-        <a href="security-hub.html">🔒 AI Security Hub →</a>
-        <a href="governance-hub.html">⚖️ AI Governance Hub →</a>
-        <a href="deployment-hub.html">🚀 AI Deployment Hub →</a>
-        <a href="course-hub.html">🎓 AI Courses Hub →</a>
-    </div>
-
-    <div class="nav-group nav-admin">
-        <div class="nav-label">Site Admin</div>
-        <a href="admin-hub.html">🧭 Site Evaluation →</a>
-    </div>
-
-</div>
-
-<h1>🤖 AI Chatbot Hub</h1>
-<p class="subtitle">September 2026 frontier chat interfaces</p>
-
-<div class="vendor-section">
-    <div class="vendor-label">Anthropic — Claude Fable 5.1</div>
-    <div class="card-grid">
-        <a class="card" href="https://claude.ai" target="_blank">
-            <div class="card-name">Claude Fable 5.1</div>
-            <div class="card-desc">Anthropic's September 2026 frontier model on claude.ai</div>
-            <span class="badge badge-free-pro">Free + Pro</span>
+    <h2 class="home-group-title" id="build-ai">Build AI</h2>
+    <div class="card-grid home-goal-grid">
+        <a class="card" href="data-hub.html">
+            <div class="card-name">Build a RAG system</div>
+            <div class="card-desc">Data, retrieval, and grounding for private knowledge</div>
+        </a>
+        <a class="card" href="agents-hub.html">
+            <div class="card-name">Build an agent</div>
+            <div class="card-desc">Agent patterns, memory, and multi-agent orchestration</div>
+        </a>
+        <a class="card" href="local-models-hub.html">
+            <div class="card-name">Run a model locally</div>
+            <div class="card-desc">Open-weight models and local inference options</div>
+        </a>
+        <a class="card" href="architecture-hub.html">
+            <div class="card-name">Design an AI architecture</div>
+            <div class="card-desc">Patterns for routing, workflows, and production systems</div>
         </a>
     </div>
-</div>
 
-<div class="vendor-section">
-    <div class="vendor-label">OpenAI — GPT-6 Astra</div>
-    <div class="card-grid">
-        <a class="card" href="https://chatgpt.com" target="_blank">
-            <div class="card-name">GPT-6 Astra</div>
-            <div class="card-desc">OpenAI's September 2026 ChatGPT frontier model</div>
-            <span class="badge badge-free-pro">Free + Pro</span>
+    <h2 class="home-group-title">Operate AI</h2>
+    <div class="card-grid home-goal-grid">
+        <a class="card" href="evaluation-hub.html">
+            <div class="card-name">Evaluate an AI system</div>
+            <div class="card-desc">How to tell whether an application is actually working</div>
         </a>
-        <a class="card" href="https://platform.openai.com/playground" target="_blank">
-            <div class="card-name">OpenAI Playground</div>
-            <div class="card-desc">API playground for GPT-6 Astra and other OpenAI models</div>
-            <span class="badge badge-pro">API Key</span>
+        <a class="card" href="security-hub.html">
+            <div class="card-name">Secure an AI system</div>
+            <div class="card-desc">Prompt injection, guardrails, and untrusted input</div>
+        </a>
+        <a class="card" href="governance-hub.html">
+            <div class="card-name">Govern AI</div>
+            <div class="card-desc">Policy, accountability, and responsible-use practices</div>
+        </a>
+        <a class="card" href="deployment-hub.html">
+            <div class="card-name">Deploy to production</div>
+            <div class="card-desc">Shipping, serving, and operating AI in production</div>
         </a>
     </div>
-</div>
+</section>
 
-<div class="vendor-section">
-    <div class="vendor-label">Google — Gemini 3.8 Flash</div>
-    <div class="card-grid">
-        <a class="card" href="https://gemini.google.com" target="_blank">
-            <div class="card-name">Gemini 3.8 Flash</div>
-            <div class="card-desc">Google's September 2026 fast Gemini chat model</div>
-            <span class="badge badge-free-pro">Free + Advanced</span>
-        </a>
-        <a class="card" href="https://aistudio.google.com" target="_blank">
-            <div class="card-name">Google AI Studio</div>
-            <div class="card-desc">Developer playground for Gemini 3.8 Flash</div>
-            <span class="badge badge-free">Free (API)</span>
-        </a>
-        <a class="card" href="https://notebooklm.google.com" target="_blank">
-            <div class="card-name">NotebookLM</div>
-            <div class="card-desc">Gemini-powered research assistant</div>
-            <span class="badge badge-free">Free</span>
-        </a>
-    </div>
-</div>
-
-<div class="vendor-section">
-    <div class="vendor-label">xAI — Grok 4.6</div>
-    <div class="card-grid">
-        <a class="card" href="https://grok.com" target="_blank">
-            <div class="card-name">Grok 4.6</div>
-            <div class="card-desc">xAI's September 2026 Grok chat model</div>
-            <span class="badge badge-free-pro">Free + Premium</span>
-        </a>
-        <a class="card" href="https://x.com/i/grok" target="_blank">
-            <div class="card-name">Grok on X</div>
-            <div class="card-desc">Grok 4.6 integrated into X</div>
-            <span class="badge badge-pro">X Premium</span>
-        </a>
-    </div>
-</div>
-
-<div class="vendor-section">
-    <div class="vendor-label">Meta — Muse Spark 1.3</div>
-    <div class="card-grid">
-        <a class="card" href="https://www.meta.ai" target="_blank">
-            <div class="card-name">Muse Spark 1.3</div>
-            <div class="card-desc">Meta's September 2026 Muse Spark frontier model</div>
-            <span class="badge badge-free-pro">Free + Pro</span>
-        </a>
-        <a class="card" href="https://www.meta.ai" target="_blank">
-            <div class="card-name">Meta AI</div>
-            <div class="card-desc">Llama-powered assistant</div>
-            <span class="badge badge-free">Free</span>
-        </a>
-    </div>
-</div>
-
-<div class="vendor-section">
-    <div class="vendor-label">Adobe — Firefly</div>
-    <div class="card-grid">
-        <a class="card" href="https://firefly.adobe.com/" target="_blank">
-            <div class="card-name">Adobe Firefly</div>
-            <div class="card-desc">Adobe's generative AI creative studio</div>
-            <span class="badge badge-free-pro">Free + Premium</span>
-        </a>
-    </div>
-</div>
-
-<div class="vendor-section">
-    <div class="vendor-label">Microsoft — Copilot</div>
-    <div class="card-grid">
-        <a class="card" href="https://copilot.microsoft.com" target="_blank">
-            <div class="card-name">Copilot Web</div>
-            <div class="card-desc">Standalone Copilot web app</div>
-            <span class="badge badge-free-pro">Free + Pro</span>
-        </a>
-        <a class="card" href="https://m365.cloud.microsoft/chat" target="_blank">
-            <div class="card-name">Copilot 365</div>
-            <div class="card-desc">Microsoft 365 integrated version</div>
-            <span class="badge badge-pro">M365 License</span>
-        </a>
-        <a class="card" href="https://www.bing.com/chat" target="_blank">
-            <div class="card-name">Copilot in Bing</div>
-            <div class="card-desc">Search-integrated Copilot with web grounding</div>
-            <span class="badge badge-free">Free</span>
-        </a>
-    </div>
-</div>
-
-<div class="vendor-section">
-    <div class="vendor-label">Perplexity AI</div>
-    <div class="card-grid">
-        <a class="card" href="https://www.perplexity.ai" target="_blank">
-            <div class="card-name">Perplexity</div>
-            <div class="card-desc">AI search engine with citations</div>
-            <span class="badge badge-free-pro">Free + Pro</span>
-        </a>
-    </div>
-</div>
-
-<div class="vendor-section">
-    <div class="vendor-label">Cohere</div>
-    <div class="card-grid">
-        <a class="card" href="https://coral.cohere.com" target="_blank">
-            <div class="card-name">Coral</div>
-            <div class="card-desc">Cohere's Command assistant</div>
-            <span class="badge badge-free">Free</span>
-        </a>
-    </div>
-</div>
-
-<div class="vendor-section">
-    <div class="vendor-label">Open weights — Chinese labs</div>
-    <div class="card-grid">
-        <a class="card" href="https://www.kimi.com" target="_blank">
-            <div class="card-name">Kimi K3</div>
-            <div class="card-desc">Moonshot open-weights Kimi chat model</div>
-            <span class="badge badge-open">Open weights</span>
-        </a>
-        <a class="card" href="https://chat.deepseek.com" target="_blank">
-            <div class="card-name">DeepSeek V4</div>
-            <div class="card-desc">DeepSeek open-weights chat interface</div>
-            <span class="badge badge-open">Open weights</span>
-        </a>
-        <a class="card" href="https://chat.qwen.ai" target="_blank">
-            <div class="card-name">Qwen 3.8</div>
-            <div class="card-desc">Alibaba Qwen Studio — Qwen3.8-Max</div>
-            <span class="badge badge-open">Open weights</span>
-        </a>
-        <a class="card" href="https://chat.z.ai" target="_blank">
-            <div class="card-name">GLM 5.2</div>
-            <div class="card-desc">Zhipu / Z.ai open-weights GLM chat</div>
-            <span class="badge badge-open">Open weights</span>
-        </a>
-        <a class="card" href="https://agent.minimax.io" target="_blank">
-            <div class="card-name">MiniMax M3</div>
-            <div class="card-desc">MiniMax open-weights multimodal chat</div>
-            <span class="badge badge-open">Open weights</span>
-        </a>
-    </div>
-</div>
-
-<div class="vendor-section">
-    <div class="vendor-label">Open weights</div>
-    <div class="card-grid">
-        <a class="card" href="https://thinkingmachines.ai/inkling/" target="_blank">
-            <div class="card-name">Inkling</div>
-            <div class="card-desc">Thinking Machines Lab open-weights multimodal model</div>
-            <span class="badge badge-open">Open weights</span>
-        </a>
-        <a class="card" href="https://chat.mistral.ai" target="_blank">
-            <div class="card-name">Le Chat</div>
-            <div class="card-desc">Mistral's official open-weights chat interface</div>
-            <span class="badge badge-open">Open weights</span>
-        </a>
-    </div>
-</div>
+<section class="section" id="start-here">
+    <div class="section-label">Start Here</div>
+    <p class="home-section-intro">A simple order if you are new. Skip ahead when you already know a step.</p>
+    <ol class="home-start-path">
+        <li><a href="chatbot-hub.html">Chatbots</a> — try a chat interface and notice what it does well or poorly.</li>
+        <li><a href="prompt-hub.html">Prompting</a> — learn the patterns that shape model behavior.</li>
+        <li><a href="architecture-hub.html">Architecture</a> — see how chat, tools, and data fit together.</li>
+        <li><a href="agents-hub.html">Agents</a> — when the model needs to take actions, not just answer.</li>
+        <li><a href="evaluation-hub.html">Evaluation</a> — measure whether the system is good enough.</li>
+        <li><a href="security-hub.html">Security</a> — treat model input and tools as untrusted by default.</li>
+        <li><a href="deployment-hub.html">Deployment</a> — run it for real users.</li>
+    </ol>
+</section>
 
 </body>
 </html>

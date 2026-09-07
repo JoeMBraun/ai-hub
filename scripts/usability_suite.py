@@ -232,6 +232,61 @@ def run_suite() -> dict:
         'Found the "Start Here" group.' if start_here_exists else "Start Here group is missing.",
     ))
 
+    home_in_start = bool(re.search(r'label:\s*"Start Here"[\s\S]*?href:\s*"index\.html"', hub_js))
+    chatbot_still_on_index = bool(re.search(r'href:\s*"index\.html",\s*text:\s*"[^"]*Chatbot', hub_js))
+    checks.append(make_check(
+        "DIR-HOME",
+        "Start Here includes the AI Hub home page",
+        "pass" if home_in_start and not chatbot_still_on_index else "fail",
+        "index.html is the home page in Start Here." if home_in_start and not chatbot_still_on_index else "index.html is missing from Start Here or still labeled as Chatbot Hub.",
+    ))
+
+    chatbot_in_start = bool(re.search(r'label:\s*"Start Here"[\s\S]*?chatbot-hub\.html', hub_js))
+    checks.append(make_check(
+        "DIR-CHATBOT",
+        "Chatbot Hub has its own directory page",
+        "pass" if chatbot_in_start else "fail",
+        "chatbot-hub.html is listed under Start Here." if chatbot_in_start else "chatbot-hub.html is missing from Start Here.",
+    ))
+
+    index_html = (ROOT / "index.html").read_text(encoding="utf-8")
+    home_explains_product = (
+        "A practical map of modern AI" in index_html
+        and "What do you want to do?" in index_html
+        and "chatbot-hub.html" in index_html
+        and "<title>AI Chatbot Hub</title>" not in index_html
+    )
+    checks.append(make_check(
+        "HOME-FRONT-DOOR",
+        "Root page explains AI Hub and routes by goal",
+        "pass" if home_explains_product else "fail",
+        "index.html is the product home page with goal routes." if home_explains_product else "index.html is not a goal-based home page.",
+    ))
+
+    course_html = (ROOT / "course-hub.html").read_text(encoding="utf-8")
+    courses_wording_ok = (
+        "Never pay for AI courses" not in course_html
+        and "Start with free first-party AI training" in course_html
+    )
+    checks.append(make_check(
+        "COURSE-WORDING",
+        "Courses copy is not absolute",
+        "pass" if courses_wording_ok else "fail",
+        "Courses recommends free first-party training without a never-pay absolute." if courses_wording_ok else "course-hub.html still uses absolute never-pay wording.",
+    ))
+
+    stale_nav_pages = []
+    for html_path in sorted(ROOT.glob("*.html")):
+        html_text = html_path.read_text(encoding="utf-8")
+        if "AI Interfaces" in html_text or "nav-admin" in html_text:
+            stale_nav_pages.append(html_path.name)
+    checks.append(make_check(
+        "NAV-SHARED",
+        "Public pages do not ship a second stale nav taxonomy",
+        "pass" if not stale_nav_pages else "fail",
+        "Shared .nav target only; HUB_DIRECTORY is the source of truth." if not stale_nav_pages else "Stale nav remains in: " + ", ".join(stale_nav_pages),
+    ))
+
     pages_to_inspect = list(pages)
     if "admin-hub.html" not in pages_to_inspect:
         pages_to_inspect.append("admin-hub.html")
