@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate an AI application — AI Hub</title>
+    <meta name="description" content="How to tell whether an AI app works: golden sets, checkers, and when LLM-as-a-judge is optional.">
+    <link rel="canonical" href="https://joembraun.github.io/ai-hub/guides/evaluate-an-ai-application.html">
+    <meta property="og:title" content="Evaluate an AI application — AI Hub">
+    <meta property="og:description" content="How to tell whether an AI app works: golden sets, checkers, and when LLM-as-a-judge is optional.">
+    <meta property="og:url" content="https://joembraun.github.io/ai-hub/guides/evaluate-an-ai-application.html">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../css/hub.css">
+    <script src="../js/hub.js"></script>
+</head>
+<body class="guide-page">
+
+<nav class="nav" aria-label="AI Hub directory"></nav>
+
+<article class="guide">
+<p class="page-meta">Last reviewed: 2026-09-07 · Status: <span class="review-status">Needs review</span></p>
+<h1>Evaluate an AI application</h1>
+
+<p class="subtitle" style="text-align:left;margin:0 0 16px">If you cannot fail a build, you are demoing, not evaluating.</p>
+
+<h2>Who this is for</h2>
+<p>You have a prompt, RAG app, or agent and you need a repeatable quality signal.</p>
+
+<h2>Short answer</h2>
+<p>Write a golden set. Prefer automatic checkers (schema, tests, citations). Use LLM-as-a-judge only with a rubric and human spot checks.</p>
+
+<h2>Decision tree</h2>
+<ol>
+    <li>If a unit test or parser can decide, do not use a judge model.</li>
+    <li>If answers must match documents, score retrieval and faithfulness.</li>
+    <li>If style is the product, use a small human-labeled set plus a judge you calibrated.</li>
+    <li>If tools can do harm, include security cases (injection, over-reach).</li>
+</ol>
+
+<h2>Default</h2>
+<p>Twenty cases: happy path, missing context, must-refuse, and one regression from a real bug. Run on every prompt or index change.</p>
+
+<h2>Alternatives</h2>
+<ul>
+    <li>Production traces sampled into the set (watch privacy).</li>
+    <li>Pairwise judging when you are comparing two prompt versions.</li>
+</ul>
+
+<h2>Tradeoffs</h2>
+<p>LLM-as-a-judge scales and can be biased. Golden sets go stale. Human review is slow and still required on a sample.</p>
+
+<h2>Steps</h2>
+<ol>
+    <li>Define pass/fail in writing.</li>
+    <li>Add cases on <a href="../prompt-hub.html">Prompt Hub</a> Golden Sets and the Evaluation Hub.</li>
+    <li>Store expected citations or tool traces, not only final prose.</li>
+    <li>After each change, run the set and record the score next to the git SHA if you have one.</li>
+    <li>Calibrate any judge against humans before you trust it.</li>
+</ol>
+
+<div class="card-grid" style="margin-top:20px">
+    <div class="card" data-knowledge="Golden Sets">
+        <div class="card-name">Golden Sets</div>
+        <div class="card-desc">Fixed cases that catch regressions</div>
+    </div>
+    <div class="card" data-knowledge="LLM-as-a-Judge">
+        <div class="card-name">LLM-as-a-Judge</div>
+        <div class="card-desc">A model scoring a model — calibrate it</div>
+    </div>
+</div>
+
+<h2>Related links</h2>
+<ul>
+    <li><a href="../evaluation-hub.html">AI Evaluation Hub</a></li>
+    <li><a href="../prompt-hub.html">AI Prompt Hub</a></li>
+    <li><a href="../benchmark-hub.html">AI Benchmark Hub</a></li>
+</ul>
+
+</article>
+
+</body>
+</html>

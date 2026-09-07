@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose an AI coding tool — AI Hub</title>
+    <meta name="description" content="How to pick a coding assistant from the workflow you have, not from hype.">
+    <link rel="canonical" href="https://joembraun.github.io/ai-hub/guides/choose-an-ai-coding-tool.html">
+    <meta property="og:title" content="Choose an AI coding tool — AI Hub">
+    <meta property="og:description" content="How to pick a coding assistant from the workflow you have, not from hype.">
+    <meta property="og:url" content="https://joembraun.github.io/ai-hub/guides/choose-an-ai-coding-tool.html">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../css/hub.css">
+    <script src="../js/hub.js"></script>
+</head>
+<body class="guide-page">
+
+<nav class="nav" aria-label="AI Hub directory"></nav>
+
+<article class="guide">
+<p class="page-meta">Last reviewed: 2026-09-07 · Status: <span class="review-status">Needs review</span></p>
+<h1>Choose an AI coding tool</h1>
+
+<p class="subtitle" style="text-align:left;margin:0 0 16px">A workflow-based path into the Harness Hub. Not a ranking of IDEs.</p>
+
+<h2>Who this is for</h2>
+<p>You write software and want an assistant in the editor, terminal, or browser. You do not need a scoreboard.</p>
+
+<h2>Short answer</h2>
+<p>Match the tool to where you already work. The <a href="../harness-hub.html">Harness Hub</a> lists products; this page tells you which row to start with.</p>
+
+<h2>Decision tree</h2>
+<ol>
+    <li>If you want an agent in the terminal over a real repo, start with Claude Code or Codex on the Harness Hub.</li>
+    <li>If you want an AI-native editor, start with Cursor, Windsurf, or similar IDE rows.</li>
+    <li>If you want completions inside VS Code or JetBrains you already use, start with GitHub Copilot, JetBrains AI, or Tabnine.</li>
+    <li>If you want a cloud VM or browser app that scaffolds a project, start with Replit, v0, Bolt, or Lovable.</li>
+    <li>If you need the model local, prefer OpenCode / local-capable rows and the <a href="run-ai-locally.html">local guide</a>.</li>
+</ol>
+
+<h2>Default</h2>
+<p>Use the assistant inside the editor you already know, on a small branch, with tests running. New IDEs are optional after that works.</p>
+
+<h2>Alternatives</h2>
+<ul>
+    <li>Chat-only coding in ChatGPT or Claude when you are learning an API, not editing a large repo.</li>
+    <li>Open-source harnesses (OpenCode, SWE-agent) when you must see the loop.</li>
+</ul>
+
+<h2>Tradeoffs</h2>
+<div class="decision-table-wrap">
+<table class="decision-table">
+    <thead><tr><th>If you need</th><th>Watch for</th></tr></thead>
+    <tbody>
+        <tr><td>Deep repo agents</td><td>Unreviewed diffs and secret files in context</td></tr>
+        <tr><td>Inline completions</td><td>Weaker multi-file refactors</td></tr>
+        <tr><td>Browser builders</td><td>Export and ownership of the generated app</td></tr>
+    </tbody>
+</table>
+</div>
+
+<h2>Steps</h2>
+<ol>
+    <li>Name the workflow: complete a line, edit a repo, or generate a prototype.</li>
+    <li>Open the matching section on <a href="../harness-hub.html">Harness Hub</a>.</li>
+    <li>Give the tool a failing test or a precise file list.</li>
+    <li>Review every diff. Do not merge agent output you did not read.</li>
+</ol>
+
+<h2>Related links</h2>
+<ul>
+    <li><a href="../harness-hub.html">AI Harness Hub</a></li>
+    <li><a href="../agents-hub.html">AI Agents Hub</a></li>
+    <li><a href="../security-hub.html">AI Security Hub</a></li>
+</ul>
+
+</article>
+
+</body>
+</html>

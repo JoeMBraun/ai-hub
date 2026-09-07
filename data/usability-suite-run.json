@@ -1,11 +1,11 @@
 {
   "suite": "AI Hub website usability",
   "source": "scripts/usability_suite.py",
-  "startedAt": "2026-09-07T03:05:21Z",
-  "finishedAt": "2026-09-07T03:05:21Z",
+  "startedAt": "2026-09-07T14:02:24Z",
+  "finishedAt": "2026-09-07T14:02:24Z",
   "summary": {
-    "total": 147,
-    "passed": 147,
+    "total": 218,
+    "passed": 218,
     "failed": 0,
     "warned": 0
   },
@@ -14,6 +14,12 @@
     "chatbot-hub.html",
     "prompt-hub.html",
     "course-hub.html",
+    "guides/choose-an-ai.html",
+    "guides/choose-an-ai-coding-tool.html",
+    "guides/build-your-first-rag-app.html",
+    "guides/build-your-first-ai-agent.html",
+    "guides/run-ai-locally.html",
+    "guides/evaluate-an-ai-application.html",
     "harness-hub.html",
     "architecture-hub.html",
     "agents-hub.html",
@@ -112,6 +118,125 @@
       "page": "directory"
     },
     {
+      "id": "DIR-GUIDES",
+      "name": "Guides group lists the six how-to pages",
+      "status": "pass",
+      "detail": "Six guides are in HUB_DIRECTORY and on disk.",
+      "page": "directory"
+    },
+    {
+      "id": "OUT-START-LEARNING",
+      "name": "A visitor can start learning from Home",
+      "status": "pass",
+      "detail": "Home links Start Here, courses, guides, and What\u2019s New.",
+      "page": "index.html"
+    },
+    {
+      "id": "OUT-CHOOSE-CHATBOT",
+      "name": "A visitor can choose a chatbot without a fake ranking",
+      "status": "pass",
+      "detail": "Chatbot Hub and the choose-an-AI guide use job-based tables.",
+      "page": "chatbot-hub.html"
+    },
+    {
+      "id": "OUT-CODING-TOOL",
+      "name": "A visitor can choose a coding tool from a workflow",
+      "status": "pass",
+      "detail": "Harness Hub and the coding-tool guide match tools to workflows.",
+      "page": "harness-hub.html"
+    },
+    {
+      "id": "OUT-RAG",
+      "name": "RAG meaning and when-not are documented",
+      "status": "pass",
+      "detail": "RAG guide and knowledge unit include when not to use it.",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "OUT-LOCAL",
+      "name": "Local-model path explains hardware variance",
+      "status": "pass",
+      "detail": "Local hub and guide warn that RAM/VRAM needs vary.",
+      "page": "local-models-hub.html"
+    },
+    {
+      "id": "OUT-SECURITY",
+      "name": "Prompt injection is explained as untrusted text",
+      "status": "pass",
+      "detail": "Security Hub and the knowledge unit cover prompt injection.",
+      "page": "security-hub.html"
+    },
+    {
+      "id": "OUT-AGENT-PATTERNS",
+      "name": "Agent patterns can be compared without scores",
+      "status": "pass",
+      "detail": "Agent guide and Architecture hub compare patterns.",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "OUT-ASK-AI",
+      "name": "Ask AI 2.0 uses intents and does not prefix AI",
+      "status": "pass",
+      "detail": "Default Explain uses the concept name; ChatGPT, Claude, and Perplexity are wired.",
+      "page": "js/hub.js"
+    },
+    {
+      "id": "OUT-ASK-AI-GOLDEN",
+      "name": "Explain Golden Sets does not become AI Golden Sets",
+      "status": "pass",
+      "detail": "Prompt builder concatenates Explain + concept name with no AI prefix.",
+      "page": "prompt-hub.html"
+    },
+    {
+      "id": "OUT-REVIEW-STATUS",
+      "name": "Pages show review status without invented verification",
+      "status": "pass",
+      "detail": "Editorial pages have Last reviewed; volatile hubs say Needs review.",
+      "page": "directory"
+    },
+    {
+      "id": "OUT-WHATS-NEW",
+      "name": "Home What\u2019s New lists real site changes",
+      "status": "pass",
+      "detail": "updates.json has 8 site-change items.",
+      "page": "index.html"
+    },
+    {
+      "id": "KNOW-UNITS",
+      "name": "At least 20 knowledge units keyed by card name",
+      "status": "pass",
+      "detail": "22 units on disk.",
+      "page": "data/knowledge-units.json"
+    },
+    {
+      "id": "SEARCH-INDEX",
+      "name": "Search index covers hubs, concepts, and guides",
+      "status": "pass",
+      "detail": "Index has 308 entries.",
+      "page": "data/search-index.json"
+    },
+    {
+      "id": "SEO-HARDENING",
+      "name": "Canonical metadata, sitemap, robots, reduced motion",
+      "status": "pass",
+      "detail": "SEO files and reduced-motion CSS are present.",
+      "page": "index.html"
+    },
+    {
+      "id": "OUT-EVALUATE",
+      "name": "Evaluation guide uses golden sets before vibe checks",
+      "status": "pass",
+      "detail": "Evaluate guide covers golden sets and judges.",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "FRESH-ISSUE",
+      "name": "Stale-info issue template exists",
+      "status": "pass",
+      "detail": "Issue template for stale pages is present.",
+      "page": "directory"
+    },
+    {
       "id": "LOAD-index.html",
       "name": "Page loads",
       "status": "pass",
@@ -150,7 +275,7 @@
       "id": "CSS-index.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "index.html"
     },
     {
@@ -213,7 +338,7 @@
       "id": "CSS-chatbot-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "chatbot-hub.html"
     },
     {
@@ -276,7 +401,7 @@
       "id": "CSS-prompt-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "prompt-hub.html"
     },
     {
@@ -339,7 +464,7 @@
       "id": "CSS-course-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "course-hub.html"
     },
     {
@@ -362,6 +487,384 @@
       "status": "pass",
       "detail": "No insecure http:// links.",
       "page": "course-hub.html"
+    },
+    {
+      "id": "LOAD-guides/choose-an-ai.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "LANG-guides/choose-an-ai.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "VIEW-guides/choose-an-ai.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "TITLE-guides/choose-an-ai.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "Choose an AI \u2014 AI Hub",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "H1-guides/choose-an-ai.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "CSS-guides/choose-an-ai.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css (root or ../ for guides).",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "JS-guides/choose-an-ai.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "ALT-guides/choose-an-ai.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "HTTPS-guides/choose-an-ai.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "guides/choose-an-ai.html"
+    },
+    {
+      "id": "LOAD-guides/choose-an-ai-coding-tool.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "LANG-guides/choose-an-ai-coding-tool.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "VIEW-guides/choose-an-ai-coding-tool.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "TITLE-guides/choose-an-ai-coding-tool.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "Choose an AI coding tool \u2014 AI Hub",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "H1-guides/choose-an-ai-coding-tool.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "CSS-guides/choose-an-ai-coding-tool.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css (root or ../ for guides).",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "JS-guides/choose-an-ai-coding-tool.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "ALT-guides/choose-an-ai-coding-tool.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "HTTPS-guides/choose-an-ai-coding-tool.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "guides/choose-an-ai-coding-tool.html"
+    },
+    {
+      "id": "LOAD-guides/build-your-first-rag-app.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "LANG-guides/build-your-first-rag-app.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "VIEW-guides/build-your-first-rag-app.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "TITLE-guides/build-your-first-rag-app.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "Build your first RAG app \u2014 AI Hub",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "H1-guides/build-your-first-rag-app.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "CSS-guides/build-your-first-rag-app.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css (root or ../ for guides).",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "JS-guides/build-your-first-rag-app.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "ALT-guides/build-your-first-rag-app.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "HTTPS-guides/build-your-first-rag-app.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "guides/build-your-first-rag-app.html"
+    },
+    {
+      "id": "LOAD-guides/build-your-first-ai-agent.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "LANG-guides/build-your-first-ai-agent.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "VIEW-guides/build-your-first-ai-agent.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "TITLE-guides/build-your-first-ai-agent.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "Build your first AI agent \u2014 AI Hub",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "H1-guides/build-your-first-ai-agent.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "CSS-guides/build-your-first-ai-agent.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css (root or ../ for guides).",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "JS-guides/build-your-first-ai-agent.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "ALT-guides/build-your-first-ai-agent.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "HTTPS-guides/build-your-first-ai-agent.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "guides/build-your-first-ai-agent.html"
+    },
+    {
+      "id": "LOAD-guides/run-ai-locally.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "LANG-guides/run-ai-locally.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "VIEW-guides/run-ai-locally.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "TITLE-guides/run-ai-locally.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "Run AI locally \u2014 AI Hub",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "H1-guides/run-ai-locally.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "CSS-guides/run-ai-locally.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css (root or ../ for guides).",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "JS-guides/run-ai-locally.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "ALT-guides/run-ai-locally.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "HTTPS-guides/run-ai-locally.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "guides/run-ai-locally.html"
+    },
+    {
+      "id": "LOAD-guides/evaluate-an-ai-application.html",
+      "name": "Page loads",
+      "status": "pass",
+      "detail": "HTML file is present in the site.",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "LANG-guides/evaluate-an-ai-application.html",
+      "name": "Language declared",
+      "status": "pass",
+      "detail": "html lang=\"en\"",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "VIEW-guides/evaluate-an-ai-application.html",
+      "name": "Responsive viewport",
+      "status": "pass",
+      "detail": "Viewport meta tag is present.",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "TITLE-guides/evaluate-an-ai-application.html",
+      "name": "Document title",
+      "status": "pass",
+      "detail": "Evaluate an AI application \u2014 AI Hub",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "H1-guides/evaluate-an-ai-application.html",
+      "name": "Single page heading",
+      "status": "pass",
+      "detail": "Found 1 h1 element(s).",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "CSS-guides/evaluate-an-ai-application.html",
+      "name": "Shared stylesheet",
+      "status": "pass",
+      "detail": "Links css/hub.css (root or ../ for guides).",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "JS-guides/evaluate-an-ai-application.html",
+      "name": "Shared directory script",
+      "status": "pass",
+      "detail": "Loads js/hub.js so Site Admin and Evaluation stay in nav.",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "ALT-guides/evaluate-an-ai-application.html",
+      "name": "Images have alt text",
+      "status": "pass",
+      "detail": "0 image(s) include alt text.",
+      "page": "guides/evaluate-an-ai-application.html"
+    },
+    {
+      "id": "HTTPS-guides/evaluate-an-ai-application.html",
+      "name": "Prefers HTTPS links",
+      "status": "pass",
+      "detail": "No insecure http:// links.",
+      "page": "guides/evaluate-an-ai-application.html"
     },
     {
       "id": "LOAD-harness-hub.html",
@@ -402,7 +905,7 @@
       "id": "CSS-harness-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "harness-hub.html"
     },
     {
@@ -465,7 +968,7 @@
       "id": "CSS-architecture-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "architecture-hub.html"
     },
     {
@@ -528,7 +1031,7 @@
       "id": "CSS-agents-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "agents-hub.html"
     },
     {
@@ -591,7 +1094,7 @@
       "id": "CSS-local-models-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "local-models-hub.html"
     },
     {
@@ -654,7 +1157,7 @@
       "id": "CSS-data-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "data-hub.html"
     },
     {
@@ -717,7 +1220,7 @@
       "id": "CSS-benchmark-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "benchmark-hub.html"
     },
     {
@@ -780,7 +1283,7 @@
       "id": "CSS-evaluation-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "evaluation-hub.html"
     },
     {
@@ -843,7 +1346,7 @@
       "id": "CSS-security-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "security-hub.html"
     },
     {
@@ -906,7 +1409,7 @@
       "id": "CSS-governance-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "governance-hub.html"
     },
     {
@@ -969,7 +1472,7 @@
       "id": "CSS-deployment-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "deployment-hub.html"
     },
     {
@@ -1032,7 +1535,7 @@
       "id": "CSS-admin-hub.html",
       "name": "Shared stylesheet",
       "status": "pass",
-      "detail": "Links css/hub.css.",
+      "detail": "Links css/hub.css (root or ../ for guides).",
       "page": "admin-hub.html"
     },
     {

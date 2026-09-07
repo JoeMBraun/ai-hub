@@ -64,11 +64,11 @@ function inspectPageDocument(page, doc, responseOk) {
     const headingStatus = headingCount === 1 ? "pass" : "fail";
     checks.push(makeCheck("H1-" + page, "Single page heading", headingStatus, "Found " + headingCount + " h1 element(s).", page));
 
-    const cssLink = doc.querySelector('link[rel="stylesheet"][href="css/hub.css"]');
+    const cssLink = doc.querySelector('link[rel="stylesheet"][href$="css/hub.css"]');
     const cssIsPresent = cssLink !== null && cssLink !== undefined;
     checks.push(makeCheck("CSS-" + page, "Shared stylesheet", cssIsPresent ? "pass" : "fail", cssIsPresent ? "Links css/hub.css." : "Missing css/hub.css.", page));
 
-    const scriptTag = doc.querySelector('script[src="js/hub.js"]');
+    const scriptTag = doc.querySelector('script[src$="js/hub.js"]');
     const scriptIsPresent = scriptTag !== null && scriptTag !== undefined;
     checks.push(makeCheck("JS-" + page, "Shared directory script", scriptIsPresent ? "pass" : "fail", scriptIsPresent ? "Loads js/hub.js so Site Admin and Evaluation stay in nav." : "Missing js/hub.js; directory nav will not render.", page));
 
@@ -210,6 +210,23 @@ async function runUsabilitySuite() {
         directoryGroupContains("interfaces", "chatbot-hub.html")
             ? "chatbot-hub.html is listed under Start Here."
             : "chatbot-hub.html is missing from Start Here."
+    ));
+
+    const guideHrefs = [
+        "guides/choose-an-ai.html",
+        "guides/choose-an-ai-coding-tool.html",
+        "guides/build-your-first-rag-app.html",
+        "guides/build-your-first-ai-agent.html",
+        "guides/run-ai-locally.html",
+        "guides/evaluate-an-ai-application.html"
+    ];
+    const guidesOk = directoryGroupContains("guides", "guides/choose-an-ai.html")
+        && guideHrefs.every(function (href) { return directoryContains(href); });
+    checks.push(makeCheck(
+        "DIR-GUIDES",
+        "Guides group lists the six how-to pages",
+        guidesOk ? "pass" : "fail",
+        guidesOk ? "Six guides are in HUB_DIRECTORY." : "Guides group or files are missing."
     ));
 
     const pagesToInspect = pages.slice();

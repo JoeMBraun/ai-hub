@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Architecture Hub</title>
+    <meta name="description" content="RAG, agents, routing, and production AI system patterns.">
+    <link rel="canonical" href="https://joembraun.github.io/ai-hub/architecture-hub.html">
+    <meta property="og:title" content="AI Architecture Hub">
+    <meta property="og:description" content="RAG, agents, routing, and production AI system patterns.">
+    <meta property="og:url" content="https://joembraun.github.io/ai-hub/architecture-hub.html">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="css/hub.css">
     <script src="js/hub.js"></script>
 </head>
@@ -13,6 +19,24 @@
 
 <h1>🏗️ AI Architecture Hub</h1>
 <p class="subtitle">Reference architectures, system patterns, and blueprints for modern AI systems</p>
+<p class="page-meta">Last reviewed: 2026-09-07 · Status: <span class="review-status">Needs review</span></p>
+
+<div class="decision-support" id="how-to-choose">
+    <h2>Which pattern first?</h2>
+    <p>These are starting points, not scores. Expand Learn more on the concept cards for when <em>not</em> to use each pattern.</p>
+    <div class="decision-table-wrap">
+    <table class="decision-table">
+        <thead><tr><th>If you need</th><th>Start with</th></tr></thead>
+        <tbody>
+            <tr><td>Answers grounded in your documents</td><td>RAG Architecture · <a href="guides/build-your-first-rag-app.html">guide</a></td></tr>
+            <tr><td>The model to call tools or change systems</td><td>Agent Architecture · <a href="guides/build-your-first-ai-agent.html">guide</a></td></tr>
+            <tr><td>Cheap default + expensive fallback</td><td>Hybrid Routing or Model Cascading</td></tr>
+            <tr><td>Irreversible actions</td><td>Human-in-the-Loop on the Agents Hub</td></tr>
+            <tr><td>Session recall beyond the window</td><td>Memory Architectures / Vector Memory</td></tr>
+        </tbody>
+    </table>
+    </div>
+</div>
 
 <div class="section">
     <div class="section-label">Overview</div>

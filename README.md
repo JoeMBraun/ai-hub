@@ -4,7 +4,7 @@ A practical map of modern AI — concepts, tools, and a path from idea to implem
 
 **Live site:** https://joembraun.github.io/ai-hub/
 
-**Chatbot directory:** [AI Chatbot Hub](chatbot-hub.html)
+**Start here:** [Home](index.html) · [Choose an AI](guides/choose-an-ai.html) · [Chatbot Hub](chatbot-hub.html)
 
 **Site Admin (quality metrics):** [Site Evaluation](https://joembraun.github.io/ai-hub/admin-hub.html) — usefulness, usability, value, ease of use, freshness, and return-visit pull, plus the recorded directory/usability suite. The Site Evaluation link stays in the directory on every hub page.
 

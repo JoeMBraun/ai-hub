@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joembraun.github.io/ai-hub/sitemap.xml

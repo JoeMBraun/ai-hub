@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run AI locally — AI Hub</title>
+    <meta name="description" content="How to try a local model: runtimes, hardware tiers, and why exact VRAM numbers vary.">
+    <link rel="canonical" href="https://joembraun.github.io/ai-hub/guides/run-ai-locally.html">
+    <meta property="og:title" content="Run AI locally — AI Hub">
+    <meta property="og:description" content="How to try a local model: runtimes, hardware tiers, and why exact VRAM numbers vary.">
+    <meta property="og:url" content="https://joembraun.github.io/ai-hub/guides/run-ai-locally.html">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../css/hub.css">
+    <script src="../js/hub.js"></script>
+</head>
+<body class="guide-page">
+
+<nav class="nav" aria-label="AI Hub directory"></nav>
+
+<article class="guide">
+<p class="page-meta">Last reviewed: 2026-09-07 · Status: <span class="review-status">Needs review</span></p>
+<h1>Run AI locally</h1>
+
+<p class="subtitle" style="text-align:left;margin:0 0 16px">Local inference is a hardware and runtime choice. Exact requirements vary by quantization, context length, and runtime.</p>
+
+<h2>Who this is for</h2>
+<p>You want a model on your machine for privacy, cost, or offline use. You are not looking for a fake VRAM leaderboard.</p>
+
+<h2>Short answer</h2>
+<p>Install a runtime (Ollama or LM Studio are the usual first try), pull a small model first, then scale up only if quality is not enough. Confirm sizes on the vendor page — this site does not invent GB figures.</p>
+
+<h2>Decision tree</h2>
+<ol>
+    <li>If you want a GUI and no CLI, start with LM Studio on the <a href="../local-models-hub.html">Local Models Hub</a>.</li>
+    <li>If you want a local HTTP API, start with Ollama.</li>
+    <li>If you want a ChatGPT-like UI on top of a local API, look at Open WebUI.</li>
+    <li>If you need frontier quality and have no suitable GPU/RAM, use a cloud chatbot instead.</li>
+</ol>
+
+<h2>Default</h2>
+<p>Small quantized model + Ollama + one test prompt. Increase size only after it runs stably.</p>
+
+<h2>Hardware tiers (indicative, not guarantees)</h2>
+<div class="decision-table-wrap">
+<table class="decision-table">
+    <thead><tr><th>Rough machine</th><th>What to try first</th></tr></thead>
+    <tbody>
+        <tr><td>CPU laptop, 8–16 GB RAM</td><td>Smallest advertised quantized models; expect slow tokens</td></tr>
+        <tr><td>16–32 GB RAM, no dedicated GPU</td><td>Mid-small quantizations; keep context short</td></tr>
+        <tr><td>Consumer GPU with modest VRAM</td><td>GPU-offloaded quantizations the runtime documents</td></tr>
+        <tr><td>High VRAM workstation</td><td>Larger weights if the vendor card says they fit</td></tr>
+    </tbody>
+</table>
+</div>
+<p>Exact requirements vary by quantization, context length, and runtime. Treat any GB number you see elsewhere as <strong>Needs review</strong> until you measure it on your machine.</p>
+
+<h2>Alternatives</h2>
+<ul>
+    <li>Cloud APIs when quality or speed matters more than locality.</li>
+    <li>Hybrid: local drafts, cloud for hard prompts (see Hybrid Routing).</li>
+</ul>
+
+<h2>Steps</h2>
+<ol>
+    <li>Open <a href="../local-models-hub.html">Local Models Hub</a> and pick a runtime card.</li>
+    <li>Install from the vendor site, not a random script dump.</li>
+    <li>Run the smallest model they document.</li>
+    <li>If it works, try a larger model until RAM/VRAM pressure shows up.</li>
+    <li>Point a harness at the local API only after chat works.</li>
+</ol>
+
+<h2>Related links</h2>
+<ul>
+    <li><a href="../local-models-hub.html">AI Local Models Hub</a></li>
+    <li><a href="../deployment-hub.html">Edge Deployment</a></li>
+    <li><a href="../harness-hub.html">AI Harness Hub</a></li>
+</ul>
+
+</article>
+
+</body>
+</html>

@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Evaluation Hub</title>
+    <meta name="description" content="Golden sets, RAG metrics, judges, and observability.">
+    <link rel="canonical" href="https://joembraun.github.io/ai-hub/evaluation-hub.html">
+    <meta property="og:title" content="AI Evaluation Hub">
+    <meta property="og:description" content="Golden sets, RAG metrics, judges, and observability.">
+    <meta property="og:url" content="https://joembraun.github.io/ai-hub/evaluation-hub.html">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="css/hub.css">
     <script src="js/hub.js"></script>
 </head>
@@ -13,6 +19,7 @@
 
 <h1>🧪 AI Evaluation Hub</h1>
 <p class="subtitle">LLM evaluation frameworks, RAG testing, agent evals, safety checks, and observability</p>
+<p class="page-meta">Last reviewed: 2026-09-07 · Status: <span class="review-status">Needs review</span></p>
 
 <div class="section">
     <div class="section-label">Overview</div>
@@ -104,7 +111,7 @@
     <div class="section-label">Prompt Regression Testing</div>
     <div class="card-grid">
 
-        <div class="card"> <div class="card-name">Golden Test Sets</div>
+        <div class="card" data-knowledge="Golden Sets"> <div class="card-name">Golden Test Sets</div>
             <div class="card-desc">Fixed prompts with expected outputs to detect regressions</div>
             <div class="llm-actions"> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Golden Test Sets for Prompt Evaluation', 'ChatGPT')" title="Ask ChatGPT"> <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" alt="ChatGPT" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Golden Test Sets for Prompt Evaluation', 'Perplexity')" title="Ask Perplexity"> <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" alt="Perplexity" class="llm-icon-img"> </button> <button class="llm-icon-btn" onclick="generatePromptAndRouteToLanguageModel(event, 'Golden Test Sets for Prompt Evaluation', 'Claude')" title="Ask Claude"> <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" alt="Claude" class="llm-icon-img"> </button> </div> </div> <div class="card"> <div class="card-name">Style Consistency</div>
             <div class="card-desc">Ensures tone, structure, and persona remain stable</div>
@@ -178,6 +185,14 @@
 <div class="section">
     <div class="section-label">Observability & Telemetry</div>
     <div class="card-grid">
+        <div class="card" data-knowledge="Observability">
+            <div class="card-name">Observability</div>
+            <div class="card-desc">Traces, cost, latency, and enough detail to replay a bad answer</div>
+        </div>
+        <div class="card" data-knowledge="LLM-as-a-Judge">
+            <div class="card-name">LLM-as-a-Judge</div>
+            <div class="card-desc">A model scoring outputs against a rubric — calibrate with humans</div>
+        </div>
 
         <a class="card" href="https://www.langfuse.com" target="_blank">
             <div class="card-name">Langfuse</div>

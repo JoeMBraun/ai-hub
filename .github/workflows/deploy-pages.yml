@@ -44,6 +44,14 @@ jobs:
             prompt-hub.html
             chatbot-hub.html
             security-hub.html
+            guides/choose-an-ai.html
+            guides/choose-an-ai-coding-tool.html
+            guides/build-your-first-rag-app.html
+            guides/build-your-first-ai-agent.html
+            guides/run-ai-locally.html
+            guides/evaluate-an-ai-application.html
+            sitemap.xml
+            robots.txt
           )
           for f in "${required[@]}"; do
             test -f "$f" || { echo "Missing $f"; exit 1; }
@@ -53,7 +61,15 @@ jobs:
           test -f css/hub.css || { echo "Missing css/hub.css"; exit 1; }
           test -f js/hub.js || { echo "Missing js/hub.js"; exit 1; }
           test -f js/usability-suite.js || { echo "Missing js/usability-suite.js"; exit 1; }
+          test -f data/knowledge-units.json || { echo "Missing data/knowledge-units.json"; exit 1; }
+          test -f data/search-index.json || { echo "Missing data/search-index.json"; exit 1; }
+          test -f data/updates.json || { echo "Missing data/updates.json"; exit 1; }
+          test -f sitemap.xml || { echo "Missing sitemap.xml"; exit 1; }
+          test -f robots.txt || { echo "Missing robots.txt"; exit 1; }
           test -f admin-hub.html || { echo "Missing admin-hub.html"; exit 1; }
+
+      - name: Build search index
+        run: python3 scripts/build_search_index.py
 
       - name: Run website usability suite
         run: python3 scripts/usability_suite.py
@@ -85,11 +101,18 @@ jobs:
             /prompt-hub.html
             /chatbot-hub.html
             /security-hub.html
+            /guides/choose-an-ai.html
+            /guides/run-ai-locally.html
             /css/hub.css
             /js/hub.js
             /js/usability-suite.js
             /data/usability-suite-run.json
             /data/ux-measurements.json
+            /data/knowledge-units.json
+            /data/search-index.json
+            /data/updates.json
+            /sitemap.xml
+            /robots.txt
           )
           for p in "${pages[@]}"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:8080$p")
@@ -120,8 +143,8 @@ jobs:
           set -euo pipefail
           mkdir -p _site
           cp *.html _site/
-          cp -R css js data _site/
-          cp .nojekyll _site/
+          cp -R css js data guides _site/
+          cp .nojekyll sitemap.xml robots.txt _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

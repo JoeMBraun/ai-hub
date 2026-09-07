@@ -38,9 +38,9 @@ class HubPageParser(HTMLParser):
             self.in_title = True
         if tag == "h1":
             self.h1_count += 1
-        if tag == "link" and attributes.get("rel") == "stylesheet" and attributes.get("href") == "css/hub.css":
+        if tag == "link" and attributes.get("rel") == "stylesheet" and attributes.get("href", "").endswith("css/hub.css"):
             self.has_css = True
-        if tag == "script" and attributes.get("src") == "js/hub.js":
+        if tag == "script" and attributes.get("src", "").endswith("js/hub.js"):
             self.has_hub_js = True
         if tag == "img":
             self.image_count += 1
@@ -80,6 +80,243 @@ def make_check(check_id: str, name: str, status: str, detail: str, page: str = "
         "detail": detail,
         "page": page,
     }
+
+
+def read_json(path: Path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def outcome_checks(hub_js: str, index_html: str) -> list[dict]:
+    checks: list[dict] = []
+    choose_guide = (ROOT / "guides" / "choose-an-ai.html").read_text(encoding="utf-8")
+    coding_guide = (ROOT / "guides" / "choose-an-ai-coding-tool.html").read_text(encoding="utf-8")
+    rag_guide = (ROOT / "guides" / "build-your-first-rag-app.html").read_text(encoding="utf-8")
+    agent_guide = (ROOT / "guides" / "build-your-first-ai-agent.html").read_text(encoding="utf-8")
+    local_guide = (ROOT / "guides" / "run-ai-locally.html").read_text(encoding="utf-8")
+    eval_guide = (ROOT / "guides" / "evaluate-an-ai-application.html").read_text(encoding="utf-8")
+    chatbot_html = (ROOT / "chatbot-hub.html").read_text(encoding="utf-8")
+    harness_html = (ROOT / "harness-hub.html").read_text(encoding="utf-8")
+    local_html = (ROOT / "local-models-hub.html").read_text(encoding="utf-8")
+    architecture_html = (ROOT / "architecture-hub.html").read_text(encoding="utf-8")
+    security_html = (ROOT / "security-hub.html").read_text(encoding="utf-8")
+
+    start_ok = (
+        'id="start-here"' in index_html
+        and "guides/choose-an-ai.html" in index_html
+        and "course-hub.html" in index_html
+        and 'id="whats-new"' in index_html
+    )
+    checks.append(make_check(
+        "OUT-START-LEARNING",
+        "A visitor can start learning from Home",
+        "pass" if start_ok else "fail",
+        "Home links Start Here, courses, guides, and What’s New." if start_ok else "Home is missing the learning path.",
+        "index.html",
+    ))
+
+    choose_ok = (
+        "This is not a ranking" in chatbot_html
+        and "If you need" in chatbot_html
+        and "Decision tree" in choose_guide
+        and "chatbot-hub.html" in choose_guide
+    )
+    checks.append(make_check(
+        "OUT-CHOOSE-CHATBOT",
+        "A visitor can choose a chatbot without a fake ranking",
+        "pass" if choose_ok else "fail",
+        "Chatbot Hub and the choose-an-AI guide use job-based tables." if choose_ok else "Chatbot decision path is missing.",
+        "chatbot-hub.html",
+    ))
+
+    coding_ok = (
+        "How to choose" in harness_html
+        and "Claude Code" in harness_html
+        and "Decision tree" in coding_guide
+        and "harness-hub.html" in coding_guide
+    )
+    checks.append(make_check(
+        "OUT-CODING-TOOL",
+        "A visitor can choose a coding tool from a workflow",
+        "pass" if coding_ok else "fail",
+        "Harness Hub and the coding-tool guide match tools to workflows." if coding_ok else "Coding-tool decision path is missing.",
+        "harness-hub.html",
+    ))
+
+    knowledge = read_json(ROOT / "data" / "knowledge-units.json")
+    rag_unit = knowledge.get("RAG Architecture", {})
+    rag_ok = (
+        "When not to use RAG" in rag_guide
+        and isinstance(rag_unit.get("whenNot"), list)
+        and len(rag_unit.get("whenNot", [])) >= 2
+        and "what" in rag_unit
+    )
+    checks.append(make_check(
+        "OUT-RAG",
+        "RAG meaning and when-not are documented",
+        "pass" if rag_ok else "fail",
+        "RAG guide and knowledge unit include when not to use it." if rag_ok else "RAG when-not guidance is missing.",
+        "guides/build-your-first-rag-app.html",
+    ))
+
+    local_ok = (
+        "Exact requirements vary" in local_html
+        and "Exact requirements vary" in local_guide
+        and "Ollama" in local_html
+    )
+    checks.append(make_check(
+        "OUT-LOCAL",
+        "Local-model path explains hardware variance",
+        "pass" if local_ok else "fail",
+        "Local hub and guide warn that RAM/VRAM needs vary." if local_ok else "Local-model hardware caveats are missing.",
+        "local-models-hub.html",
+    ))
+
+    security_ok = (
+        "Prompt Injection" in security_html
+        and "Prompt Injection" in knowledge
+        and "untrusted" in knowledge["Prompt Injection"]["what"].lower()
+    )
+    checks.append(make_check(
+        "OUT-SECURITY",
+        "Prompt injection is explained as untrusted text",
+        "pass" if security_ok else "fail",
+        "Security Hub and the knowledge unit cover prompt injection." if security_ok else "Prompt injection knowledge is missing.",
+        "security-hub.html",
+    ))
+
+    agent_ok = (
+        "ReAct" in agent_guide
+        and "Reflexion" in agent_guide
+        and "Human-in-the-loop" in agent_guide
+        and "Which pattern first?" in architecture_html
+    )
+    checks.append(make_check(
+        "OUT-AGENT-PATTERNS",
+        "Agent patterns can be compared without scores",
+        "pass" if agent_ok else "fail",
+        "Agent guide and Architecture hub compare patterns." if agent_ok else "Agent pattern comparison is missing.",
+        "guides/build-your-first-ai-agent.html",
+    ))
+
+    explain_uses_concept = 'return "Explain " + conceptName' in hub_js
+    no_ai_prefix = 'return "AI " +' not in hub_js
+    intents_ok = 'ASK_AI_INTENTS = ["explain", "implement", "compare", "troubleshoot"]' in hub_js
+    default_explain = 'let selectedIntent = "explain"' in hub_js
+    providers_ok = all(name in hub_js for name in ("ChatGPT", "Claude", "Perplexity"))
+    skip_anchor_cards = 'if (card.tagName === "A")' in hub_js
+    ask_ok = explain_uses_concept and no_ai_prefix and intents_ok and default_explain and providers_ok and skip_anchor_cards
+    checks.append(make_check(
+        "OUT-ASK-AI",
+        "Ask AI 2.0 uses intents and does not prefix AI",
+        "pass" if ask_ok else "fail",
+        "Default Explain uses the concept name; ChatGPT, Claude, and Perplexity are wired." if ask_ok else "Ask AI 2.0 contract is not met.",
+        "js/hub.js",
+    ))
+
+    golden_ok = 'Explain " + conceptName + " in the context of "' in hub_js and "AI Golden Sets" not in hub_js
+    checks.append(make_check(
+        "OUT-ASK-AI-GOLDEN",
+        "Explain Golden Sets does not become AI Golden Sets",
+        "pass" if golden_ok else "fail",
+        "Prompt builder concatenates Explain + concept name with no AI prefix." if golden_ok else "Golden Sets prompt construction is unsafe.",
+        "prompt-hub.html",
+    ))
+
+    review_ok = (
+        "Needs review" in chatbot_html
+        and "Needs review" in choose_guide
+        and "Last reviewed: 2026-09-07" in choose_guide
+        and "independently verified" in chatbot_html
+    )
+    checks.append(make_check(
+        "OUT-REVIEW-STATUS",
+        "Pages show review status without invented verification",
+        "pass" if review_ok else "fail",
+        "Editorial pages have Last reviewed; volatile hubs say Needs review." if review_ok else "Freshness labels are missing.",
+        "directory",
+    ))
+
+    updates = read_json(ROOT / "data" / "updates.json")
+    whats_new_ok = (
+        'id="whats-new"' in index_html
+        and isinstance(updates, list)
+        and 5 <= len(updates) <= 10
+        and all("title" in item and "date" in item and "description" in item for item in updates)
+        and "renderWhatsNew" in hub_js
+    )
+    checks.append(make_check(
+        "OUT-WHATS-NEW",
+        "Home What’s New lists real site changes",
+        "pass" if whats_new_ok else "fail",
+        f"updates.json has {len(updates)} site-change items." if whats_new_ok else "What’s New data or mount is missing.",
+        "index.html",
+    ))
+
+    units_ok = len(knowledge) >= 20
+    required_keys = [
+        "RAG Architecture", "Agent Architecture", "Hybrid Routing", "Model Cascading",
+        "ReAct", "ReAct Pattern", "Reflexion", "Human-in-the-Loop", "Guardrails",
+        "Vector Memory", "Memory Architectures", "Prompt Injection", "Context Isolation",
+        "Golden Sets", "LLM-as-a-Judge", "Edge Deployment", "Model Cards", "System Cards",
+        "Semantic Chunking", "Embeddings",
+    ]
+    missing_keys = [key for key in required_keys if key not in knowledge]
+    checks.append(make_check(
+        "KNOW-UNITS",
+        "At least 20 knowledge units keyed by card name",
+        "pass" if units_ok and not missing_keys else "fail",
+        f"{len(knowledge)} units on disk." if units_ok and not missing_keys else "Missing keys: " + ", ".join(missing_keys),
+        "data/knowledge-units.json",
+    ))
+
+    search_index_path = ROOT / "data" / "search-index.json"
+    search_ok = search_index_path.is_file()
+    search_entries = read_json(search_index_path) if search_ok else []
+    search_has_guide = any(item.get("href") == "guides/choose-an-ai.html" for item in search_entries)
+    search_has_concept = any(item.get("title") == "RAG Architecture" for item in search_entries)
+    search_ui = "site-search-input" in hub_js and "No matching hubs, concepts, or guides." in hub_js
+    checks.append(make_check(
+        "SEARCH-INDEX",
+        "Search index covers hubs, concepts, and guides",
+        "pass" if search_ok and search_has_guide and search_has_concept and search_ui else "fail",
+        f"Index has {len(search_entries)} entries." if search_ok and search_has_guide and search_has_concept and search_ui else "Search index or UI is incomplete.",
+        "data/search-index.json",
+    ))
+
+    seo_ok = (
+        (ROOT / "sitemap.xml").is_file()
+        and (ROOT / "robots.txt").is_file()
+        and "joembraun.github.io/ai-hub" in (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        and 'name="description"' in index_html
+        and "prefers-reduced-motion" in (ROOT / "css" / "hub.css").read_text(encoding="utf-8")
+    )
+    checks.append(make_check(
+        "SEO-HARDENING",
+        "Canonical metadata, sitemap, robots, reduced motion",
+        "pass" if seo_ok else "fail",
+        "SEO files and reduced-motion CSS are present." if seo_ok else "SEO or a11y hardening is incomplete.",
+        "index.html",
+    ))
+
+    eval_ok = "Golden Sets" in eval_guide and "LLM-as-a-Judge" in eval_guide
+    checks.append(make_check(
+        "OUT-EVALUATE",
+        "Evaluation guide uses golden sets before vibe checks",
+        "pass" if eval_ok else "fail",
+        "Evaluate guide covers golden sets and judges." if eval_ok else "Evaluate guide is incomplete.",
+        "guides/evaluate-an-ai-application.html",
+    ))
+
+    issue_template = ROOT / ".github" / "ISSUE_TEMPLATE" / "stale-info.yml"
+    checks.append(make_check(
+        "FRESH-ISSUE",
+        "Stale-info issue template exists",
+        "pass" if issue_template.is_file() else "fail",
+        "Issue template for stale pages is present." if issue_template.is_file() else "Missing .github/ISSUE_TEMPLATE/stale-info.yml.",
+        "directory",
+    ))
+
+    return checks
 
 
 def inspect_page(page: str) -> list[dict]:
@@ -135,7 +372,7 @@ def inspect_page(page: str) -> list[dict]:
         f"CSS-{page}",
         "Shared stylesheet",
         "pass" if parser.has_css else "fail",
-        "Links css/hub.css." if parser.has_css else "Missing css/hub.css.",
+        "Links css/hub.css (root or ../ for guides)." if parser.has_css else "Missing css/hub.css.",
         page,
     ))
 
@@ -276,16 +513,37 @@ def run_suite() -> dict:
     ))
 
     stale_nav_pages = []
-    for html_path in sorted(ROOT.glob("*.html")):
+    html_paths = list(ROOT.glob("*.html")) + list((ROOT / "guides").glob("*.html"))
+    for html_path in sorted(html_paths):
         html_text = html_path.read_text(encoding="utf-8")
         if "AI Interfaces" in html_text or "nav-admin" in html_text:
-            stale_nav_pages.append(html_path.name)
+            stale_nav_pages.append(str(html_path.relative_to(ROOT)))
     checks.append(make_check(
         "NAV-SHARED",
         "Public pages do not ship a second stale nav taxonomy",
         "pass" if not stale_nav_pages else "fail",
         "Shared .nav target only; HUB_DIRECTORY is the source of truth." if not stale_nav_pages else "Stale nav remains in: " + ", ".join(stale_nav_pages),
     ))
+
+    guides_group = 'id: "guides"' in hub_js and 'label: "Guides"' in hub_js
+    expected_guides = [
+        "guides/choose-an-ai.html",
+        "guides/choose-an-ai-coding-tool.html",
+        "guides/build-your-first-rag-app.html",
+        "guides/build-your-first-ai-agent.html",
+        "guides/run-ai-locally.html",
+        "guides/evaluate-an-ai-application.html",
+    ]
+    guides_listed = all(page in pages for page in expected_guides)
+    guides_exist = all((ROOT / page).is_file() for page in expected_guides)
+    checks.append(make_check(
+        "DIR-GUIDES",
+        "Guides group lists the six how-to pages",
+        "pass" if guides_group and guides_listed and guides_exist else "fail",
+        "Six guides are in HUB_DIRECTORY and on disk." if guides_group and guides_listed and guides_exist else "Guides group or files are missing.",
+    ))
+
+    checks.extend(outcome_checks(hub_js, index_html))
 
     pages_to_inspect = list(pages)
     if "admin-hub.html" not in pages_to_inspect:
