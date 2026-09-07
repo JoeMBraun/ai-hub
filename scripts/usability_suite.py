@@ -193,9 +193,9 @@ def run_suite() -> dict:
     admin_is_option = bool(re.search(r'id:\s*"admin"[\s\S]*?admin-hub\.html', hub_js))
     checks.append(make_check(
         "DIR-ADMIN",
-        "Site Evaluation is an Admin directory option",
+        "Site Evaluation is an Admin directory option on every page",
         "pass" if admin_in_directory and admin_is_option else "fail",
-        "admin-hub.html is listed under Admin." if admin_in_directory and admin_is_option else "admin-hub.html is missing from the Admin group.",
+        "admin-hub.html is listed under Admin in the shared directory." if admin_in_directory and admin_is_option else "admin-hub.html is missing from the Admin group.",
     ))
 
     course_in_start = bool(re.search(r'label:\s*"Start Here"[\s\S]*?course-hub\.html', hub_js))
@@ -213,6 +213,15 @@ def run_suite() -> dict:
         "Admin navigation group exists",
         "pass" if admin_group_exists else "fail",
         'Found the "Admin" group.' if admin_group_exists else "Admin group is missing.",
+    ))
+
+    checks.append(make_check(
+        "DIR-ADMIN-PUBLIC",
+        "Site Evaluation stays in the public directory",
+        "pass" if admin_in_directory and admin_is_option and admin_group_exists else "fail",
+        "Owner decision: Admin / Site Evaluation remains in HUB_DIRECTORY so the link renders on every page."
+        if admin_in_directory and admin_is_option and admin_group_exists
+        else "Site Evaluation was removed from the public directory; restore the Admin group in js/hub.js.",
     ))
 
     start_here_exists = 'label: "Start Here"' in hub_js
