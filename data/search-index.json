@@ -1,0 +1,2466 @@
+[
+  {
+    "title": "\ud83e\udded Site Evaluation",
+    "type": "hub",
+    "hub": "admin hub",
+    "href": "admin-hub.html",
+    "description": "Site Evaluation",
+    "keywords": "\ud83e\udded Site Evaluation"
+  },
+  {
+    "title": "\ud83e\udde0 AI Agents Hub",
+    "type": "hub",
+    "hub": "agents hub",
+    "href": "agents-hub.html",
+    "description": "AI Agents Hub",
+    "keywords": "\ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Microsoft AutoGen",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Multi-agent orchestration with role-based agents, tool use, and conversation loops",
+    "keywords": "Microsoft AutoGen Multi-agent orchestration with role-based agents, tool use, and conversation loops \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "LangGraph",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Graph-based agent workflows with stateful nodes and deterministic execution",
+    "keywords": "LangGraph Graph-based agent workflows with stateful nodes and deterministic execution \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "CrewAI",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Role-playing multi-agent teams with task delegation and collaboration",
+    "keywords": "CrewAI Role-playing multi-agent teams with task delegation and collaboration \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "HuggingFace Agents",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Tool-using agents powered by Transformers and HF tool registry",
+    "keywords": "HuggingFace Agents Tool-using agents powered by Transformers and HF tool registry \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "LlamaIndex Agents",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Data-aware agents with retrieval, memory, and tool orchestration",
+    "keywords": "LlamaIndex Agents Data-aware agents with retrieval, memory, and tool orchestration \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "ReAct Pattern",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Reasoning + acting loops for tool use and step-by-step problem solving",
+    "keywords": "ReAct Pattern Reasoning + acting loops for tool use and step-by-step problem solving \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Reflexion",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Self-critique and iterative improvement loops for autonomous refinement",
+    "keywords": "Reflexion Self-critique and iterative improvement loops for autonomous refinement \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Tree-of-Thought",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Branching reasoning paths with scoring and pruning for complex tasks",
+    "keywords": "Tree-of-Thought Branching reasoning paths with scoring and pruning for complex tasks \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Plan-Act-Reflect",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Structured planning followed by execution and evaluation cycles",
+    "keywords": "Plan-Act-Reflect Structured planning followed by execution and evaluation cycles \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Supervisor + Worker Agents",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Hierarchical agent teams with task decomposition and delegation",
+    "keywords": "Supervisor + Worker Agents Hierarchical agent teams with task decomposition and delegation \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Episodic Memory",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Stores conversation history and short-term context",
+    "keywords": "Episodic Memory Stores conversation history and short-term context \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Semantic Memory",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Long-term knowledge encoded as embeddings or structured data",
+    "keywords": "Semantic Memory Long-term knowledge encoded as embeddings or structured data \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Vector Memory",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Embedding-based retrieval for scalable agent knowledge",
+    "keywords": "Vector Memory Embedding-based retrieval for scalable agent knowledge \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Memory Safety",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Scoping, forgetting, and privacy boundaries for agent memory",
+    "keywords": "Memory Safety Scoping, forgetting, and privacy boundaries for agent memory \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Collaboration Patterns",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Agents working together to solve complex tasks",
+    "keywords": "Collaboration Patterns Agents working together to solve complex tasks \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Negotiation & Debate",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Agents challenge and refine each other's reasoning",
+    "keywords": "Negotiation & Debate Agents challenge and refine each other's reasoning \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Delegation & Routing",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Supervisor agents assign tasks to specialists",
+    "keywords": "Delegation & Routing Supervisor agents assign tasks to specialists \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Failure Recovery",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Fallback strategies, retries, and error handling",
+    "keywords": "Failure Recovery Fallback strategies, retries, and error handling \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Guardrails",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Safety constraints, filters, and policy enforcement",
+    "keywords": "Guardrails Safety constraints, filters, and policy enforcement \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Sandboxing",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Constrained execution environments for safe tool use",
+    "keywords": "Sandboxing Constrained execution environments for safe tool use \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Human-in-the-Loop",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Checkpoints requiring human approval",
+    "keywords": "Human-in-the-Loop Checkpoints requiring human approval \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Risk Scoring",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Assessing autonomy, tool access, and task sensitivity",
+    "keywords": "Risk Scoring Assessing autonomy, tool access, and task sensitivity \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "OSWorld",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Desktop environment tasks for multimodal agents",
+    "keywords": "OSWorld Desktop environment tasks for multimodal agents \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "WebArena",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Realistic web tasks for agent evaluation",
+    "keywords": "WebArena Realistic web tasks for agent evaluation \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "METR Evaluations",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Autonomy duration and real-world task performance",
+    "keywords": "METR Evaluations Autonomy duration and real-world task performance \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "Tau-Bench",
+    "type": "concept",
+    "hub": "\ud83e\udde0 AI Agents Hub",
+    "href": "agents-hub.html",
+    "description": "Customer-service scenarios requiring tool use",
+    "keywords": "Tau-Bench Customer-service scenarios requiring tool use \ud83e\udde0 AI Agents Hub"
+  },
+  {
+    "title": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "type": "hub",
+    "hub": "architecture hub",
+    "href": "architecture-hub.html",
+    "description": "AI Architecture Hub",
+    "keywords": "\ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "RAG Architecture",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Retriever + vector DB + LLM + ranking + grounding",
+    "keywords": "RAG Architecture Retriever + vector DB + LLM + ranking + grounding \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Agent Architecture",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Planner, tools, memory, environment, and execution loop",
+    "keywords": "Agent Architecture Planner, tools, memory, environment, and execution loop \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Multimodal Systems",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Vision, text, audio, and structured data pipelines",
+    "keywords": "Multimodal Systems Vision, text, audio, and structured data pipelines \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Hybrid Routing",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Route queries to different models based on complexity",
+    "keywords": "Hybrid Routing Route queries to different models based on complexity \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Pinecone",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Managed vector DB for large\u2011scale RAG",
+    "keywords": "Pinecone Managed vector DB for large\u2011scale RAG \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Weaviate",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Open\u2011source vector search with hybrid retrieval",
+    "keywords": "Weaviate Open\u2011source vector search with hybrid retrieval \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Milvus",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "High\u2011performance vector DB for enterprise workloads",
+    "keywords": "Milvus High\u2011performance vector DB for enterprise workloads \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Qdrant",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Fast vector search with filters and embeddings",
+    "keywords": "Qdrant Fast vector search with filters and embeddings \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "LangChain",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Chains, agents, tools, and RAG pipelines",
+    "keywords": "LangChain Chains, agents, tools, and RAG pipelines \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "LlamaIndex",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Data connectors, RAG pipelines, and agent tooling",
+    "keywords": "LlamaIndex Data connectors, RAG pipelines, and agent tooling \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Prefect",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Workflow orchestration for AI pipelines",
+    "keywords": "Prefect Workflow orchestration for AI pipelines \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Airflow",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Enterprise workflow scheduling and DAG orchestration",
+    "keywords": "Airflow Enterprise workflow scheduling and DAG orchestration \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Azure AI Studio",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Model catalog, RAG, safety, deployment, and monitoring",
+    "keywords": "Azure AI Studio Model catalog, RAG, safety, deployment, and monitoring \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Google Vertex AI",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Model training, tuning, pipelines, and deployment",
+    "keywords": "Google Vertex AI Model training, tuning, pipelines, and deployment \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "AWS Bedrock",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Foundation models, agents, and enterprise integrations",
+    "keywords": "AWS Bedrock Foundation models, agents, and enterprise integrations \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Grounded Generation",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "LLM outputs tied to retrieved or verified data",
+    "keywords": "Grounded Generation LLM outputs tied to retrieved or verified data \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Model Cascading",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Use small models first, escalate to larger ones",
+    "keywords": "Model Cascading Use small models first, escalate to larger ones \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Feedback Loops",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "User feedback \u2192 retraining \u2192 improved responses",
+    "keywords": "Feedback Loops User feedback \u2192 retraining \u2192 improved responses \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "Memory Architectures",
+    "type": "concept",
+    "hub": "\ud83c\udfd7\ufe0f AI Architecture Hub",
+    "href": "architecture-hub.html",
+    "description": "Short\u2011term, long\u2011term, and vector\u2011based memory",
+    "keywords": "Memory Architectures Short\u2011term, long\u2011term, and vector\u2011based memory \ud83c\udfd7\ufe0f AI Architecture Hub"
+  },
+  {
+    "title": "\ud83d\udcca AI Benchmark Hub",
+    "type": "hub",
+    "hub": "benchmark hub",
+    "href": "benchmark-hub.html",
+    "description": "AI Benchmark Hub",
+    "keywords": "\ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "LMArena",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Blind pairwise voting produces Elo ratings across chat, vision, and coding. The de facto \"real-world quality\" leaderboard",
+    "keywords": "LMArena Blind pairwise voting produces Elo ratings across chat, vision, and coding. The de facto \"real-world quality\" leaderboard \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "WebDev Arena",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Head-to-head evaluation of models on full-stack web development prompts, judged by users",
+    "keywords": "WebDev Arena Head-to-head evaluation of models on full-stack web development prompts, judged by users \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "Dynabench",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Dynamic, adversarial evaluation where humans generate challenge examples that fool current models",
+    "keywords": "Dynabench Dynamic, adversarial evaluation where humans generate challenge examples that fool current models \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "Stanford HELM",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Evaluates accuracy, robustness, fairness, efficiency, and more across many scenarios",
+    "keywords": "Stanford HELM Evaluates accuracy, robustness, fairness, efficiency, and more across many scenarios \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "Artificial Analysis",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Frontier model comparison across intelligence, speed, price, and context \u2014 great single-page overview",
+    "keywords": "Artificial Analysis Frontier model comparison across intelligence, speed, price, and context \u2014 great single-page overview \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "LiveBench",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Contamination-free benchmark with questions refreshed monthly across reasoning, math, coding, and more",
+    "keywords": "LiveBench Contamination-free benchmark with questions refreshed monthly across reasoning, math, coding, and more \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "Papers with Code",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Aggregates leaderboards across hundreds of NLP, vision, and ML benchmarks, linked to source papers",
+    "keywords": "Papers with Code Aggregates leaderboards across hundreds of NLP, vision, and ML benchmarks, linked to source papers \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "GPQA Diamond",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "\"Google-proof\" graduate-level science questions by PhDs. A current frontier reasoning benchmark",
+    "keywords": "GPQA Diamond \"Google-proof\" graduate-level science questions by PhDs. A current frontier reasoning benchmark \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "Humanity's Last Exam",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Expert-authored questions across 100+ subjects designed to challenge the strongest frontier models",
+    "keywords": "Humanity's Last Exam Expert-authored questions across 100+ subjects designed to challenge the strongest frontier models \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "MMLU-Pro Leaderboard",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "57-subject multitask test. MMLU-Pro is the harder, less-saturated successor with live rankings",
+    "keywords": "MMLU-Pro Leaderboard 57-subject multitask test. MMLU-Pro is the harder, less-saturated successor with live rankings \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "ARC-AGI Leaderboard",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Fran\u00e7ois Chollet's abstract visual reasoning benchmark \u2014 notoriously hard for LLMs",
+    "keywords": "ARC-AGI Leaderboard Fran\u00e7ois Chollet's abstract visual reasoning benchmark \u2014 notoriously hard for LLMs \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "BIG-bench",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Google's 200+ task benchmark spanning reasoning, creativity, and linguistics. BBH is the hard subset",
+    "keywords": "BIG-bench Google's 200+ task benchmark spanning reasoning, creativity, and linguistics. BBH is the hard subset \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "AI2 Reasoning Challenge",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Grade-school science questions requiring multi-step logical reasoning. Classic Allen AI benchmark",
+    "keywords": "AI2 Reasoning Challenge Grade-school science questions requiring multi-step logical reasoning. Classic Allen AI benchmark \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "SWE-bench Leaderboard",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Real GitHub issues \u2014 models must produce patches that pass the project's tests. Key agentic coding benchmark",
+    "keywords": "SWE-bench Leaderboard Real GitHub issues \u2014 models must produce patches that pass the project's tests. Key agentic coding benchmark \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "LiveCodeBench",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Contamination-free coding benchmark from LeetCode, AtCoder, and Codeforces, refreshed continuously",
+    "keywords": "LiveCodeBench Contamination-free coding benchmark from LeetCode, AtCoder, and Codeforces, refreshed continuously \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "Terminal-Bench",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Evaluates AI agents on real terminal tasks \u2014 filesystems, commands, end-to-end shell workflows",
+    "keywords": "Terminal-Bench Evaluates AI agents on real terminal tasks \u2014 filesystems, commands, end-to-end shell workflows \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "Aider Polyglot",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Editing benchmark across C++, Go, Java, JavaScript, Python, and Rust",
+    "keywords": "Aider Polyglot Editing benchmark across C++, Go, Java, JavaScript, Python, and Rust \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "MathArena",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Live leaderboard evaluating LLMs on recent AIME, USAMO, IMO, and other math olympiad problems",
+    "keywords": "MathArena Live leaderboard evaluating LLMs on recent AIME, USAMO, IMO, and other math olympiad problems \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "MATH",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "12,500 competition-style problems across algebra, geometry, and number theory",
+    "keywords": "MATH 12,500 competition-style problems across algebra, geometry, and number theory \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "GSM8K",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Grade-school word problems testing multi-step arithmetic reasoning. Largely saturated but widely cited",
+    "keywords": "GSM8K Grade-school word problems testing multi-step arithmetic reasoning. Largely saturated but widely cited \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "FrontierMath",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Epoch AI's unpublished, expert-crafted problems at the edge of research mathematics",
+    "keywords": "FrontierMath Epoch AI's unpublished, expert-crafted problems at the edge of research mathematics \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "OSWorld",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Benchmark for multimodal agents operating real desktop environments across Ubuntu, Windows, macOS",
+    "keywords": "OSWorld Benchmark for multimodal agents operating real desktop environments across Ubuntu, Windows, macOS \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "WebArena",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Self-hostable web environment for evaluating agents on realistic e-commerce, forum, and dev tasks",
+    "keywords": "WebArena Self-hostable web environment for evaluating agents on realistic e-commerce, forum, and dev tasks \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "METR Evaluations",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Measures how long AI agents can autonomously work on real-world tasks",
+    "keywords": "METR Evaluations Measures how long AI agents can autonomously work on real-world tasks \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "\u03c4-bench (Tau-bench)",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Evaluates agents on realistic customer-service scenarios requiring tool use and multi-turn reasoning",
+    "keywords": "\u03c4-bench (Tau-bench) Evaluates agents on realistic customer-service scenarios requiring tool use and multi-turn reasoning \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "ImageNet",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Classic vision benchmark \u2014 still widely referenced",
+    "keywords": "ImageNet Classic vision benchmark \u2014 still widely referenced \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "VQA",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Visual question answering benchmark",
+    "keywords": "VQA Visual question answering benchmark \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "MMMLU",
+    "type": "concept",
+    "hub": "\ud83d\udcca AI Benchmark Hub",
+    "href": "benchmark-hub.html",
+    "description": "Multimodal version of MMLU",
+    "keywords": "MMMLU Multimodal version of MMLU \ud83d\udcca AI Benchmark Hub"
+  },
+  {
+    "title": "\ud83e\udd16 AI Chatbot Hub",
+    "type": "hub",
+    "hub": "chatbot hub",
+    "href": "chatbot-hub.html",
+    "description": "AI Chatbot Hub",
+    "keywords": "\ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Claude Fable 5.1",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Anthropic's September 2026 frontier model on claude.ai",
+    "keywords": "Claude Fable 5.1 Anthropic's September 2026 frontier model on claude.ai \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "GPT-6 Astra",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "OpenAI's September 2026 ChatGPT frontier model",
+    "keywords": "GPT-6 Astra OpenAI's September 2026 ChatGPT frontier model \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "OpenAI Playground",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "API playground for GPT-6 Astra and other OpenAI models",
+    "keywords": "OpenAI Playground API playground for GPT-6 Astra and other OpenAI models \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Gemini 3.8 Flash",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Google's September 2026 fast Gemini chat model",
+    "keywords": "Gemini 3.8 Flash Google's September 2026 fast Gemini chat model \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Google AI Studio",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Developer playground for Gemini 3.8 Flash",
+    "keywords": "Google AI Studio Developer playground for Gemini 3.8 Flash \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "NotebookLM",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Gemini-powered research assistant",
+    "keywords": "NotebookLM Gemini-powered research assistant \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Grok 4.6",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "xAI's September 2026 Grok chat model",
+    "keywords": "Grok 4.6 xAI's September 2026 Grok chat model \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Grok on X",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Grok 4.6 integrated into X",
+    "keywords": "Grok on X Grok 4.6 integrated into X \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Muse Spark 1.3",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Meta's September 2026 Muse Spark frontier model",
+    "keywords": "Muse Spark 1.3 Meta's September 2026 Muse Spark frontier model \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Meta AI",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Llama-powered assistant",
+    "keywords": "Meta AI Llama-powered assistant \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Adobe Firefly",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Adobe's generative AI creative studio",
+    "keywords": "Adobe Firefly Adobe's generative AI creative studio \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Copilot Web",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Standalone Copilot web app",
+    "keywords": "Copilot Web Standalone Copilot web app \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Copilot 365",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Microsoft 365 integrated version",
+    "keywords": "Copilot 365 Microsoft 365 integrated version \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Copilot in Bing",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Search-integrated Copilot with web grounding",
+    "keywords": "Copilot in Bing Search-integrated Copilot with web grounding \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Perplexity",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "AI search engine with citations",
+    "keywords": "Perplexity AI search engine with citations \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Coral",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Cohere's Command assistant",
+    "keywords": "Coral Cohere's Command assistant \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Kimi K3",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Moonshot open-weights Kimi chat model",
+    "keywords": "Kimi K3 Moonshot open-weights Kimi chat model \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "DeepSeek V4",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "DeepSeek open-weights chat interface",
+    "keywords": "DeepSeek V4 DeepSeek open-weights chat interface \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Qwen 3.8",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Alibaba Qwen Studio \u2014 Qwen3.8-Max",
+    "keywords": "Qwen 3.8 Alibaba Qwen Studio \u2014 Qwen3.8-Max \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "GLM 5.2",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Zhipu / Z.ai open-weights GLM chat",
+    "keywords": "GLM 5.2 Zhipu / Z.ai open-weights GLM chat \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "MiniMax M3",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "MiniMax open-weights multimodal chat",
+    "keywords": "MiniMax M3 MiniMax open-weights multimodal chat \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Inkling",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Thinking Machines Lab open-weights multimodal model",
+    "keywords": "Inkling Thinking Machines Lab open-weights multimodal model \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "Le Chat",
+    "type": "concept",
+    "hub": "\ud83e\udd16 AI Chatbot Hub",
+    "href": "chatbot-hub.html",
+    "description": "Mistral's official open-weights chat interface",
+    "keywords": "Le Chat Mistral's official open-weights chat interface \ud83e\udd16 AI Chatbot Hub"
+  },
+  {
+    "title": "\ud83c\udf93 AI Courses Hub",
+    "type": "hub",
+    "hub": "course hub",
+    "href": "course-hub.html",
+    "description": "AI Courses Hub",
+    "keywords": "\ud83c\udf93 AI Courses Hub"
+  },
+  {
+    "title": "\ud83d\udcda AI Data Hub",
+    "type": "hub",
+    "hub": "data hub",
+    "href": "data-hub.html",
+    "description": "AI Data Hub",
+    "keywords": "\ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Airbyte",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Open-source ELT platform with 300+ connectors",
+    "keywords": "Airbyte Open-source ELT platform with 300+ connectors \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Fivetran",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Enterprise-grade managed ELT pipelines",
+    "keywords": "Fivetran Enterprise-grade managed ELT pipelines \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Dagster",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Modern data orchestration for complex pipelines",
+    "keywords": "Dagster Modern data orchestration for complex pipelines \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Prefect",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Workflow orchestration for data and AI pipelines",
+    "keywords": "Prefect Workflow orchestration for data and AI pipelines \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Fixed-Size Chunking",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Simple, predictable, but may split semantic units",
+    "keywords": "Fixed-Size Chunking Simple, predictable, but may split semantic units \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Semantic Chunking",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Splits based on meaning using embeddings or LLMs",
+    "keywords": "Semantic Chunking Splits based on meaning using embeddings or LLMs \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Recursive Chunking",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Hierarchical splitting for structured documents",
+    "keywords": "Recursive Chunking Hierarchical splitting for structured documents \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Hybrid Chunking",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Combines fixed + semantic for optimal retrieval",
+    "keywords": "Hybrid Chunking Combines fixed + semantic for optimal retrieval \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Embeddings",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Vectors for similarity search \u2014 required for most RAG indexes",
+    "keywords": "Embeddings Vectors for similarity search \u2014 required for most RAG indexes \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Vector Databases",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Nearest-neighbor stores plus metadata filters",
+    "keywords": "Vector Databases Nearest-neighbor stores plus metadata filters \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "OpenAI Embeddings",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "High-quality embeddings for semantic search",
+    "keywords": "OpenAI Embeddings High-quality embeddings for semantic search \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "MTEB Leaderboard",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Benchmark for embedding models across 50+ tasks",
+    "keywords": "MTEB Leaderboard Benchmark for embedding models across 50+ tasks \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Sentence Transformers",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Open-source embeddings for semantic similarity",
+    "keywords": "Sentence Transformers Open-source embeddings for semantic similarity \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Milvus",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "High-performance vector DB for large-scale AI",
+    "keywords": "Milvus High-performance vector DB for large-scale AI \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Pinecone",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Managed vector DB with hybrid search",
+    "keywords": "Pinecone Managed vector DB with hybrid search \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "pgvector",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Vector search inside PostgreSQL",
+    "keywords": "pgvector Vector search inside PostgreSQL \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Weaviate",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Modular vector DB with hybrid search and modules",
+    "keywords": "Weaviate Modular vector DB with hybrid search and modules \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Gretel",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Synthetic data generation for training and privacy",
+    "keywords": "Gretel Synthetic data generation for training and privacy \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Mostly AI",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Structured synthetic data for enterprise use",
+    "keywords": "Mostly AI Structured synthetic data for enterprise use \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "SDV",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Open-source synthetic data library",
+    "keywords": "SDV Open-source synthetic data library \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Monte Carlo",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Data observability for pipelines and AI systems",
+    "keywords": "Monte Carlo Data observability for pipelines and AI systems \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Great Expectations",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Data validation and quality enforcement",
+    "keywords": "Great Expectations Data validation and quality enforcement \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "Collibra",
+    "type": "concept",
+    "hub": "\ud83d\udcda AI Data Hub",
+    "href": "data-hub.html",
+    "description": "Enterprise data governance platform",
+    "keywords": "Collibra Enterprise data governance platform \ud83d\udcda AI Data Hub"
+  },
+  {
+    "title": "\ud83d\ude80 AI Deployment Hub",
+    "type": "hub",
+    "hub": "deployment hub",
+    "href": "deployment-hub.html",
+    "description": "AI Deployment Hub",
+    "keywords": "\ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Serverless AI",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "On-demand inference with autoscaling and zero idle cost",
+    "keywords": "Serverless AI On-demand inference with autoscaling and zero idle cost \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Containerized AI",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Docker + Kubernetes for predictable, portable deployments",
+    "keywords": "Containerized AI Docker + Kubernetes for predictable, portable deployments \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Edge Deployment",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Run models locally for privacy and low latency",
+    "keywords": "Edge Deployment Run models locally for privacy and low latency \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Hybrid Cloud",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Combine cloud GPUs with on-prem data and compute",
+    "keywords": "Hybrid Cloud Combine cloud GPUs with on-prem data and compute \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Modal",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Serverless GPU compute for AI workloads",
+    "keywords": "Modal Serverless GPU compute for AI workloads \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "RunPod",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "GPU cloud for inference and training",
+    "keywords": "RunPod GPU cloud for inference and training \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Paperspace",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "GPU VMs for AI development and deployment",
+    "keywords": "Paperspace GPU VMs for AI development and deployment \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Google TPU",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "High-performance tensor processing for large models",
+    "keywords": "Google TPU High-performance tensor processing for large models \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "GitHub Actions",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Automate testing, deployment, and model updates",
+    "keywords": "GitHub Actions Automate testing, deployment, and model updates \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "GitLab CI",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Integrated CI/CD pipelines for AI systems",
+    "keywords": "GitLab CI Integrated CI/CD pipelines for AI systems \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "CircleCI",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Automated builds and deployments for AI apps",
+    "keywords": "CircleCI Automated builds and deployments for AI apps \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Weights & Biases",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Experiment tracking and model versioning",
+    "keywords": "Weights & Biases Experiment tracking and model versioning \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "MLflow",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Model registry and lifecycle management",
+    "keywords": "MLflow Model registry and lifecycle management \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "HuggingFace Hub",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Model hosting, versioning, and deployment",
+    "keywords": "HuggingFace Hub Model hosting, versioning, and deployment \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Batching",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Group inference requests to reduce cost",
+    "keywords": "Batching Group inference requests to reduce cost \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Caching",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Reuse previous responses to avoid recomputation",
+    "keywords": "Caching Reuse previous responses to avoid recomputation \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Model Distillation",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Use smaller models for cheaper inference",
+    "keywords": "Model Distillation Use smaller models for cheaper inference \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Hybrid Routing",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Send easy queries to cheaper models",
+    "keywords": "Hybrid Routing Send easy queries to cheaper models \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Langfuse",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "Tracing, metrics, prompt tracking, and analytics",
+    "keywords": "Langfuse Tracing, metrics, prompt tracking, and analytics \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Arize Phoenix",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "LLM monitoring, drift detection, and evaluation",
+    "keywords": "Arize Phoenix LLM monitoring, drift detection, and evaluation \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "Traceloop",
+    "type": "concept",
+    "hub": "\ud83d\ude80 AI Deployment Hub",
+    "href": "deployment-hub.html",
+    "description": "LLM observability with OpenTelemetry",
+    "keywords": "Traceloop LLM observability with OpenTelemetry \ud83d\ude80 AI Deployment Hub"
+  },
+  {
+    "title": "\ud83e\uddea AI Evaluation Hub",
+    "type": "hub",
+    "hub": "evaluation hub",
+    "href": "evaluation-hub.html",
+    "description": "AI Evaluation Hub",
+    "keywords": "\ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Ragas",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "RAG evaluation: faithfulness, answer relevance, context precision",
+    "keywords": "Ragas RAG evaluation: faithfulness, answer relevance, context precision \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "TruLens",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "LLM observability and evaluation with feedback functions",
+    "keywords": "TruLens LLM observability and evaluation with feedback functions \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "DeepEval",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Unit testing for LLM apps with hallucination and toxicity checks",
+    "keywords": "DeepEval Unit testing for LLM apps with hallucination and toxicity checks \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Giskard",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "AI testing platform for safety, bias, and robustness",
+    "keywords": "Giskard AI testing platform for safety, bias, and robustness \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Context Precision",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Measures how relevant retrieved chunks are to the query",
+    "keywords": "Context Precision Measures how relevant retrieved chunks are to the query \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Faithfulness",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Checks if the answer is grounded in retrieved evidence",
+    "keywords": "Faithfulness Checks if the answer is grounded in retrieved evidence \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Answer Relevance",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Evaluates how well the answer addresses the question",
+    "keywords": "Answer Relevance Evaluates how well the answer addresses the question \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Retrieval Recall",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Measures whether the right documents were retrieved",
+    "keywords": "Retrieval Recall Measures whether the right documents were retrieved \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "OSWorld",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Desktop tasks for multimodal agents",
+    "keywords": "OSWorld Desktop tasks for multimodal agents \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "WebArena",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Realistic web navigation tasks",
+    "keywords": "WebArena Realistic web navigation tasks \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "METR",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Autonomy duration and real-world task performance",
+    "keywords": "METR Autonomy duration and real-world task performance \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Tau-Bench",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Customer-service scenarios requiring tool use",
+    "keywords": "Tau-Bench Customer-service scenarios requiring tool use \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Golden Test Sets",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Fixed prompts with expected outputs to detect regressions",
+    "keywords": "Golden Test Sets Fixed prompts with expected outputs to detect regressions \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Style Consistency",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Ensures tone, structure, and persona remain stable",
+    "keywords": "Style Consistency Ensures tone, structure, and persona remain stable \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Guardrail Testing",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Validates refusal behavior and safety boundaries",
+    "keywords": "Guardrail Testing Validates refusal behavior and safety boundaries \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Standardizing Quality",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Leverage the Prometheus framework for fine-grained rubric evaluation and scoring.",
+    "keywords": "Standardizing Quality Leverage the Prometheus framework for fine-grained rubric evaluation and scoring. \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "LLM-as-a-Judge",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Understanding \"Weak-to-Strong\" generalization where frontier models grade agent outputs.",
+    "keywords": "LLM-as-a-Judge Understanding \"Weak-to-Strong\" generalization where frontier models grade agent outputs. \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Agent Alignment",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Defining multi-dimensional success criteria to ensure agents stay on-task.",
+    "keywords": "Agent Alignment Defining multi-dimensional success criteria to ensure agents stay on-task. \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "HarmBench",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Automated red-teaming and refusal robustness",
+    "keywords": "HarmBench Automated red-teaming and refusal robustness \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "WMDP",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Hazardous knowledge evaluation",
+    "keywords": "WMDP Hazardous knowledge evaluation \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Anthropic Evals",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Datasets for sycophancy, risks, and model-written evals",
+    "keywords": "Anthropic Evals Datasets for sycophancy, risks, and model-written evals \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Observability",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Traces, cost, latency, and enough detail to replay a bad answer",
+    "keywords": "Observability Traces, cost, latency, and enough detail to replay a bad answer \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Langfuse",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "Tracing, metrics, and prompt/version tracking",
+    "keywords": "Langfuse Tracing, metrics, and prompt/version tracking \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Traceloop",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "LLM observability with OpenTelemetry integration",
+    "keywords": "Traceloop LLM observability with OpenTelemetry integration \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "Arize Phoenix",
+    "type": "concept",
+    "hub": "\ud83e\uddea AI Evaluation Hub",
+    "href": "evaluation-hub.html",
+    "description": "LLM monitoring, drift detection, and evaluation",
+    "keywords": "Arize Phoenix LLM monitoring, drift detection, and evaluation \ud83e\uddea AI Evaluation Hub"
+  },
+  {
+    "title": "\u2696\ufe0f AI Governance Hub",
+    "type": "hub",
+    "hub": "governance hub",
+    "href": "governance-hub.html",
+    "description": "AI Governance Hub",
+    "keywords": "\u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "NIST AI RMF",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "US risk management framework for trustworthy AI",
+    "keywords": "NIST AI RMF US risk management framework for trustworthy AI \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "EU AI Act",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Risk-based regulatory framework for AI systems",
+    "keywords": "EU AI Act Risk-based regulatory framework for AI systems \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "ISO/IEC 42001",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "AI management system standard for enterprises",
+    "keywords": "ISO/IEC 42001 AI management system standard for enterprises \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Risk Classification",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Categorize AI systems by risk level and impact",
+    "keywords": "Risk Classification Categorize AI systems by risk level and impact \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Impact Assessments",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Evaluate societal, ethical, and operational risks",
+    "keywords": "Impact Assessments Evaluate societal, ethical, and operational risks \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Mitigation Plans",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Define controls, guardrails, and fallback strategies",
+    "keywords": "Mitigation Plans Define controls, guardrails, and fallback strategies \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Model Cards",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Document model purpose, limitations, and risks",
+    "keywords": "Model Cards Document model purpose, limitations, and risks \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "System Cards",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Describe end-to-end AI system behavior",
+    "keywords": "System Cards Describe end-to-end AI system behavior \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Data Sheets",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Document datasets, provenance, and quality",
+    "keywords": "Data Sheets Document datasets, provenance, and quality \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Refusal Policies",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Define what the AI must decline to answer",
+    "keywords": "Refusal Policies Define what the AI must decline to answer \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Content Moderation",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Prevent harmful or disallowed outputs",
+    "keywords": "Content Moderation Prevent harmful or disallowed outputs \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Tool Access Controls",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Restrict agent tool use based on risk",
+    "keywords": "Tool Access Controls Restrict agent tool use based on risk \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Langfuse",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Tracing, metrics, and audit logs for AI systems",
+    "keywords": "Langfuse Tracing, metrics, and audit logs for AI systems \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Arize Phoenix",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "Monitoring, drift detection, and evaluation",
+    "keywords": "Arize Phoenix Monitoring, drift detection, and evaluation \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "Traceloop",
+    "type": "concept",
+    "hub": "\u2696\ufe0f AI Governance Hub",
+    "href": "governance-hub.html",
+    "description": "LLM observability with OpenTelemetry",
+    "keywords": "Traceloop LLM observability with OpenTelemetry \u2696\ufe0f AI Governance Hub"
+  },
+  {
+    "title": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "type": "hub",
+    "hub": "harness hub",
+    "href": "harness-hub.html",
+    "description": "AI Harness Hub",
+    "keywords": "\ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Claude Code",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Anthropic's agentic CLI and desktop coding tool \u2014 terminal or desktop app",
+    "keywords": "Claude Code Anthropic's agentic CLI and desktop coding tool \u2014 terminal or desktop app \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Codex",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "OpenAI's September 2026 coding agent, available in ChatGPT",
+    "keywords": "Codex OpenAI's September 2026 coding agent, available in ChatGPT \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "OpenAI Playground",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Direct API access to test Codex and GPT-6 Astra",
+    "keywords": "OpenAI Playground Direct API access to test Codex and GPT-6 Astra \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Grok Build",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "xAI's September 2026 coding harness powered by Grok 4.6",
+    "keywords": "Grok Build xAI's September 2026 coding harness powered by Grok 4.6 \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Antigravity",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Google's agentic development platform for Gemini 3.8 Flash",
+    "keywords": "Antigravity Google's agentic development platform for Gemini 3.8 Flash \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "OpenCode",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Open coding agent and harness for local and cloud models",
+    "keywords": "OpenCode Open coding agent and harness for local and cloud models \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "SWE-agent",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Open-source autonomous agent for GitHub issues",
+    "keywords": "SWE-agent Open-source autonomous agent for GitHub issues \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Agentless",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Lightweight SWE agent for bug localization and repair",
+    "keywords": "Agentless Lightweight SWE agent for bug localization and repair \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Cursor",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "AI-first editor \u2014 multi-model support with deep codebase context",
+    "keywords": "Cursor AI-first editor \u2014 multi-model support with deep codebase context \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Kiro",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "AWS spec-driven agentic IDE for planning and implementing software",
+    "keywords": "Kiro AWS spec-driven agentic IDE for planning and implementing software \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "GitHub Copilot",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Inline code completion and chat in VS Code, JetBrains, Visual Studio, and more",
+    "keywords": "GitHub Copilot Inline code completion and chat in VS Code, JetBrains, Visual Studio, and more \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Copilot Workspace",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "GitHub's agentic task-to-PR tool \u2014 describe a feature, get a full implementation plan",
+    "keywords": "Copilot Workspace GitHub's agentic task-to-PR tool \u2014 describe a feature, get a full implementation plan \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Windsurf",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Agentic IDE from Codeium \u2014 Cascade agent understands full repo context",
+    "keywords": "Windsurf Agentic IDE from Codeium \u2014 Cascade agent understands full repo context \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Codeium Extension",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Free AI code completion plugin for VS Code, JetBrains, Vim, and others",
+    "keywords": "Codeium Extension Free AI code completion plugin for VS Code, JetBrains, Vim, and others \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Replit Agent",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Browser-based coding environment with an AI agent that builds and deploys full apps",
+    "keywords": "Replit Agent Browser-based coding environment with an AI agent that builds and deploys full apps \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "v0 by Vercel",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Generate full React/Next.js UI components and apps from text prompts",
+    "keywords": "v0 by Vercel Generate full React/Next.js UI components and apps from text prompts \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Lovable",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Full-stack app builder from natural language \u2014 React + Supabase",
+    "keywords": "Lovable Full-stack app builder from natural language \u2014 React + Supabase \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Bolt.new",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "StackBlitz's in-browser full-stack AI agent",
+    "keywords": "Bolt.new StackBlitz's in-browser full-stack AI agent \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "T3 Chat / Create T3",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Theo's T3 stack scaffolder and AI-assisted toolchain",
+    "keywords": "T3 Chat / Create T3 Theo's T3 stack scaffolder and AI-assisted toolchain \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Devin",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Fully autonomous software engineer \u2014 handles entire tickets",
+    "keywords": "Devin Fully autonomous software engineer \u2014 handles entire tickets \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "JetBrains AI",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Native AI assistant across IntelliJ, PyCharm, WebStorm",
+    "keywords": "JetBrains AI Native AI assistant across IntelliJ, PyCharm, WebStorm \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Amazon Q Developer",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "AWS's AI coding assistant \u2014 code completion, scanning, CLI agent",
+    "keywords": "Amazon Q Developer AWS's AI coding assistant \u2014 code completion, scanning, CLI agent \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "Tabnine",
+    "type": "concept",
+    "hub": "\ud83d\udee0\ufe0f AI Harness Hub",
+    "href": "harness-hub.html",
+    "description": "Privacy-focused AI code completion \u2014 can run on-prem",
+    "keywords": "Tabnine Privacy-focused AI code completion \u2014 can run on-prem \ud83d\udee0\ufe0f AI Harness Hub"
+  },
+  {
+    "title": "A practical map of modern AI",
+    "type": "hub",
+    "hub": "index",
+    "href": "index.html",
+    "description": "AI Hub \u2014 A practical map of modern AI",
+    "keywords": "A practical map of modern AI"
+  },
+  {
+    "title": "Choose a chatbot",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Frontier chat interfaces and where to open them",
+    "keywords": "Choose a chatbot Frontier chat interfaces and where to open them A practical map of modern AI"
+  },
+  {
+    "title": "Find a coding assistant",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Tools for writing and changing code with AI",
+    "keywords": "Find a coding assistant Tools for writing and changing code with AI A practical map of modern AI"
+  },
+  {
+    "title": "Find prompts",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Prompt patterns, system prompts, and orchestration",
+    "keywords": "Find prompts Prompt patterns, system prompts, and orchestration A practical map of modern AI"
+  },
+  {
+    "title": "Learn with free courses",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "First-party training from major AI vendors",
+    "keywords": "Learn with free courses First-party training from major AI vendors A practical map of modern AI"
+  },
+  {
+    "title": "Build a RAG system",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Data, retrieval, and grounding for private knowledge",
+    "keywords": "Build a RAG system Data, retrieval, and grounding for private knowledge A practical map of modern AI"
+  },
+  {
+    "title": "Build an agent",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Agent patterns, memory, and multi-agent orchestration",
+    "keywords": "Build an agent Agent patterns, memory, and multi-agent orchestration A practical map of modern AI"
+  },
+  {
+    "title": "Run a model locally",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Open-weight models and local inference options",
+    "keywords": "Run a model locally Open-weight models and local inference options A practical map of modern AI"
+  },
+  {
+    "title": "Design an AI architecture",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Patterns for routing, workflows, and production systems",
+    "keywords": "Design an AI architecture Patterns for routing, workflows, and production systems A practical map of modern AI"
+  },
+  {
+    "title": "Evaluate an AI system",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "How to tell whether an application is actually working",
+    "keywords": "Evaluate an AI system How to tell whether an application is actually working A practical map of modern AI"
+  },
+  {
+    "title": "Secure an AI system",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Prompt injection, guardrails, and untrusted input",
+    "keywords": "Secure an AI system Prompt injection, guardrails, and untrusted input A practical map of modern AI"
+  },
+  {
+    "title": "Govern AI",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Policy, accountability, and responsible-use practices",
+    "keywords": "Govern AI Policy, accountability, and responsible-use practices A practical map of modern AI"
+  },
+  {
+    "title": "Deploy to production",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Shipping, serving, and operating AI in production",
+    "keywords": "Deploy to production Shipping, serving, and operating AI in production A practical map of modern AI"
+  },
+  {
+    "title": "Choose an AI",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Pick a chat interface from the job",
+    "keywords": "Choose an AI Pick a chat interface from the job A practical map of modern AI"
+  },
+  {
+    "title": "Choose a coding tool",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Match a harness to your workflow",
+    "keywords": "Choose a coding tool Match a harness to your workflow A practical map of modern AI"
+  },
+  {
+    "title": "First RAG app",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Ground answers in your documents",
+    "keywords": "First RAG app Ground answers in your documents A practical map of modern AI"
+  },
+  {
+    "title": "First AI agent",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "One loop, tools, and stop conditions",
+    "keywords": "First AI agent One loop, tools, and stop conditions A practical map of modern AI"
+  },
+  {
+    "title": "Run AI locally",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Runtimes and hardware tiers",
+    "keywords": "Run AI locally Runtimes and hardware tiers A practical map of modern AI"
+  },
+  {
+    "title": "Evaluate an app",
+    "type": "concept",
+    "hub": "A practical map of modern AI",
+    "href": "index.html",
+    "description": "Golden sets before vibe checks",
+    "keywords": "Evaluate an app Golden sets before vibe checks A practical map of modern AI"
+  },
+  {
+    "title": "\ud83d\udcbb Local AI Models Hub",
+    "type": "hub",
+    "hub": "local models hub",
+    "href": "local-models-hub.html",
+    "description": "Local AI Models Hub",
+    "keywords": "\ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Install Ollama",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Easiest way to run models locally",
+    "keywords": "Install Ollama Easiest way to run models locally \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Run Kimi K3",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "September 2026 local-capable chat model",
+    "keywords": "Run Kimi K3 September 2026 local-capable chat model \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Kimi K3",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Moonshot Kimi K3 \u2014 strong local/open weights option",
+    "keywords": "Kimi K3 Moonshot Kimi K3 \u2014 strong local/open weights option \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "DeepSeek V4",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "DeepSeek open-weights chat model",
+    "keywords": "DeepSeek V4 DeepSeek open-weights chat model \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Qwen 3.8",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Alibaba Qwen3.8 open weights",
+    "keywords": "Qwen 3.8 Alibaba Qwen3.8 open weights \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "GLM 5.2",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Zhipu GLM open weights",
+    "keywords": "GLM 5.2 Zhipu GLM open weights \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "MiniMax M3",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "MiniMax open-weights multimodal model",
+    "keywords": "MiniMax M3 MiniMax open-weights multimodal model \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Inkling",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Thinking Machines Lab open-weights multimodal model",
+    "keywords": "Inkling Thinking Machines Lab open-weights multimodal model \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Gemma 4",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Google's current open local model family",
+    "keywords": "Gemma 4 Google's current open local model family \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Llama 4",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Meta general-purpose local model",
+    "keywords": "Llama 4 Meta general-purpose local model \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Mistral",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Fast + efficient open model",
+    "keywords": "Mistral Fast + efficient open model \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Phi-4",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Small but capable \u2014 runs on modest hardware",
+    "keywords": "Phi-4 Small but capable \u2014 runs on modest hardware \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Claude Fable 5.1",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Anthropic cloud chat \u2014 see the Chatbot Hub",
+    "keywords": "Claude Fable 5.1 Anthropic cloud chat \u2014 see the Chatbot Hub \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "GPT-6 Astra",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "OpenAI cloud chat \u2014 see the Chatbot Hub",
+    "keywords": "GPT-6 Astra OpenAI cloud chat \u2014 see the Chatbot Hub \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Gemini 3.8 Flash",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Google cloud chat \u2014 see the Chatbot Hub",
+    "keywords": "Gemini 3.8 Flash Google cloud chat \u2014 see the Chatbot Hub \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Grok 4.6",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "xAI cloud chat \u2014 see the Chatbot Hub",
+    "keywords": "Grok 4.6 xAI cloud chat \u2014 see the Chatbot Hub \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Muse Spark 1.3",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Meta frontier model \u2014 see the Chatbot Hub",
+    "keywords": "Muse Spark 1.3 Meta frontier model \u2014 see the Chatbot Hub \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Ollama",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "CLI + local API for running models",
+    "keywords": "Ollama CLI + local API for running models \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "LM Studio",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "GUI app \u2014 no coding required",
+    "keywords": "LM Studio GUI app \u2014 no coding required \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Open WebUI",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "ChatGPT-style interface for local models",
+    "keywords": "Open WebUI ChatGPT-style interface for local models \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "OpenCode",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Open harness that can drive local models",
+    "keywords": "OpenCode Open harness that can drive local models \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "Call Local Model",
+    "type": "concept",
+    "hub": "\ud83d\udcbb Local AI Models Hub",
+    "href": "local-models-hub.html",
+    "description": "Ollama exposes a localhost API",
+    "keywords": "Call Local Model Ollama exposes a localhost API \ud83d\udcbb Local AI Models Hub"
+  },
+  {
+    "title": "\u270d\ufe0f AI Prompt Hub",
+    "type": "hub",
+    "hub": "prompt hub",
+    "href": "prompt-hub.html",
+    "description": "AI Prompt Hub",
+    "keywords": "\u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Role Definition",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Assigns identity, tone, and constraints to the model",
+    "keywords": "Role Definition Assigns identity, tone, and constraints to the model \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Behavioral Rules",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Defines what the model must always or never do",
+    "keywords": "Behavioral Rules Defines what the model must always or never do \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Output Formatting",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Ensures structured, predictable responses",
+    "keywords": "Output Formatting Ensures structured, predictable responses \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Safety Boundaries",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Refusal rules, guardrails, and compliance constraints",
+    "keywords": "Safety Boundaries Refusal rules, guardrails, and compliance constraints \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Chain-of-Thought",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Step-by-step reasoning for complex tasks",
+    "keywords": "Chain-of-Thought Step-by-step reasoning for complex tasks \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "ReAct",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Reasoning + acting loops for tool use",
+    "keywords": "ReAct Reasoning + acting loops for tool use \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Tree-of-Thought",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Branching reasoning paths with scoring",
+    "keywords": "Tree-of-Thought Branching reasoning paths with scoring \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Few-Shot Prompting",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Provide examples to shape model behavior",
+    "keywords": "Few-Shot Prompting Provide examples to shape model behavior \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Self-Consistency",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Sample multiple outputs and choose the best",
+    "keywords": "Self-Consistency Sample multiple outputs and choose the best \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Router Prompts",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Direct queries to specialized prompts or models",
+    "keywords": "Router Prompts Direct queries to specialized prompts or models \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Task Decomposition",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Break complex tasks into smaller promptable units",
+    "keywords": "Task Decomposition Break complex tasks into smaller promptable units \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Prompt Chaining",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Sequential prompts that build on each other",
+    "keywords": "Prompt Chaining Sequential prompts that build on each other \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Persona Switching",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Swap roles dynamically for different tasks",
+    "keywords": "Persona Switching Swap roles dynamically for different tasks \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Tone Control",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Define voice, formality, and emotional style",
+    "keywords": "Tone Control Define voice, formality, and emotional style \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Formatting Rules",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Tables, bullet lists, JSON, and structured output",
+    "keywords": "Formatting Rules Tables, bullet lists, JSON, and structured output \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Brand Alignment",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Ensure responses match organizational style",
+    "keywords": "Brand Alignment Ensure responses match organizational style \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Refusal Rules",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Define what the model must decline to answer",
+    "keywords": "Refusal Rules Define what the model must decline to answer \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Content Filters",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Prevent unsafe or disallowed outputs",
+    "keywords": "Content Filters Prevent unsafe or disallowed outputs \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Boundary Prompts",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Clarify limits and safe operating zones",
+    "keywords": "Boundary Prompts Clarify limits and safe operating zones \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Prompt Registry",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Track versions, changes, and metadata",
+    "keywords": "Prompt Registry Track versions, changes, and metadata \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "A/B Testing",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Compare prompt variants for performance",
+    "keywords": "A/B Testing Compare prompt variants for performance \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Prompt Diffing",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Identify changes between prompt versions",
+    "keywords": "Prompt Diffing Identify changes between prompt versions \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Regression Testing",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Ensure prompts behave consistently over time",
+    "keywords": "Regression Testing Ensure prompts behave consistently over time \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "Golden Sets",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Fixed test cases for prompt validation",
+    "keywords": "Golden Sets Fixed test cases for prompt validation \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "LLM-as-a-Judge",
+    "type": "concept",
+    "hub": "\u270d\ufe0f AI Prompt Hub",
+    "href": "prompt-hub.html",
+    "description": "Use models to evaluate prompt outputs",
+    "keywords": "LLM-as-a-Judge Use models to evaluate prompt outputs \u270d\ufe0f AI Prompt Hub"
+  },
+  {
+    "title": "\ud83d\udd12 AI Security Hub",
+    "type": "hub",
+    "hub": "security hub",
+    "href": "security-hub.html",
+    "description": "AI Security Hub",
+    "keywords": "\ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Prompt Injection",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Direct, indirect, and multi\u2011turn injection attacks",
+    "keywords": "Prompt Injection Direct, indirect, and multi\u2011turn injection attacks \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Data Poisoning",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Malicious training or retrieval data manipulation",
+    "keywords": "Data Poisoning Malicious training or retrieval data manipulation \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Model Extraction",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Stealing model weights or behavior via queries",
+    "keywords": "Model Extraction Stealing model weights or behavior via queries \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Model Evasion",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Crafted inputs designed to bypass safety filters",
+    "keywords": "Model Evasion Crafted inputs designed to bypass safety filters \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Input Sanitization",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Strip, rewrite, or validate user inputs",
+    "keywords": "Input Sanitization Strip, rewrite, or validate user inputs \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Output Filtering",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Block unsafe or policy\u2011violating responses",
+    "keywords": "Output Filtering Block unsafe or policy\u2011violating responses \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Guardrail Models",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Use small models to enforce safety boundaries",
+    "keywords": "Guardrail Models Use small models to enforce safety boundaries \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Context Isolation",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Separate system prompts from user\u2011controlled content",
+    "keywords": "Context Isolation Separate system prompts from user\u2011controlled content \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "PromptBench",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Adversarial prompt evaluation suite",
+    "keywords": "PromptBench Adversarial prompt evaluation suite \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Anthropic Red\u2011Teaming",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Guides and tools for safety stress\u2011testing",
+    "keywords": "Anthropic Red\u2011Teaming Guides and tools for safety stress\u2011testing \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "LLM Attacks",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Catalog of adversarial attacks on LLMs",
+    "keywords": "LLM Attacks Catalog of adversarial attacks on LLMs \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Model Provenance",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Track model origin, training data, and lineage",
+    "keywords": "Model Provenance Track model origin, training data, and lineage \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Dependency Hardening",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Secure libraries, embeddings, and plugins",
+    "keywords": "Dependency Hardening Secure libraries, embeddings, and plugins \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Secure Model Hosting",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Isolated runtimes, encrypted weights, access control",
+    "keywords": "Secure Model Hosting Isolated runtimes, encrypted weights, access control \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Zero\u2011Trust AI",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Authenticate every request, validate every output",
+    "keywords": "Zero\u2011Trust AI Authenticate every request, validate every output \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Sandboxed Execution",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Run agents and tools in isolated environments",
+    "keywords": "Sandboxed Execution Run agents and tools in isolated environments \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Rate\u2011Limiting & Quotas",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Prevent abuse and model extraction attempts",
+    "keywords": "Rate\u2011Limiting & Quotas Prevent abuse and model extraction attempts \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Audit Logging",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Trace model decisions and user interactions",
+    "keywords": "Audit Logging Trace model decisions and user interactions \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Microsoft Agent 365",
+    "type": "concept",
+    "hub": "\ud83d\udd12 AI Security Hub",
+    "href": "security-hub.html",
+    "description": "Centralized control plane for observability, governance, and security of the agentic ecosystem.",
+    "keywords": "Microsoft Agent 365 Centralized control plane for observability, governance, and security of the agentic ecosystem. \ud83d\udd12 AI Security Hub"
+  },
+  {
+    "title": "Build your first AI agent",
+    "type": "guide",
+    "hub": "build your first ai agent",
+    "href": "guides/build-your-first-ai-agent.html",
+    "description": "Build your first AI agent \u2014 AI Hub",
+    "keywords": "Build your first AI agent"
+  },
+  {
+    "title": "Build your first RAG app",
+    "type": "guide",
+    "hub": "build your first rag app",
+    "href": "guides/build-your-first-rag-app.html",
+    "description": "Build your first RAG app \u2014 AI Hub",
+    "keywords": "Build your first RAG app"
+  },
+  {
+    "title": "Choose an AI coding tool",
+    "type": "guide",
+    "hub": "choose an ai coding tool",
+    "href": "guides/choose-an-ai-coding-tool.html",
+    "description": "Choose an AI coding tool \u2014 AI Hub",
+    "keywords": "Choose an AI coding tool"
+  },
+  {
+    "title": "Choose an AI",
+    "type": "guide",
+    "hub": "choose an ai",
+    "href": "guides/choose-an-ai.html",
+    "description": "Choose an AI \u2014 AI Hub",
+    "keywords": "Choose an AI"
+  },
+  {
+    "title": "Evaluate an AI application",
+    "type": "guide",
+    "hub": "evaluate an ai application",
+    "href": "guides/evaluate-an-ai-application.html",
+    "description": "Evaluate an AI application \u2014 AI Hub",
+    "keywords": "Evaluate an AI application"
+  },
+  {
+    "title": "Run AI locally",
+    "type": "guide",
+    "hub": "run ai locally",
+    "href": "guides/run-ai-locally.html",
+    "description": "Run AI locally \u2014 AI Hub",
+    "keywords": "Run AI locally"
+  }
+]

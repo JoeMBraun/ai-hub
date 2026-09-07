@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build your first RAG app — AI Hub</title>
+    <meta name="description" content="A first retrieval-augmented generation path: when to use it, when not to, and the default steps.">
+    <link rel="canonical" href="https://joembraun.github.io/ai-hub/guides/build-your-first-rag-app.html">
+    <meta property="og:title" content="Build your first RAG app — AI Hub">
+    <meta property="og:description" content="A first retrieval-augmented generation path: when to use it, when not to, and the default steps.">
+    <meta property="og:url" content="https://joembraun.github.io/ai-hub/guides/build-your-first-rag-app.html">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../css/hub.css">
+    <script src="../js/hub.js"></script>
+</head>
+<body class="guide-page">
+
+<nav class="nav" aria-label="AI Hub directory"></nav>
+
+<article class="guide">
+<p class="page-meta">Last reviewed: 2026-09-07 · Status: <span class="review-status">Needs review</span></p>
+<h1>Build your first RAG app</h1>
+
+<p class="subtitle" style="text-align:left;margin:0 0 16px">Ground answers in your documents. Expand the RAG Architecture card on the Architecture Hub for the full knowledge unit.</p>
+
+<h2>Who this is for</h2>
+<p>You have documents (policies, tickets, manuals) and you want a chatbot that answers from those documents.</p>
+
+<h2>Short answer</h2>
+<p>Chunk, embed, retrieve, then generate with citations. Do not fine-tune first. Do not skip evaluation.</p>
+
+<h2>Decision tree</h2>
+<ol>
+    <li>If the answer must come from your files, continue with RAG.</li>
+    <li>If there is no corpus, you need a chatbot or an agent, not RAG.</li>
+    <li>If the model must take actions (send email, edit a ticket), add an agent loop after retrieval — see <a href="build-your-first-ai-agent.html">first agent</a>.</li>
+    <li>If the whole corpus fits in the prompt every time, skip the vector store until it does not.</li>
+</ol>
+
+<h2>Default</h2>
+<p>One collection, one embedding model, metadata filters for tenant/source, top-k retrieval, answer only from retrieved text, a 20-question golden set.</p>
+
+<h2>Alternatives</h2>
+<ul>
+    <li>Keyword or hybrid search when names and IDs matter more than paraphrase.</li>
+    <li>Fine-tuning when style must change but facts already live in the model — rare for private facts.</li>
+</ul>
+
+<h2>Tradeoffs</h2>
+<p><strong>When not to use RAG:</strong> open-ended brainstorming, tasks with no source of truth, or a corpus you cannot legally index. Fluent answers without retrieval are not “free RAG.”</p>
+
+<h2>Steps</h2>
+<ol>
+    <li>Pick 10 real questions and the documents that should answer them.</li>
+    <li>Read <a href="../data-hub.html">Data Hub</a> chunking cards; start with section-sized chunks.</li>
+    <li>Index text plus source locators. Isolate tenants.</li>
+    <li>Prompt: answer only from context; say when context is missing.</li>
+    <li>Measure citation recall on the golden questions before adding agents.</li>
+</ol>
+
+<div class="card-grid" style="margin-top:20px">
+    <div class="card" data-knowledge="RAG Architecture">
+        <div class="card-name">RAG Architecture</div>
+        <div class="card-desc">Retriever, index, generate, cite</div>
+    </div>
+</div>
+
+<h2>Related links</h2>
+<ul>
+    <li><a href="../architecture-hub.html">AI Architecture Hub</a></li>
+    <li><a href="../data-hub.html">AI Data Hub</a></li>
+    <li><a href="../evaluation-hub.html">AI Evaluation Hub</a></li>
+    <li><a href="../security-hub.html">Prompt injection</a> — retrieved text is untrusted</li>
+</ul>
+
+</article>
+
+</body>
+</html>

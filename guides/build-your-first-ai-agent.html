@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build your first AI agent — AI Hub</title>
+    <meta name="description" content="A first agent: one loop, tools, stop conditions, and when a chatbot or RAG is enough.">
+    <link rel="canonical" href="https://joembraun.github.io/ai-hub/guides/build-your-first-ai-agent.html">
+    <meta property="og:title" content="Build your first AI agent — AI Hub">
+    <meta property="og:description" content="A first agent: one loop, tools, stop conditions, and when a chatbot or RAG is enough.">
+    <meta property="og:url" content="https://joembraun.github.io/ai-hub/guides/build-your-first-ai-agent.html">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../css/hub.css">
+    <script src="../js/hub.js"></script>
+</head>
+<body class="guide-page">
+
+<nav class="nav" aria-label="AI Hub directory"></nav>
+
+<article class="guide">
+<p class="page-meta">Last reviewed: 2026-09-07 · Status: <span class="review-status">Needs review</span></p>
+<h1>Build your first AI agent</h1>
+
+<p class="subtitle" style="text-align:left;margin:0 0 16px">An agent is a loop with tools. Start smaller than a multi-agent diagram.</p>
+
+<h2>Who this is for</h2>
+<p>You can already prompt a model. You now need it to call tools or edit a system of record.</p>
+
+<h2>Short answer</h2>
+<p>One agent, few tools, a step budget, logs, and a human gate for side effects. Use ReAct before graphs of agents.</p>
+
+<h2>Decision tree</h2>
+<ol>
+    <li>If a single answer with no tools is enough, stay on a chatbot.</li>
+    <li>If the model only needs documents, build <a href="build-your-first-rag-app.html">RAG</a> first.</li>
+    <li>If the next action depends on a tool result, build a ReAct loop.</li>
+    <li>If two specialists must talk, add a supervisor only after the single loop is reliable.</li>
+</ol>
+
+<h2>Default</h2>
+<p>ReAct with one worker. Compare patterns on the Agents Hub: ReAct, Reflexion (retry with self-critique), Plan-Act-Reflect, Human-in-the-Loop.</p>
+
+<h2>Alternatives</h2>
+<ul>
+    <li>Fixed workflows (no model choosing the next tool) when the path is known.</li>
+    <li>HITL-only drafts when you are not ready to grant tools.</li>
+</ul>
+
+<h2>Tradeoffs</h2>
+<div class="decision-table-wrap">
+<table class="decision-table">
+    <thead><tr><th>Pattern</th><th>Use when</th><th>Avoid when</th></tr></thead>
+    <tbody>
+        <tr><td>ReAct</td><td>Tools + observations</td><td>No tools</td></tr>
+        <tr><td>Reflexion</td><td>Cheap retries and a checker</td><td>Unsafe or expensive retries</td></tr>
+        <tr><td>Supervisor + workers</td><td>Clear specialties</td><td>You cannot debug one agent yet</td></tr>
+        <tr><td>Human-in-the-loop</td><td>Irreversible actions</td><td>Every token would need a click</td></tr>
+    </tbody>
+</table>
+</div>
+
+<h2>Steps</h2>
+<ol>
+    <li>Write the success check (test pass, ticket field set, file exists).</li>
+    <li>List tools with schemas and deny everything else.</li>
+    <li>Implement think → act → observe with a max step count.</li>
+    <li>Log the trace. Add approval for writes.</li>
+    <li>Evaluate on a handful of tasks with known outcomes.</li>
+</ol>
+
+<div class="card-grid" style="margin-top:20px">
+    <div class="card" data-knowledge="Agent Architecture">
+        <div class="card-name">Agent Architecture</div>
+        <div class="card-desc">Planner, tools, memory, stop conditions</div>
+    </div>
+    <div class="card" data-knowledge="ReAct Pattern">
+        <div class="card-name">ReAct Pattern</div>
+        <div class="card-desc">Think, act, observe</div>
+    </div>
+</div>
+
+<h2>Related links</h2>
+<ul>
+    <li><a href="../agents-hub.html">AI Agents Hub</a></li>
+    <li><a href="../prompt-hub.html">ReAct on Prompt Hub</a></li>
+    <li><a href="../security-hub.html">AI Security Hub</a></li>
+</ul>
+
+</article>
+
+</body>
+</html>

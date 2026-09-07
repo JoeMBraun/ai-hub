@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2026-09-07",
+    "title": "True home page",
+    "description": "index.html is the AI Hub front door with goal-based routes; chatbots live on Chatbot Hub.",
+    "relatedPage": "index.html"
+  },
+  {
+    "date": "2026-09-07",
+    "title": "Six how-to guides",
+    "description": "Choose an AI, coding tool, first RAG app, first agent, local models, and evaluation.",
+    "relatedPage": "guides/choose-an-ai.html"
+  },
+  {
+    "date": "2026-09-07",
+    "title": "Knowledge units",
+    "description": "Learn more on high-value concept cards: what, when, when not, and failure modes.",
+    "relatedPage": "architecture-hub.html"
+  },
+  {
+    "date": "2026-09-07",
+    "title": "Ask AI 2.0",
+    "description": "Explain, Implement, Compare, and Troubleshoot intents for ChatGPT, Claude, and Perplexity.",
+    "relatedPage": "prompt-hub.html"
+  },
+  {
+    "date": "2026-09-07",
+    "title": "Decision support",
+    "description": "Job-based tables on Chatbot, Harness, Local Models, and Architecture hubs \u2014 not numeric rankings.",
+    "relatedPage": "chatbot-hub.html"
+  },
+  {
+    "date": "2026-09-07",
+    "title": "Site search",
+    "description": "Search hubs, concepts, and guides from the directory on every page.",
+    "relatedPage": "index.html"
+  },
+  {
+    "date": "2026-09-07",
+    "title": "Freshness labels",
+    "description": "Last reviewed and Needs review status. No invented vendor verification dates.",
+    "relatedPage": "admin-hub.html"
+  },
+  {
+    "date": "2026-09-07",
+    "title": "SEO and sitemap",
+    "description": "Canonical URLs, descriptions, sitemap.xml, and robots.txt for GitHub Pages.",
+    "relatedPage": "index.html"
+  }
+]

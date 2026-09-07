@@ -1,0 +1,33 @@
+name: Stale or unverified information
+description: Report a page whose facts, versions, or vendor details look out of date.
+title: "[Stale] "
+labels: ["stale-info"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+      description: The AI Hub page that looks stale
+      placeholder: https://joembraun.github.io/ai-hub/chatbot-hub.html
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is stale?
+      options:
+        - Model or product name / version
+        - Pricing or plan badge
+        - Vendor URL
+        - Guide or knowledge-unit wording
+        - Last reviewed / Needs review label
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What should be checked
+      description: Do not invent a replacement date or ranking. Link to a primary source if you have one.
+    validations:
+      required: true
