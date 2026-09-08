@@ -1,0 +1,23 @@
+{
+  "admin-hub.html": "58c1af34-83f1-5889-bfe8-3a1788dfa987",
+  "agents-hub.html": "4540a32f-deeb-59e5-85cf-b6c38f39dfc3",
+  "architecture-hub.html": "978c50e5-8e92-5971-b48d-fd96f9969e7c",
+  "benchmark-hub.html": "16e19c0e-5b57-503e-9079-db9e1459ccab",
+  "chatbot-hub.html": "10838b8b-420b-5859-b47c-9a976ae75377",
+  "course-hub.html": "f47a65d3-ab9b-55d1-acc4-b474004082c8",
+  "data-hub.html": "da2e1487-d840-5d9b-8162-051d20ccc9ae",
+  "deployment-hub.html": "1814d5ef-6fbe-5b37-8df3-7844ef79f7b0",
+  "evaluation-hub.html": "263f58d3-be95-5169-89ab-2c68be4611da",
+  "governance-hub.html": "6e69152e-363c-5417-823b-e2646b5d4f29",
+  "guides/build-your-first-ai-agent.html": "63231c00-dbc6-565e-8e0d-7eddbdcd6aa4",
+  "guides/build-your-first-rag-app.html": "02f8ab31-c74a-51fe-b111-205eca632b86",
+  "guides/choose-an-ai-coding-tool.html": "05894f7a-e0e3-5769-99d7-b2825424230a",
+  "guides/choose-an-ai.html": "82763f5d-bd00-5da3-bbf9-48f1f2fa9fd7",
+  "guides/evaluate-an-ai-application.html": "e9fa2a90-81f3-5a47-b9cb-c20fbcacefa8",
+  "guides/run-ai-locally.html": "6ada154c-f148-5d81-a59c-de3489e59e3c",
+  "harness-hub.html": "4632113c-02a8-54dd-9ae2-baa7ed111599",
+  "index.html": "26580f07-85bf-5598-af3c-382b9676853b",
+  "local-models-hub.html": "bffeb090-d341-5e65-bbf1-720802fc02e5",
+  "prompt-hub.html": "f85a13ef-2d24-5148-aeab-209548ad3b31",
+  "security-hub.html": "d0db1d99-14af-55b6-bacb-baf5fdca5fa1"
+}

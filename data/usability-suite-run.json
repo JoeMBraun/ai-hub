@@ -1,11 +1,11 @@
 {
   "suite": "AI Hub website usability",
   "source": "scripts/usability_suite.py",
-  "startedAt": "2026-09-07T14:02:24Z",
-  "finishedAt": "2026-09-07T14:02:24Z",
+  "startedAt": "2026-09-08T00:00:01Z",
+  "finishedAt": "2026-09-08T00:00:01Z",
   "summary": {
-    "total": 218,
-    "passed": 218,
+    "total": 219,
+    "passed": 219,
     "failed": 0,
     "warned": 0
   },
@@ -191,7 +191,14 @@
       "id": "OUT-REVIEW-STATUS",
       "name": "Pages show review status without invented verification",
       "status": "pass",
-      "detail": "Editorial pages have Last reviewed; volatile hubs say Needs review.",
+      "detail": "Editorial pages have Last reviewed; volatile hubs say Needs review; labels sit in the page footer.",
+      "page": "directory"
+    },
+    {
+      "id": "PAGE-GUID",
+      "name": "Each page has a unique footer GUID next to review status",
+      "status": "pass",
+      "detail": "21 unique page GUIDs in footers.",
       "page": "directory"
     },
     {

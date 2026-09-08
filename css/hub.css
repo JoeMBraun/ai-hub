@@ -529,11 +529,23 @@ ol a {
     border: 0;
 }
 
+.page-footer {
+    max-width: 900px;
+    margin: 40px auto 8px;
+    padding-top: 16px;
+    border-top: 1px solid #2a2d3e;
+}
 .page-meta {
-    text-align: center;
     color: #888;
     font-size: 0.78rem;
-    margin: -12px auto 24px;
+    line-height: 1.5;
+    margin: 0;
+}
+.page-guid {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.72rem;
+    color: #a0a4b8;
+    user-select: all;
 }
 
 .review-status {
