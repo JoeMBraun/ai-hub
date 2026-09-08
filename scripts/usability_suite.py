@@ -227,12 +227,44 @@ def outcome_checks(hub_js: str, index_html: str) -> list[dict]:
         and "Needs review" in choose_guide
         and "Last reviewed: 2026-09-07" in choose_guide
         and "independently verified" in chatbot_html
+        and '<footer class="page-footer">' in chatbot_html
+        and '<footer class="page-footer">' in choose_guide
+        and 'class="page-guid"' in chatbot_html
+        and "home-hero" in index_html
+        and 'class="page-meta"' not in index_html.split("home-hero")[1].split("</header>")[0]
     )
     checks.append(make_check(
         "OUT-REVIEW-STATUS",
         "Pages show review status without invented verification",
         "pass" if review_ok else "fail",
-        "Editorial pages have Last reviewed; volatile hubs say Needs review." if review_ok else "Freshness labels are missing.",
+        "Editorial pages have Last reviewed; volatile hubs say Needs review; labels sit in the page footer." if review_ok else "Freshness labels are missing or still in the page header.",
+        "directory",
+    ))
+
+    guid_re = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", re.I)
+    html_paths = list(ROOT.glob("*.html")) + list((ROOT / "guides").glob("*.html"))
+    footer_missing = []
+    guid_values: list[str] = []
+    guid_mismatch = []
+    for html_path in sorted(html_paths):
+        html_text = html_path.read_text(encoding="utf-8")
+        rel = str(html_path.relative_to(ROOT)).replace("\\", "/")
+        has_footer = '<footer class="page-footer">' in html_text and "page-guid" in html_text
+        if not has_footer:
+            footer_missing.append(rel)
+            continue
+        meta_guid = re.search(r'<meta name="page-guid" content="([^"]+)"', html_text)
+        body_guid = re.search(r'<code class="page-guid">([^<]+)</code>', html_text)
+        if not meta_guid or not body_guid or meta_guid.group(1) != body_guid.group(1) or not guid_re.match(body_guid.group(1)):
+            guid_mismatch.append(rel)
+        else:
+            guid_values.append(body_guid.group(1).lower())
+    unique_ok = len(guid_values) == len(set(guid_values)) and not footer_missing and not guid_mismatch
+    checks.append(make_check(
+        "PAGE-GUID",
+        "Each page has a unique footer GUID next to review status",
+        "pass" if unique_ok else "fail",
+        f"{len(set(guid_values))} unique page GUIDs in footers." if unique_ok else "Footer GUID problems: missing=" + ", ".join(footer_missing) + " mismatch=" + ", ".join(guid_mismatch),
         "directory",
     ))
 
